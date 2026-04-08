@@ -1,0 +1,43 @@
+.card-grid {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Mobile Tweak: If screen is small, make cards stack */
+@media (max-width: 600px) {
+    .card-grid,
+    .compare-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Info Cards */
+.info-card {
+    background: white;
+    border: 1px solid #e1e8ed;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: left;
+}
+
+.info-card h3 {
+    background: #e1eef7;
+    padding: 10px;
+    margin: -20px -20px 15px -20px;
+    font-size: 1.1rem;
+}
+
+.what-is {
+    -webkit-box-shadow: 0px 5px 5px #d0d9e3;
+    -moz-box-shadow: 0px 5px 5px #d0d9e3;
+    box-shadow: 0px 5px 5px #d0d9e3;
+    border-bottom: 1px solid #d0d9e3;
+    padding: 20px;
+}

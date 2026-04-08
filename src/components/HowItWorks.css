@@ -1,0 +1,31 @@
+/* Step Bar */
+.step-container {
+    display: flex;
+    background: var(--primary-blue);
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step {
+    flex: 1;
+    padding: 15px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+}
+
+/* Mobile Tweak: If screen is small, make cards stack */
+@media (max-width: 600px) {
+    .step-container {
+        flex-direction: column;
+    }
+}
+
+.how-it-works {
+    background-color: #e9eff5;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d0d9e3;
+}

@@ -1,0 +1,39 @@
+.navbar {
+    background: linear-gradient(#f6f8fc, #dfebf9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow to see the white bg */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between; /* This pushes the logo left and links right */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the content within the bar */
+}
+
+.navbar-logo img {
+    height: 50px; /* Adjust based on your logo size */
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none; /* Removes bullets */
+    margin: 0;
+    padding: 0;
+    gap: 2rem; /* Evenly spaces the horizontal links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff4500; /* A "Red Snapper" orange/red on hover */
+}

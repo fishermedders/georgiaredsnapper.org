@@ -1,0 +1,32 @@
+/* Required/Not Required Styling */
+.compare-box header {
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+}
+.required header {
+    background: var(--required-red);
+}
+.not-required header {
+    background: var(--not-req-green);
+}
+
+/* Grid */
+.compare-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.compare-grid ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.compare-grid ul li {
+    padding: 5px;
+}
