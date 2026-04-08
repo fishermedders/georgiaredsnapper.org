@@ -11,11 +11,24 @@
 .download-box {
     background: linear-gradient(to right, #1a4a7a, #3a7abd);
     color: white;
-    border-radius: 8px;
+    border-radius: 12px;
     display: flex;
-    padding: 30px;
+    padding: 28px;
     align-items: center;
     overflow: hidden;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(42, 90, 138, 0.18);
+}
+
+/* Ensure the download title is clearly visible over the dark gradient */
+.download-box h3 {
+    color: #ffffff;
+    font-size: 1.35rem;
+    margin: 0 0 8px 0;
+    font-weight: 900;
+    letter-spacing: 0.2px;
+    line-height: 1.05;
+    text-shadow: 0 6px 18px rgba(4, 10, 20, 0.28); /* subtle lift for legibility */
 }
 
 .store-buttons {
@@ -26,39 +39,133 @@
 }
 
 .store-btn {
-    background: #000;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    display: flex;
+    /* Unified store button style (matches site CTA styling) */
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #2f6eaf 0%, #244e86 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 8px 20px rgba(36, 78, 134, 0.16);
+    border: none;
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        opacity 0.12s ease;
+}
+.store-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.98;
+    box-shadow: 0 12px 36px rgba(36, 78, 134, 0.18);
 }
 
 .store-btn img {
-    width: 20px;
-    height: 20px;
+    /* Use the provided /apple.png and /android.png assets and make them visible */
+    width: 28px;
+    height: 28px;
+    display: block;
+    object-fit: contain;
 }
 
 .quick-start-box {
-    background: #fdf8e6; /* Light tan/yellow background */
-    border: 1px solid #e6dbb9;
-    border-radius: 8px;
-    padding: 20px;
+    background: linear-gradient(180deg, #f6fbff 0%, #ffffff 100%);
+    border: 1px solid rgba(36, 78, 134, 0.06);
+    border-radius: 12px;
+    padding: 22px;
     text-align: left;
+    box-shadow: 0 10px 28px rgba(29, 40, 58, 0.05);
+    display: block;
+}
+
+.quick-start-box h3 {
+    margin: 0 0 10px 0;
+    color: var(--primary-blue-dark, #244e86);
+    font-size: 1.08rem;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+}
+
+/* Improve list readability inside the quick-start box */
+.quick-start-box ul {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+}
+
+/* Tighter list item style to pair with the circular check badge defined elsewhere */
+.quick-start-box li {
+    position: relative;
+    padding-left: 44px;
+    margin: 0;
+    font-weight: 700;
+    color: #244e86;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: transparent;
+    border-radius: 6px;
 }
 
 .quick-start-box ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .quick-start-box li {
+    position: relative;
+    padding-left: 40px;
     margin-bottom: 15px;
-    font-weight: 600;
-    color: #2a5a8a;
+    font-weight: 700;
+    color: #244e86;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Hide any inline emoji markers placed in JSX (e.g., the <span>✔️</span>) —
+   we keep them in the markup but visually remove them to avoid layout shift. */
+.quick-start-box li span {
+    display: none;
+}
+
+/* Circular check badge to the left of each list item (re-uses same look as WhatIs) */
+.quick-start-box li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    /* SVG check (dark stroke) placed over a gradient background */
+    background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M20 6L9 17l-5-5' stroke='%230f172a' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>"),
+        linear-gradient(180deg, #2f6eaf 0%, #244e86 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:
+        12px 12px,
+        cover;
+    box-shadow:
+        0 4px 10px rgba(36, 78, 134, 0.18),
+        inset 0 -2px 6px rgba(255, 255, 255, 0.06);
+}
+
+/* Slight hover effect on the badge */
+.quick-start-box li:hover::before {
+    transform: translateY(-50%) scale(1.04);
+    box-shadow:
+        0 6px 18px rgba(36, 78, 134, 0.22),
+        inset 0 -2px 6px rgba(255, 255, 255, 0.08);
 }
 
 @media (max-width: 768px) {
@@ -72,8 +179,51 @@
     border-bottom: 1px solid #d0d9e3;
 }
 
+/* Make the hero title bold and white (applies globally so hero heading is readable) */
+.hero h1 {
+    color: #ffffff;
+    font-weight: 800;
+    text-shadow: 0 6px 18px rgba(4, 10, 20, 0.35);
+}
+
+/* Slight tweak to store button container so buttons stack nicely on small screens */
+.store-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Make store icons visually consistent and the buttons match site CTAs */
+.store-btn .label {
+    display: inline-block;
+    line-height: 1;
+}
+
+/* Phone mockup adjustments: keep the mockup visible but avoid pushing content off-center */
+.phone-mockup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.phone-mockup {
+    display: flex;
+    align-items: flex-end; /* position mockup at the bottom of the container */
+    justify-content: center;
+    overflow: visible; /* allow the transparent image to visually extend out of the container */
+    padding-bottom: 6px; /* small breathing room so mockup visually sits on the edge */
+    box-sizing: border-box;
+}
 .phone-mockup img {
+    transform: translateY(0) scale(1.5);
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0; /* ensure no rounded corners so transparency blends with section */
+    background: transparent; /* remove any background so transparency shows through */
+    object-fit: contain;
     position: relative;
-    left: 40px;
-    scale: 1.5;
+    bottom: 0; /* align to bottom of the .phone-mockup container */
 }

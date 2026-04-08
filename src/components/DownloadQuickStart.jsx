@@ -26,15 +26,9 @@ export default function DownloadQuickStart() {
         <div className="quick-start-box">
           <h3>Quick Start Guide</h3>
           <ul>
-            <li>
-              <span>✔️</span> Easy Account Setup
-            </li>
-            <li>
-              <span>✔️</span> Log Your Trips
-            </li>
-            <li>
-              <span>✔️</span> Submit Reports
-            </li>
+            <li>Easy Account Setup</li>
+            <li>Log Your Trips</li>
+            <li>Submit Reports</li>
           </ul>
         </div>
       </div>

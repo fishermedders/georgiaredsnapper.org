@@ -1,0 +1,193 @@
+/* Contact.css
+   Basic styles for the Contact page (styles scoped to form and contact-related UI).
+   These are lightweight and intended to complement the global page tokens.
+   Use of CSS variables allows these rules to blend with the site's theme.
+*/
+
+:root {
+  --primary-blue: #2a5a8a;
+  --primary-blue-dark: #24476a;
+  --border: #e6e9ee;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --radius-sm: 8px;
+  --gutter: 24px;
+}
+
+/* Ensure section/content wrappers inherit sensible spacing */
+.section {
+  padding: 36px 0;
+  box-sizing: border-box;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--gutter);
+  box-sizing: border-box;
+}
+
+/* Card container used on the contact page */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  box-shadow: 0 8px 20px rgba(29, 40, 58, 0.04);
+  color: #10203a;
+}
+
+/* Card title and body */
+.card__title {
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--primary-blue-dark);
+}
+
+.card__body {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+/* Contact form basics */
+.card form {
+  margin: 0;
+}
+
+.card form label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #0f172a;
+  font-size: 0.95rem;
+}
+
+/* Inputs and textarea inside cards (contact form) */
+.card form input[type="text"],
+.card form input[type="email"],
+.card form input[type="tel"],
+.card form textarea,
+.card form input,
+.card form select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-sizing: border-box;
+  font-size: 0.95rem;
+  color: #0f172a;
+  background: #fff;
+  transition: box-shadow 120ms ease, border-color 120ms ease;
+}
+
+/* Textarea sizing */
+.card form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Input/textarea focus */
+.card form input:focus,
+.card form textarea:focus,
+.card form select:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 6px 18px rgba(42, 90, 138, 0.08);
+}
+
+/* Form layout helpers */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Form actions (buttons) */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+/* Buttons - ensure decent touch target */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--primary-blue);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(36, 78, 134, 0.14);
+}
+
+/* Secondary (outline) button */
+.btn--secondary {
+  background: transparent;
+  color: var(--primary-blue);
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+/* Success message inline style */
+.contact-success {
+  color: var(--primary-blue);
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+/* Contact info lists (left column) */
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+  color: var(--muted);
+}
+
+.card ul li {
+  margin-bottom: 8px;
+}
+
+/* Small text helper */
+.u-muted {
+  color: var(--muted);
+}
+
+/* Accessibility: visible focus state for keyboard users */
+.card form input:focus,
+.card form textarea:focus,
+.card form button:focus,
+.card a:focus {
+  outline: 3px solid rgba(42, 90, 138, 0.12);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Responsive: collapse two-column form rows on small screens */
+@media (max-width: 760px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    justify-content: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn--secondary {
+    width: 100%;
+  }
+}

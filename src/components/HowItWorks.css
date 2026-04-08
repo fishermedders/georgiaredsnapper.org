@@ -1,31 +1,174 @@
-/* Step Bar */
-.step-container {
-    display: flex;
-    background: var(--primary-blue);
-    color: white;
-    border-radius: 5px;
-    overflow: hidden;
-    max-width: 1100px;
+/* HowItWorks.css
+   Reworked styling for the steps-row used by HowItWorks.jsx
+
+   - No connector pseudo-elements.
+   - Steps are rendered as individual "pills" (.step-item) with a compact
+     numbered badge (.step-num) and label (.step-label).
+   - Arrow SVGs are placed between steps and styled to match the site accent.
+   - Responsive: horizontal layout on wide screens, stacked vertical layout on small screens.
+*/
+
+/* Section-level defaults (components may apply section background modifiers) */
+.how-it-works {
+    padding: 40px 0;
+    box-sizing: border-box;
+    color: inherit;
+}
+
+/* Constrain content when .section-inner is present (JSX handles this) */
+.how-it-works .section-inner {
+    max-width: var(--max-width, 1100px);
     margin-left: auto;
     margin-right: auto;
+    padding: 0 var(--gutter, 24px);
+    box-sizing: border-box;
 }
 
-.step {
-    flex: 1;
-    padding: 15px;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-    font-weight: bold;
+/* Title spacing */
+.how-it-works h2 {
+    margin-bottom: 22px;
+    color: var(--primary-blue, #2a5a8a);
+    font-weight: 700;
+    text-align: center;
 }
 
-/* Mobile Tweak: If screen is small, make cards stack */
-@media (max-width: 600px) {
-    .step-container {
-        flex-direction: column;
+/* Core row containing steps and arrows */
+.steps-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px; /* space between items and arrows */
+    flex-wrap: nowrap;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Each step pill */
+.step-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(
+        180deg,
+        var(--primary-blue, #2a5a8a),
+        var(--primary-blue-dark, #24476a)
+    );
+    border: none;
+    border-radius: 10px;
+    padding: 14px 18px;
+    min-width: 180px;
+    box-shadow: 0 8px 18px rgba(36, 78, 134, 0.18);
+    font-weight: 700;
+    color: #ffffff; /* white text on blue background */
+    box-sizing: border-box;
+}
+
+/* Compact number badge to the left of the label */
+.step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    background: #ffffff; /* white badge */
+    color: var(--primary-blue, #2a5a8a); /* number in blue */
+    font-weight: 800;
+    font-size: 0.95rem;
+    flex: 0 0 auto;
+    box-shadow:
+        0 6px 12px rgba(6, 10, 22, 0.12),
+        inset 0 -2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* Step label (text) */
+.step-label {
+    display: inline-block;
+    text-align: left;
+    font-size: 0.98rem;
+    line-height: 1.25;
+    color: inherit;
+}
+
+/* Arrow container between steps. The SVG inside can be styled independently. */
+.step-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    padding: 0 4px;
+    color: var(--primary-blue); /* arrows use the site's primary blue */
+}
+
+/* Style the inline arrow SVG: stroke uses currentColor (white) */
+.step-arrow svg path,
+.step-arrow svg line,
+.step-arrow svg polyline {
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Reduce visual weight of arrows on very wide layouts via opacity */
+@media (min-width: 1200px) {
+    .step-arrow svg {
+        opacity: 0.95;
     }
 }
 
-.how-it-works {
-    background-color: #e9eff5;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #d0d9e3;
+/* Stacking behavior for small screens:
+   - Switch to vertical flow
+   - Make step pills full-width (or near full-width)
+   - Rotate arrow SVGs 90deg so they point downward */
+@media (max-width: 720px) {
+    .steps-row {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .step-item {
+        width: 100%;
+        min-width: 0;
+        padding: 12px 14px;
+        justify-content: flex-start;
+    }
+
+    .step-label {
+        font-size: 0.95rem;
+    }
+
+    .step-arrow {
+        transform: rotate(90deg);
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .step-arrow svg {
+        width: 20px;
+        height: 14px;
+    }
 }
+
+/* Accessibility: visible focus state if steps become keyboard-focusable later */
+.step-item:focus {
+    outline: 3px solid rgba(42, 90, 138, 0.14);
+    outline-offset: 3px;
+}
+
+/* Optional lighter visual variant: if the surrounding section uses a light background,
+   reduce the card shadow and use a subtle border only */
+.how-it-works.light .step-item {
+    box-shadow: none;
+    border-color: rgba(36, 78, 134, 0.06);
+}
+
+/* Minor visual polish: ensure text doesn't overflow the pill */
+.step-item,
+.step-label {
+    word-break: break-word;
+}
+
+/* End of HowItWorks.css */

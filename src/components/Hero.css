@@ -1,77 +1,401 @@
+/* Hero.css
+   Polished styles for the Hero component that match the updated Hero.jsx layout.
+   - Assumes the section uses: <section class="hero section section--bg-image section--edge-to-edge">
+   - Inner constrained container: .section-inner.hero-inner
+   - Grid layout: .hero-grid, .hero-copy, .hero-media
+   - Buttons: .btn, .btn-primary, .btn--secondary, .btn-text
+   - Phone mockup: .phone-mockup img
+   - Small helper utilities for kicker, lead, hero features, and the scroll chevron
+*/
+
+/* Base hero section (full-bleed background is handled by .section--bg-image or inline style) */
 .hero {
-    background-image: url("https://images.captainexperiences.com/blog_images/878/C58h0OR093yXptXOAnMHN9pPDitTKBpKea7KuuJE.jpg");
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    color: #fff; /* default for image/colored backgrounds */
+    overflow: hidden;
+}
+
+/* Blurred background layer + stronger overlay for improved legibility
+   - ::before renders a blurred copy of the hero image to soften busy details
+     (it uses the element's background image via `background: inherit`).
+   - ::after adds a stronger dark overlay on top of the blur to improve text contrast.
+*/
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Use the same image as the hero background and blur it to reduce distraction */
+    background: inherit;
     background-size: cover;
     background-position: center;
-    /* Set height to 1/4 of the viewport height */
-    height: 25vh;
-    width: 100%;
+    background-repeat: no-repeat;
+    filter: blur(8px) saturate(0.95);
+    transform: scale(1.04);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Stronger dark overlay above the blurred image but beneath the content */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(6, 10, 22, 0.62),
+        rgba(6, 10, 22, 0.44)
+    );
+    mix-blend-mode: normal;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Constrained inner content (keeps content centered within the full-bleed section) */
+.section-inner.hero-inner {
     position: relative;
-    display: flex;
+    z-index: 2; /* raise content above the overlay and blurred background layers */
+    display: block;
+    box-sizing: border-box;
+    padding: 40px 18px;
+}
+
+/* Grid layout: text left, media right (on wide screens) */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 32px;
     align-items: center;
-    justify-content: center;
-    color: white;
-    overflow: hidden; /* Prevents content from spilling out */
+    justify-items: start;
 }
 
-.hero-overlay {
-    background: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    height: 100%;
+/* When the available width for the inner content is narrow, reduce the right column */
+.hero-inner .hero-grid {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Copy area */
+.hero-copy {
+    color: inherit;
+    text-align: left;
+}
+
+/* Kicker / small label above title */
+.hero-copy .kicker {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.09);
+    color: rgba(255, 255, 255, 0.95);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    margin-bottom: 12px;
+}
+
+/* Title & lead */
+.hero-copy h1 {
+    margin: 6px 0 14px 0;
+    font-size: clamp(28px, 4.6vw, 40px);
+    line-height: 1.04;
+    font-weight: 800;
+    color: inherit;
+    text-shadow: 0 6px 18px rgba(4, 10, 20, 0.35);
+}
+
+.hero-copy .lead {
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: clamp(14px, 1.7vw, 18px);
+    max-width: 58ch;
+    line-height: 1.55;
+}
+
+/* CTA button cluster */
+.hero-ctas {
     display: flex;
+    gap: 12px;
     align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
 }
 
-.hero-content {
-    padding: 10px;
-}
-
-.hero-content h1 {
-    /* Smaller font for the shorter height */
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    margin: 0;
-    line-height: 1.2;
-}
-
-.hero-content p {
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-    margin: 5px 0 15px 0;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-.btn {
-    background: #000;
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 6px;
+/* Store button style (match DownloadQuickStart .store-btn) */
+.store-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #2f6eaf 0%, #244e86 100%);
+    color: #ffffff;
     text-decoration: none;
-    display: flex;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 8px 20px rgba(36, 78, 134, 0.16);
+    border: none;
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        opacity 0.12s ease;
+}
+.store-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.98;
+    box-shadow: 0 12px 36px rgba(36, 78, 134, 0.18);
+}
+.store-btn img {
+    width: 28px;
+    height: 28px;
+    display: block;
+    object-fit: contain;
+}
+.store-btn .label {
+    display: inline-block;
+    line-height: 1;
+}
+
+/* Ensure hero title is white and bold */
+.hero-copy h1 {
+    color: #ffffff;
+    font-weight: 800;
+    text-shadow: 0 6px 18px rgba(4, 10, 20, 0.35);
+}
+
+/* Base button style (keeps consistent with page-level .btn but tuned for hero contrast) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        opacity 0.12s ease;
+    box-shadow: 0 8px 24px rgba(6, 12, 24, 0.18);
+    color: inherit;
+    background: rgba(0, 0, 0, 0.18);
+}
+
+/* Primary App Store button - solid accent color for visibility */
+.btn-primary,
+.btn.btn-primary,
+.btn-primary.btn--ios {
+    background: linear-gradient(180deg, #2f6eaf, #244e86);
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(36, 78, 134, 0.28);
+}
+
+/* Secondary button: outlined light button for contrast */
+.btn--secondary {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: none;
+}
+
+/* Button inner text when we have two-line text (small line + strong line) */
+.btn-text {
+    display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
-    border: 1px solid #444;
-    /* Scale down buttons to fit the smaller height */
-    transform: scale(0.85);
+    line-height: 1;
 }
 
-.btn span {
-    font-size: 0.6rem;
+.btn-text small {
+    font-size: 10px;
     text-transform: uppercase;
-}
-.btn strong {
-    font-size: 0.9rem;
+    opacity: 0.85;
+    letter-spacing: 0.6px;
 }
 
-/* Mobile adjustments */
-@media (max-width: 600px) {
-    .hero-content p {
-        display: none; /* Hide tagline on mobile to keep buttons visible in the 25vh space */
+.btn-text strong {
+    font-size: 14px;
+    line-height: 1;
+}
+
+/* Button hover states */
+.btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.98;
+}
+.btn--secondary:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hero features list (small bullets under CTAs) */
+.hero-features {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0 0;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+/* Each list item: small check dot icon using pseudo-element */
+.hero-features li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.hero-features li::before {
+    content: "•";
+    color: #ffdd9b;
+    font-size: 18px;
+    margin-right: 6px;
+    opacity: 0.95;
+    transform: translateY(-1px);
+}
+
+/* Media / phone mockup on the right */
+.hero-media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* position mockup at the bottom of the media column */
+    pointer-events: none; /* decorative */
+    padding-bottom: 6px; /* small breathing room so mockup visually sits on the edge */
+}
+
+.phone-mockup {
+    width: 320px;
+    max-width: 100%;
+    transform: translateY(0);
+    filter: drop-shadow(0 16px 40px rgba(6, 12, 24, 0.45));
+    border-radius: 0; /* remove rounded corners so transparent mockup blends with section edge */
+    overflow: visible; /* allow the transparent image to visually extend out of the container */
+    background: transparent; /* no background so mockup appears to emerge from the section */
+    padding: 0;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+}
+
+/* Make sure the image fills the mockup area */
+.phone-mockup img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0; /* ensure no rounded corners */
+    object-fit: contain;
+    background: transparent; /* remove any solid background so transparency shows through */
+    /* Keep the image naturally placed; hero-media's align-items:flex-end will ensure it sits at the bottom */
+}
+
+/* Decorative scroll chevron that sits near the bottom center of the hero */
+.hero-scroll {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 18px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    z-index: 2;
+    opacity: 0.95;
+    transition:
+        transform 0.18s ease,
+        opacity 0.12s ease;
+}
+
+.hero-scroll svg {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
+.hero-scroll:hover {
+    transform: translateX(-50%) translateY(6px);
+    opacity: 1;
+}
+
+/* If the hero is used on a light background (e.g., section--bg-white), reverse some colors */
+.hero.section--bg-white,
+.hero.section--bg-page {
+    color: #10203a;
+}
+.hero.section--bg-white .hero::before {
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+}
+
+/* Responsiveness: stack content on smaller screens */
+@media (max-width: 980px) {
+    .hero-grid {
+        grid-template-columns: 1fr 300px;
+        gap: 22px;
     }
-    .btn {
-        transform: scale(0.75);
+    .phone-mockup {
+        width: 280px;
     }
 }
+
+@media (max-width: 760px) {
+    .hero {
+        min-height: auto;
+        padding-top: 36px;
+        padding-bottom: 36px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        align-items: start;
+    }
+
+    .hero-media {
+        order: -1; /* place media above on small screens if desired */
+        justify-content: center;
+    }
+
+    .hero-copy {
+        text-align: center;
+    }
+
+    .hero-ctas {
+        justify-content: center;
+    }
+
+    .hero-features {
+        justify-content: center;
+    }
+
+    .hero-scroll {
+        bottom: 8px;
+    }
+
+    .phone-mockup {
+        width: 200px;
+        margin: 0 auto;
+        padding: 6px;
+    }
+}
+
+/* Small visual polish for reduced-motion users */
+@media (prefers-reduced-motion: reduce) {
+    .btn,
+    .hero-scroll,
+    .card,
+    .phone-mockup {
+        transition: none !important;
+    }
+}
+
+/* End of Hero.css */

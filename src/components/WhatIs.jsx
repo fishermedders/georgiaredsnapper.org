@@ -1,3 +1,4 @@
+import React from "react";
 import "./WhatIs.css";
 
 export default function WhatIs() {
@@ -17,22 +18,28 @@ export default function WhatIs() {
   ];
 
   return (
-    <section className="section what-is">
-      <h2>What is the Red Snapper Project?</h2>
-      <div className="card-grid">
-        {cards.map((card, i) => (
-          <div key={i} className="info-card">
-            <h3>{card.title}</h3>
-            {card.text && <p>{card.text}</p>}
-            {card.list && (
-              <ul>
-                {card.list.map((item) => (
-                  <li key={item}>✔️ {item}</li>
-                ))}
-              </ul>
-            )}
-          </div>
-        ))}
+    <section
+      className="section what-is section--bg-white section--edge-to-edge"
+      aria-labelledby="what-is-heading"
+    >
+      <div className="section-inner">
+        <h2 id="what-is-heading">What is the Red Snapper Project?</h2>
+
+        <div className="card-grid" role="list">
+          {cards.map((card, i) => (
+            <div key={i} className="info-card" role="listitem">
+              <h3>{card.title}</h3>
+              {card.text && <p>{card.text}</p>}
+              {card.list && (
+                <ul>
+                  {card.list.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
