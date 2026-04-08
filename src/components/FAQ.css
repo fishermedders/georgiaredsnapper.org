@@ -73,4 +73,12 @@
 }
 
 /* Mobile Layout */
-@media ;
+@media (max-width: 768px) {
+    .faq-grid {
+        grid-template-columns: 1fr; /* Stack into one column */
+    }
+
+    .faq-section h2 {
+        font-size: 1.4rem;
+    }
+}
