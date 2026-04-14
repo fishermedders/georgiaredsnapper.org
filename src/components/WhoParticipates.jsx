@@ -1,16 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./WhoParticipates.css";
 
 /**
  * WhoParticipates.jsx
  *
- * - Wraps content in `.section-inner` so the section background can remain full-bleed
- *   while the content is constrained.
- * - Applies an explicit narrower constraint to the compare grid so this section
- *   doesn't feel too wide compared with the rest of the page.
+ * Updated to reflect that participation is mandatory for anglers
+ * fishing under the approved EFP season in federal waters off Georgia.
  *
- * Note: the CSS file `WhoParticipates.css` still controls the visual appearance.
- * The inline style below ensures a narrower max width without requiring a CSS edit.
+ * - Clearly lists who is required to participate and who is not.
+ * - Provides concise, actionable requirements (register trips, obtain
+ *   trip authorization number, submit post-trip report).
+ * - Notes enforcement consequence (potential denial of future EFP participation).
+ * - Mentions supporting program elements (carcass-donation stations, Yamaha Rightwaters).
  */
 
 export default function WhoParticipates() {
@@ -20,9 +22,16 @@ export default function WhoParticipates() {
       aria-labelledby="who-needs-heading"
     >
       <div className="section-inner">
-        <h2 id="who-needs-heading">Who Needs to Participate?</h2>
+        <h2 id="who-needs-heading">Who Must Participate?</h2>
 
-        {/* Constrain the compare grid to a narrower width so the content doesn't stretch too wide */}
+        <p className="lead">
+          Under the approved Exempted Fishing Permit (EFP) that establishes the
+          two-month recreational Red Snapper season beginning in 2026,
+          participation in the state's electronic trip-registration and
+          reporting program is mandatory for all anglers fishing under the EFP
+          in federal waters off Georgia's coast.
+        </p>
+
         <div
           className="compare-grid compare-grid--narrow"
           role="list"
@@ -40,9 +49,15 @@ export default function WhoParticipates() {
           >
             <header id="required-heading">REQUIRED</header>
             <ul>
-              <li>Recreational Snapper Anglers</li>
-              <li>Charter Captains</li>
-              <li>Headboats</li>
+              <li>
+                Private recreational anglers fishing for Red Snapper in federal
+                waters during the EFP season
+              </li>
+              <li>For-hire captains and guides operating under the EFP</li>
+              <li>
+                Any participant retaining Red Snapper during the two-month EFP
+                season
+              </li>
             </ul>
           </div>
 
@@ -53,8 +68,14 @@ export default function WhoParticipates() {
           >
             <header id="not-required-heading">NOT REQUIRED</header>
             <ul>
-              <li>Not Targeting Snapper</li>
-              <li>State Waters Only</li>
+              <li>Anglers not fishing for Red Snapper during the EFP season</li>
+              <li>
+                Fishing that occurs exclusively in state waters and is not
+                covered by the EFP
+              </li>
+              <li>
+                Commercial fishers not participating under the recreational EFP
+              </li>
             </ul>
           </div>
         </div>

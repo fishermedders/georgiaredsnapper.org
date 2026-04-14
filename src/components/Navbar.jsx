@@ -7,7 +7,12 @@ export default function Navbar() {
       <div className="navbar-container">
         {/* Logo floating on the left */}
         <Link to="/" className="navbar-logo">
-          <img src="/logo.png" alt="Georgia Red Snapper Logo" />
+          <img src="/GRSP_Logo.svg" alt="Georgia Red Snapper Logo" />
+          <img
+            src="/logos/dnr.jpg"
+            alt="Georgia DNR logo"
+            className="navbar-dnr-logo"
+          />
         </Link>
 
         {/* Links floating to the right */}

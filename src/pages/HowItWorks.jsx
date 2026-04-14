@@ -1,24 +1,48 @@
 import React from "react";
 import { Link } from "react-router-dom";
-//import "./HowItWorks.css"; // optional - create if you want page-specific styles
+
+/**
+ * HowItWorks.jsx
+ *
+ * This page describes the user workflow for participating in Georgia's
+ * electronic trip-registration and reporting program. Season-specific
+ * regulatory details (dates, bag/size limits, official season status)
+ * are intentionally not repeated here — see the Season Information page
+ * for those rules.
+ *
+ * The page keeps a clear, step-by-step workflow that applies across seasons
+ * and links to SeasonInfo for anything regulatory.
+ */
 
 export default function HowItWorks() {
-  const steps = [
+  const workflowSteps = [
     {
-      title: "Download the VESL App",
-      body: "Get the VESL app from the App Store or Google Play and create a free account. The app works offline and syncs when you have a connection.",
+      title: "Get the Reporting App",
+      body: "Install the Georgia reporting app (iOS or Android) or use the state web portal. The app is the primary tool for trip registration, in-trip logging, and post-trip reporting.",
     },
     {
-      title: "Register Your Trip",
-      body: "Before or after you launch, open VESL and quickly log a trip. Basic details (date, location, anglers) are all that's required to start.",
+      title: "Register Your Account & Vessel",
+      body: "Create an account and register your vessel or operator profile. Keeping your profile up to date helps ensure accurate reporting and efficient program administration.",
     },
     {
-      title: "Report Your Catch",
-      body: "When you catch a red snapper, record the catch and relevant details in the app. Reports are simple, fast, and designed for minimal distraction while on the water.",
+      title: "Check Season Requirements",
+      body: "Visit the Season Information page to confirm whether a trip authorization is required for the current season and for authoritative regulatory details.",
     },
     {
-      title: "Contribute to Better Management",
-      body: "Your submitted reports are aggregated with other angler data to help fisheries managers make more informed decisions about seasons and resource stewardship.",
+      title: "Log the Trip",
+      body: "At trip start (or shortly after), register the trip in the app with basic details (date, number of anglers, reporting area). The app supports offline logging and will sync when a connection is available.",
+    },
+    {
+      title: "Record Catches & Releases",
+      body: "During the trip, add any retained or released fish. Enter species and counts; optional biological fields can be provided when available to improve scientific value.",
+    },
+    {
+      title: "Submit a Post‑Trip Report",
+      body: "After returning, submit the post‑trip report including harvests, releases, effort, and approximate location or depth fished. Timely and accurate post‑trip reports are essential for data quality.",
+    },
+    {
+      title: "Support Biological Sampling",
+      body: "Where available, consider using carcass-donation stations and other sampling opportunities to support age, size, and reproductive data collection that complements electronic reporting.",
     },
   ];
 
@@ -26,38 +50,35 @@ export default function HowItWorks() {
     <main className="content-container">
       <section className="section section--bg-blue-soft section--edge-to-edge">
         <div className="section-inner">
-          <h2>How It Works</h2>
+          <h2>How the Reporting Workflow Works</h2>
 
           <p className="lead">
-            Participating is quick and straightforward. Below is a short
-            walkthrough of the steps anglers follow to report trips and catches
-            using the VESL app. Your contributions help improve science-based
-            management and create better outcomes for recreational fishing.
+            This page explains the practical steps anglers follow to register
+            trips and report catches using the state-managed reporting platform.
+            For season dates, bag limits, size rules, and any season-specific
+            regulatory requirements, please see the{" "}
+            <Link to="/season-info">Season Information</Link> page.
           </p>
 
           <div className="grid grid--cols-2" style={{ marginTop: 20 }}>
             <div>
-              <h3>Quick Overview</h3>
-              <ul>
-                <li>Download VESL and create an account</li>
-                <li>Log trips with basic trip info</li>
-                <li>
-                  Report catches (species, count, size info when available)
-                </li>
-                <li>
-                  Sync and contribute — data are used anonymously for management
-                </li>
-              </ul>
+              <h3>Overview</h3>
+              <p>
+                The workflow is built around three simple phases: prepare
+                (account and authorization), log (in-trip data), and report
+                (post-trip submission). The platform is designed to be quick to
+                use, work offline, and minimize distraction while on the water.
+              </p>
             </div>
 
             <div>
-              <h3>Data Privacy & Use</h3>
+              <h3>Who uses this?</h3>
               <p>
-                All angler data collected via VESL are managed securely.
-                Personal information is protected and reporting is used to
-                produce anonymized summaries for fisheries management and
-                research. If you have questions about data use, contact the
-                project team.
+                Recreational anglers, charter operators, and headboats that are
+                participating in the state's reporting program use this
+                workflow. If you're unsure whether the current season or your
+                trip is covered, check{" "}
+                <Link to="/season-info">Season Information</Link>.
               </p>
             </div>
           </div>
@@ -66,10 +87,14 @@ export default function HowItWorks() {
 
       <section className="section section--bg-white section--edge-to-edge">
         <div className="section-inner">
-          <h2>Step-by-step</h2>
+          <h2>Step-by-step Workflow</h2>
 
-          <div className="grid grid--cols-1" style={{ gap: 14, marginTop: 12 }}>
-            {steps.map((s, i) => (
+          <div
+            className="grid grid--cols-1"
+            style={{ gap: 14, marginTop: 12 }}
+            aria-live="polite"
+          >
+            {workflowSteps.map((s, i) => (
               <article key={s.title} className="card">
                 <div
                   style={{ display: "flex", alignItems: "flex-start", gap: 12 }}
@@ -114,24 +139,35 @@ export default function HowItWorks() {
 
       <section className="section section--bg-page section--edge-to-edge">
         <div className="section-inner">
-          <h2>Need Help?</h2>
-          <p className="lead">
-            If you have trouble using the app or questions about reporting, our
-            team is here to assist. Visit the FAQs or get in touch directly.
-          </p>
+          <h2>Before You Head Out</h2>
 
-          <p style={{ marginTop: 12 }}>
-            <Link to="/faqs" className="btn">
-              Read FAQs
-            </Link>{" "}
-            <Link
-              to="/contact"
-              className="btn btn--secondary"
-              style={{ marginLeft: 12 }}
-            >
-              Contact Us
-            </Link>
-          </p>
+          <div className="grid grid--cols-3" style={{ marginTop: 12 }}>
+            <div className="card">
+              <h3 className="card__title">Have Your App Ready</h3>
+              <p className="card__body">
+                Install the app, sign in, and confirm your profile and vessel
+                information before departing.
+              </p>
+            </div>
+
+            <div className="card">
+              <h3 className="card__title">Check Season Rules</h3>
+              <p className="card__body">
+                Visit <Link to="/season-info">Season Information</Link> for
+                current dates, bag and size limits, and whether trip
+                authorization is required for your trip.
+              </p>
+            </div>
+
+            <div className="card">
+              <h3 className="card__title">Plan to Report</h3>
+              <p className="card__body">
+                Make reporting part of your routine: log catches during the trip
+                (or immediately after) and submit a post‑trip report to complete
+                the record.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>

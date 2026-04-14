@@ -4,15 +4,13 @@ import "./Hero.css";
 /**
  * Hero.jsx
  *
- * - Sets the section's inline background to the raw image only (no gradient).
- * - Visual treatment (blurred background layer + dark overlay) is implemented in CSS
- *   using pseudo-elements on the `.hero` selector (e.g. `.hero::before` / `.hero::after`).
- * - Keeps content constrained via `.section-inner` while the section background remains full-bleed.
+ * Updated to remove VESL-specific branding and reference the official
+ * Georgia state reporting application. Visual treatment (blurred
+ * background + dark overlay) is implemented in CSS using pseudo-elements
+ * on `.hero` (e.g. `.hero::before` / `.hero::after`).
  *
- * Notes:
- * - Ensure `Hero.css` contains the pseudo-element rules for `.hero::before` (blur layer)
- *   and `.hero::after` (dark overlay). This file intentionally does not apply gradients
- *   inline so the CSS can manage layering, blur, and overlay independently.
+ * Keep the section layout and accessibility landmarks consistent with the
+ * rest of the site.
  */
 
 const HERO_IMAGE =
@@ -23,7 +21,6 @@ export default function Hero() {
     <section
       className="hero section section--bg-image section--edge-to-edge"
       aria-label="Georgia Red Snapper hero"
-      // Inline background intentionally contains only the image URL.
       style={{ backgroundImage: `url('${HERO_IMAGE}')` }}
     >
       <div
@@ -34,10 +31,11 @@ export default function Hero() {
         <div className="hero-grid">
           <div className="hero-copy">
             <span className="kicker">Coastal Fishing · Season Tracking</span>
-            <h1 id="hero-heading">Georgia Red Snapper</h1>
+            <h1 id="hero-heading">Georgia Red Snapper Project</h1>
             <p className="lead">
-              The VESL-powered companion for anglers: log trips, report catches,
-              and help improve recreational fisheries management in Georgia.
+              The official Georgia reporting app: register trips, report
+              catches, and help improve recreational fisheries management across
+              state and federal waters.
             </p>
 
             <div className="hero-ctas">
@@ -61,15 +59,22 @@ export default function Hero() {
             </div>
 
             <ul className="hero-features" aria-hidden="false">
-              <li>Quick trip logging — on or offline</li>
-              <li>Secure, privacy-first reporting</li>
-              <li>Helps manage seasons & protect the resource</li>
+              <li>Quick trip registration — on or offline</li>
+              <li>
+                Mandatory trip and catch reporting for participating seasons
+              </li>
+              <li>
+                Improves data for longer, more predictable fishing seasons
+              </li>
             </ul>
           </div>
 
           <aside className="hero-media" aria-hidden="true">
             <div className="phone-mockup">
-              <img src="/mockup.png" alt="VESL app preview on phone" />
+              <img
+                src="/GRSP_Logo.svg"
+                alt="State reporting app preview on phone"
+              />
             </div>
           </aside>
         </div>

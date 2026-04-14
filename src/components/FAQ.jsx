@@ -1,37 +1,54 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import "./FAQ.css";
 
-export default function FAQ() {
-  const faqs = [
-    {
-      q: "Is reporting mandatory?",
-      a: "Yes, for all recreational anglers targeting red snapper in Georgia state waters during the season.",
-    },
-    {
-      q: "How long does it take to report?",
-      a: "Most reports take less than 3 minutes to complete via the VESL app.",
-    },
-    {
-      q: "Is my data confidential?",
-      a: "Yes. Your data is encrypted and used only for fisheries management and research purposes.",
-    },
-    {
-      q: "Do I need a signal to report?",
-      a: "The app allows you to log data offline; it will sync once you return to a service area.",
-    },
-  ];
+/**
+ * FAQ (teaser)
+ *
+ * Condensed FAQ used on the Home page. Displays a short set of high-level
+ * Q&As and links to the full FAQ page for complete details.
+ */
 
+export default function FAQ() {
   return (
-    <section className="faq-section">
-      <h2>Frequently Asked Questions</h2>
-      <div className="faq-grid">
-        {faqs.map((faq, index) => (
-          <details key={index} className="faq-item">
-            <summary>{faq.q}</summary>
-            <div className="faq-answer">
-              <p>{faq.a}</p>
-            </div>
-          </details>
-        ))}
+    <section
+      className="faq-teaser section section--bg-white section--edge-to-edge"
+      aria-labelledby="faq-teaser-heading"
+    >
+      <div className="section-inner">
+        <h2 id="faq-teaser-heading">Quick FAQs</h2>
+
+        <p className="lead">
+          Short answers to common questions about the EFP season and reporting.
+          For the full list and detailed guidance, visit the FAQs page.
+        </p>
+
+        <ul
+          className="faq-teaser-list"
+          style={{ marginTop: 12, lineHeight: 1.5 }}
+        >
+          <li>
+            <strong>Is reporting required?</strong> — Yes. Trip registration and
+            post-trip reporting are required for anglers participating in the
+            EFP season.
+          </li>
+
+          <li>
+            <strong>Bag limit?</strong> — 1 Red Snapper per person per day (no
+            minimum size under the EFP).
+          </li>
+
+          <li>
+            <strong>What about cell service?</strong> — The reporting app
+            supports offline logging and will sync when you reconnect.
+          </li>
+        </ul>
+
+        <div style={{ marginTop: 16 }}>
+          <Link to="/faqs" className="btn">
+            Read full FAQs
+          </Link>
+        </div>
       </div>
     </section>
   );

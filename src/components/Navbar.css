@@ -14,9 +14,19 @@
     margin: 0 auto; /* Centers the content within the bar */
 }
 
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 .navbar-logo img {
     height: 50px; /* Adjust based on your logo size */
     display: block;
+}
+.navbar-dnr-logo {
+    height: 36px;
+    width: auto;
+    opacity: 0.95;
 }
 
 .nav-links {

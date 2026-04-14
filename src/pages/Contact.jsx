@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-//import "./Contact.css";
+import "./styles/Contact.css";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -42,57 +42,52 @@ export default function Contact() {
           <h2>Contact the Georgia Red Snapper Project</h2>
 
           <p className="lead">
-            We value your feedback, questions, and reports. Use the form below
-            to contact the project team about reporting issues, data questions,
-            or partnership inquiries. For urgent regulatory or enforcement
-            matters, please contact your local fisheries office directly.
+            Use the form below to contact the project team about reporting
+            issues, data questions, or partnership inquiries. For official
+            regulatory information, season decisions, or enforcement matters,
+            please consult the Georgia Department of Natural Resources (DNR)
+            website.
           </p>
 
           <div className="grid grid--cols-2" style={{ gap: 20, marginTop: 18 }}>
             <div className="card">
-              <h3 className="card__title">Project Team</h3>
+              <h3 className="card__title">Official Regulatory Information</h3>
               <p className="card__body">
-                Georgia Department of Natural Resources - Fisheries Management
+                For authoritative rules, season announcements, and enforcement
+                contacts, visit the Georgia DNR website:
+              </p>
+              <p style={{ marginTop: 8 }}>
+                <a
+                  href="https://gadnr.org"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn--secondary"
+                >
+                  Visit GA DNR
+                </a>
               </p>
 
-              <ul style={{ listStyle: "none", padding: 0, marginTop: 12 }}>
-                <li>
-                  <strong>Email:</strong>{" "}
-                  <a href="mailto:redsnapper@gadnr.gov">redsnapper@gadnr.gov</a>
-                </li>
-                <li>
-                  <strong>Phone:</strong> (555) 555-5555
-                </li>
-                <li>
-                  <strong>Office hours:</strong> Mon–Fri, 8:30am – 4:30pm
-                </li>
-              </ul>
-
               <p style={{ marginTop: 12 }}>
-                For technical support with the VESL app, please include your
-                device type and app version in your message.
+                If you need assistance locating a specific office or official
+                contact, the GA DNR site has up-to-date phone numbers and local
+                office addresses.
               </p>
             </div>
 
             <div className="card">
-              <h3 className="card__title">Mailing Address</h3>
-              <p className="card__body" style={{ marginBottom: 12 }}>
-                Georgia Department of Natural Resources
-                <br />
-                Fisheries Management Division
-                <br />
-                123 Coastal Way
-                <br />
-                Savannah, GA 31401
+              <h3 className="card__title">Project & Reporting Questions</h3>
+              <p className="card__body">
+                This project is operated by the Georgia DNR Coastal Resources
+                Division. For inquiries about the reporting platform, data use,
+                or how to participate, submit a message using the form on this
+                page and our team will route your request to the appropriate
+                staff.
               </p>
 
-              <h3 className="card__title" style={{ marginTop: 14 }}>
-                General Inquiries
-              </h3>
-              <p className="card__body">
-                If you have questions about seasons, regulations, or data use,
-                review our <Link to="/faqs">FAQs</Link> or{" "}
-                <Link to="/about">About</Link> pages for quick answers.
+              <p style={{ marginTop: 12 }}>
+                For technical issues with the mobile reporting app, please use
+                the app's built-in help/support feature or the app store pages
+                for the VESL app.
               </p>
             </div>
           </div>
@@ -239,7 +234,8 @@ export default function Contact() {
             For media requests or partnership discussions (research, outreach,
             or funding), please include details about your organization and the
             nature of the inquiry in the message form. We will route your
-            inquiry to the appropriate team member.
+            inquiry to the appropriate team member or provide official contact
+            information from GA DNR when applicable.
           </p>
 
           <p style={{ marginTop: 12 }}>
