@@ -71,10 +71,7 @@ export default function Hero() {
 
           <aside className="hero-media" aria-hidden="true">
             <div className="phone-mockup">
-              <img
-                src="/GRSP_Logo.svg"
-                alt="State reporting app preview on phone"
-              />
+              <img src="/GRSP_Logo.svg" alt="Georgia Red Snapper logo" />
             </div>
           </aside>
         </div>

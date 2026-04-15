@@ -1,49 +1,376 @@
+/* RedSnapperWebsite\GeorgiaRedSnapper.org
+   src\components\Navbar.css
+
+   Responsive navbar styles plus a few mobile-friendly helpers used across
+   the homepage and About/WhatIs areas so that buttons, the quick-links pane,
+   and the app/download panel collapse and stack nicely on small screens.
+*/
+
+/* --- Base navbar --------------------------------------------------------- */
+:root {
+    --nav-bg-start: #f6f8fc;
+    --nav-bg-end: #dfebf9;
+    --nav-max-width: 1200px;
+    --nav-link-color: #333;
+    --nav-link-hover: #ff4500;
+    --nav-height: 72px;
+    --breakpoint-md: 768px;
+    --breakpoint-sm: 640px;
+}
+
 .navbar {
-    background: linear-gradient(#f6f8fc, #dfebf9);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow to see the white bg */
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    background: linear-gradient(var(--nav-bg-start), var(--nav-bg-end));
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+    padding: 0.6rem 0;
     width: 100%;
+    z-index: 60;
+    position: relative;
 }
 
 .navbar-container {
     display: flex;
-    justify-content: space-between; /* This pushes the logo left and links right */
+    justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto; /* Centers the content within the bar */
+    max-width: var(--nav-max-width);
+    margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
 }
 
+/* Logo group (site mark + DNR mark) */
 .navbar-logo {
     display: flex;
     align-items: center;
     gap: 10px;
+    text-decoration: none;
 }
+
+.site-logo,
 .navbar-logo img {
-    height: 50px; /* Adjust based on your logo size */
+    height: 50px;
     display: block;
 }
+
+/* smaller DNR mark */
 .navbar-dnr-logo {
     height: 36px;
     width: auto;
     opacity: 0.95;
 }
 
+/* Nav links - desktop */
 .nav-links {
     display: flex;
-    list-style: none; /* Removes bullets */
+    list-style: none;
     margin: 0;
     padding: 0;
-    gap: 2rem; /* Evenly spaces the horizontal links */
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Improve touch targets */
+.nav-links li {
+    margin: 0;
 }
 
 .nav-links a {
+    display: inline-block;
+    padding: 8px 6px;
     text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    color: var(--nav-link-color);
+    font-weight: 600;
+    transition:
+        color 0.18s ease,
+        opacity 0.18s ease;
+    line-height: 1;
 }
 
-.nav-links a:hover {
-    color: #ff4500; /* A "Red Snapper" orange/red on hover */
+.nav-links a:hover,
+.nav-links a:focus {
+    color: var(--nav-link-hover);
+    outline: none;
 }
+
+/* --- Mobile toggle / hamburger ------------------------------------------ */
+.navbar-toggle {
+    display: none; /* hidden by default, shown at mobile breakpoint */
+    background: transparent;
+    border: none;
+    padding: 8px;
+    margin-left: 12px;
+    color: var(--nav-link-color);
+    border-radius: 8px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-toggle:focus {
+    box-shadow: 0 0 0 3px rgba(36, 78, 134, 0.16);
+}
+
+/* two inline svgs inside the button; hide/show by class */
+.navbar-toggle .icon--close {
+    display: none;
+}
+
+.navbar-toggle.is-open .icon--hamburger {
+    display: none;
+}
+
+.navbar-toggle.is-open .icon--close {
+    display: inline-block;
+}
+
+/* --- Mobile nav panel --------------------------------------------------- */
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0 12px;
+    }
+
+    .navbar-toggle {
+        display: inline-flex;
+    }
+
+    /* Hide the desktop nav by collapsing it into an overlay/panel */
+    .nav-links {
+        /* keep off-screen by default */
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 12px;
+        right: 12px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 14px 36px rgba(36, 78, 134, 0.12);
+        flex-direction: column;
+        gap: 0;
+        padding: 8px 8px;
+        opacity: 0;
+        transform-origin: top center;
+        transform: translateY(-6px) scale(0.99);
+        pointer-events: none;
+        transition:
+            transform 180ms cubic-bezier(0.2, 0.9, 0.3, 1),
+            opacity 160ms ease;
+    }
+
+    .nav-links--open {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 14px 16px;
+        border-radius: 8px;
+        color: var(--nav-link-color);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+        background: rgba(36, 78, 134, 0.04);
+        color: var(--nav-link-hover);
+    }
+
+    /* Ensure logo doesn't shrink too far on small screens */
+    .site-logo {
+        height: 46px;
+    }
+}
+
+/* --- Accessibility + focus polishing ------------------------------------- */
+.nav-links a:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid rgba(36, 78, 134, 0.12);
+    outline-offset: 2px;
+}
+
+/* --- Buttons used site-wide (.btn variants) ----------------------------- */
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #2f6eaf 0%, #244e86 100%);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 36px rgba(36, 78, 134, 0.16);
+}
+
+.btn--secondary {
+    background: #f6f8fc;
+    color: #244e86;
+    border: 1px solid rgba(36, 78, 134, 0.08);
+}
+
+.btn--tertiary {
+    background: transparent;
+    color: #244e86;
+    border: 1px solid transparent;
+}
+
+/* --- WhatIs / About page button and card responsive tweaks --------------- */
+/* The "Learn more" and "Season details" CTAs used in the WhatIs section
+   and About page should stack and be full-width on small screens so they
+   are easy to tap without overflowing or causing layout issues. */
+
+@media (max-width: 640px) {
+    /* Make all site CTAs block-level and full width on small devices */
+    .what-is .btn,
+    .info-links .btn,
+    .card .btn,
+    .download-quickstart .btn,
+    .partners-section .btn,
+    .btn--secondary,
+    .btn--tertiary {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 6px 0;
+    }
+
+    /* Reduce padding and font size a bit for small screen space */
+    .btn {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+        border-radius: 10px;
+    }
+
+    /* About page quick links area: collapse 3-column grid to single column */
+    .info-links .grid.grid--cols-3,
+    .info-links .grid.grid--cols-2,
+    .info-links .grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+
+    /* Make card headers slightly smaller for mobile */
+    .info-links .card__title,
+    .card h4,
+    .card h3 {
+        font-size: 1rem;
+    }
+
+    /* Ensure card body text doesn't create overflow */
+    .info-links .card__body,
+    .info-links .card p {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+}
+
+/* --- DownloadQuickStart component mobile collapse ----------------------- */
+/* The download + quick-links pane on the home screen (download-quickstart)
+   should collapse to a single column and reorder so the quick-links are
+   accessible below the download/app panel on small screens. */
+
+.download-quickstart-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .download-quickstart-content {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 12px;
+    }
+
+    /* Keep the download/app box visually first (use source order if needed) */
+    .download-box {
+        order: 0;
+        padding: 20px;
+    }
+
+    .quick-start-box,
+    .quick-start-aside,
+    .download-quickstart .quick-start-box {
+        order: 1;
+        width: 100%;
+    }
+
+    /* Stack store buttons horizontally for easier reach with thumb */
+    .store-buttons {
+        flex-direction: row;
+        gap: 10px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .store-buttons .store-btn {
+        flex: 1 1 0;
+    }
+
+    /* Removed the global phone-mockup hide from the navbar stylesheet.
+       Phone/mockup visibility is now controlled at the component level
+       (DownloadQuickStart.css and Hero.css) so the hero mockup is not
+       inadvertently hidden on mobile. */
+}
+
+/* --- Quick-start card & the partner strip minor polish ------------------ */
+
+/* make icon badges and checkmarks scale a little on small screens */
+@media (max-width: 640px) {
+    .info-card,
+    .card,
+    .quick-start-box {
+        padding: 14px;
+    }
+
+    .info-card h3,
+    .card h3,
+    .card h4 {
+        font-size: 1rem;
+    }
+}
+
+/* --- Utility: ensure components don't overflow horizontally -------------- */
+.main,
+.content-container,
+.section-inner,
+.section {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+
+/* --- Small refinements for visual rhythm on mobile ---------------------- */
+@media (max-width: 640px) {
+    .navbar {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .navbar-container {
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+}
+
+/* --- End of file -------------------------------------------------------- */

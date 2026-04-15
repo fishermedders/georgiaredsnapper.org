@@ -1,34 +1,30 @@
-/* Hero.css
-   Polished styles for the Hero component that match the updated Hero.jsx layout.
-   - Assumes the section uses: <section class="hero section section--bg-image section--edge-to-edge">
-   - Inner constrained container: .section-inner.hero-inner
-   - Grid layout: .hero-grid, .hero-copy, .hero-media
-   - Buttons: .btn, .btn-primary, .btn--secondary, .btn-text
-   - Phone mockup: .phone-mockup img
-   - Small helper utilities for kicker, lead, hero features, and the scroll chevron
+/* RedSnapperWebsite\GeorgiaRedSnapper.org
+   src\components\Hero.css
+
+   Updated hero stylesheet:
+   - Larger, more prominent media/logo on desktop.
+   - On narrow screens the hero media is lifted above the rest of the content
+     (overlay effect) so the logo visually sits on top of the hero.
+   - Keeps blur/overlay layers for background legibility.
+   - Ensures responsive sizing and prevents layout overflow.
 */
 
-/* Base hero section (full-bleed background is handled by .section--bg-image or inline style) */
+/* Base hero section */
 .hero {
     position: relative;
     width: 100%;
     min-height: 60vh;
     display: flex;
     align-items: center;
-    color: #fff; /* default for image/colored backgrounds */
+    color: #fff;
     overflow: hidden;
 }
 
-/* Blurred background layer + stronger overlay for improved legibility
-   - ::before renders a blurred copy of the hero image to soften busy details
-     (it uses the element's background image via `background: inherit`).
-   - ::after adds a stronger dark overlay on top of the blur to improve text contrast.
-*/
+/* Blurred background (uses the section background-image). Keeps behind content. */
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    /* Use the same image as the hero background and blur it to reduce distraction */
     background: inherit;
     background-size: cover;
     background-position: center;
@@ -39,7 +35,7 @@
     pointer-events: none;
 }
 
-/* Stronger dark overlay above the blurred image but beneath the content */
+/* Dark overlay to aid legibility */
 .hero::after {
     content: "";
     position: absolute;
@@ -49,31 +45,26 @@
         rgba(6, 10, 22, 0.62),
         rgba(6, 10, 22, 0.44)
     );
-    mix-blend-mode: normal;
     z-index: 1;
     pointer-events: none;
 }
 
-/* Constrained inner content (keeps content centered within the full-bleed section) */
+/* Constrained inner content */
 .section-inner.hero-inner {
     position: relative;
-    z-index: 2; /* raise content above the overlay and blurred background layers */
+    z-index: 2; /* content above overlay */
     display: block;
     box-sizing: border-box;
     padding: 40px 18px;
 }
 
-/* Grid layout: text left, media right (on wide screens) */
+/* Grid layout: primary content left, media right (desktop) */
 .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 420px;
+    grid-template-columns: 1fr 640px; /* larger media column on desktop for a more prominent logo */
     gap: 32px;
     align-items: center;
     justify-items: start;
-}
-
-/* When the available width for the inner content is narrow, reduce the right column */
-.hero-inner .hero-grid {
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
@@ -85,27 +76,35 @@
     text-align: left;
 }
 
-/* Kicker / small label above title */
+/* Kicker */
 .hero-copy .kicker {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.09);
-    color: rgba(255, 255, 255, 0.95);
+    /* slightly stronger background for contrast against the mockup */
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
     padding: 6px 10px;
     border-radius: 999px;
     font-weight: 700;
     font-size: 12px;
     letter-spacing: 0.4px;
     margin-bottom: 12px;
+    position: relative;
+    /* lower z-index so the overlayed logo sits above the kicker on narrow screens */
+    z-index: 900;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
 }
 
 /* Title & lead */
 .hero-copy h1 {
     margin: 6px 0 14px 0;
-    font-size: clamp(28px, 4.6vw, 40px);
+    font-size: clamp(28px, 4.6vw, 44px);
     line-height: 1.04;
     font-weight: 800;
-    color: inherit;
-    text-shadow: 0 6px 18px rgba(4, 10, 20, 0.35);
+    /* Force white heading so it remains visible against the hero image/overlay */
+    color: #ffffff !important;
+    position: relative;
+    z-index: 1008;
+    text-shadow: 0 8px 24px rgba(4, 10, 20, 0.45);
 }
 
 .hero-copy .lead {
@@ -116,7 +115,7 @@
     line-height: 1.55;
 }
 
-/* CTA button cluster */
+/* CTA cluster */
 .hero-ctas {
     display: flex;
     gap: 12px;
@@ -125,7 +124,7 @@
     margin-bottom: 18px;
 }
 
-/* Store button style (match DownloadQuickStart .store-btn) */
+/* Store button visuals */
 .store-btn {
     display: inline-flex;
     align-items: center;
@@ -138,13 +137,13 @@
     font-weight: 700;
     font-size: 0.95rem;
     box-shadow: 0 8px 20px rgba(36, 78, 134, 0.16);
-    border: none;
     transition:
         transform 0.12s ease,
         box-shadow 0.12s ease,
         opacity 0.12s ease;
 }
-.store-btn:hover {
+.store-btn:hover,
+.store-btn:focus {
     transform: translateY(-3px);
     opacity: 0.98;
     box-shadow: 0 12px 36px rgba(36, 78, 134, 0.18);
@@ -155,86 +154,8 @@
     display: block;
     object-fit: contain;
 }
-.store-btn .label {
-    display: inline-block;
-    line-height: 1;
-}
 
-/* Ensure hero title is white and bold */
-.hero-copy h1 {
-    color: #ffffff;
-    font-weight: 800;
-    text-shadow: 0 6px 18px rgba(4, 10, 20, 0.35);
-}
-
-/* Base button style (keeps consistent with page-level .btn but tuned for hero contrast) */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    border: none;
-    padding: 10px 14px;
-    border-radius: 10px;
-    font-weight: 700;
-    cursor: pointer;
-    text-decoration: none;
-    transition:
-        transform 0.12s ease,
-        box-shadow 0.12s ease,
-        opacity 0.12s ease;
-    box-shadow: 0 8px 24px rgba(6, 12, 24, 0.18);
-    color: inherit;
-    background: rgba(0, 0, 0, 0.18);
-}
-
-/* Primary App Store button - solid accent color for visibility */
-.btn-primary,
-.btn.btn-primary,
-.btn-primary.btn--ios {
-    background: linear-gradient(180deg, #2f6eaf, #244e86);
-    color: #fff;
-    box-shadow: 0 10px 30px rgba(36, 78, 134, 0.28);
-}
-
-/* Secondary button: outlined light button for contrast */
-.btn--secondary {
-    background: rgba(255, 255, 255, 0.06);
-    color: rgba(255, 255, 255, 0.98);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    box-shadow: none;
-}
-
-/* Button inner text when we have two-line text (small line + strong line) */
-.btn-text {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    line-height: 1;
-}
-
-.btn-text small {
-    font-size: 10px;
-    text-transform: uppercase;
-    opacity: 0.85;
-    letter-spacing: 0.6px;
-}
-
-.btn-text strong {
-    font-size: 14px;
-    line-height: 1;
-}
-
-/* Button hover states */
-.btn:hover {
-    transform: translateY(-3px);
-    opacity: 0.98;
-}
-.btn--secondary:hover {
-    transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* Hero features list (small bullets under CTAs) */
+/* Hero features */
 .hero-features {
     list-style: none;
     padding: 0;
@@ -246,13 +167,6 @@
     font-weight: 600;
     font-size: 13px;
 }
-
-/* Each list item: small check dot icon using pseudo-element */
-.hero-features li {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
 .hero-features li::before {
     content: "•";
     color: #ffdd9b;
@@ -262,42 +176,60 @@
     transform: translateY(-1px);
 }
 
-/* Media / phone mockup on the right */
+/* Media column (phone mockup / logo). On desktop this is inline to the right. */
 .hero-media {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* position mockup at the bottom of the media column */
-    pointer-events: none; /* decorative */
-    padding-bottom: 6px; /* small breathing room so mockup visually sits on the edge */
+    align-items: center; /* center media vertically by default */
+    pointer-events: none;
+    padding-bottom: 0; /* override small bottom padding so element height is driven by content */
+    position: relative;
+    z-index: 1002; /* ensure media can be stacked above overlay when needed */
+    min-height: 160px; /* ensure aside has visible height so contained img/SVG can render */
+    height: auto; /* allow image to define rendered height */
+    flex: 0 0 auto; /* prevent flex child growth/shrink causing collapse */
+    overflow: visible;
 }
 
+/* Phone/mockup container: larger on desktop to make logo prominent */
 .phone-mockup {
-    width: 320px;
+    width: min(
+        760px,
+        92vw
+    ); /* larger on desktop, but never wider than viewport */
     max-width: 100%;
+    height: auto;
+    min-height: 120px; /* ensure there is height even if image takes time to render */
     transform: translateY(0);
-    filter: drop-shadow(0 16px 40px rgba(6, 12, 24, 0.45));
-    border-radius: 0; /* remove rounded corners so transparent mockup blends with section edge */
-    overflow: visible; /* allow the transparent image to visually extend out of the container */
-    background: transparent; /* no background so mockup appears to emerge from the section */
+    filter: drop-shadow(0 22px 56px rgba(6, 12, 24, 0.5));
+    border-radius: 0;
+    overflow: visible;
+    background: transparent;
     padding: 0;
     box-sizing: border-box;
     display: block;
     position: relative;
+    z-index: 1001;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Make sure the image fills the mockup area */
+/* Ensure the displayed image scales nicely and remains visible */
 .phone-mockup img {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 0; /* ensure no rounded corners */
     object-fit: contain;
-    background: transparent; /* remove any solid background so transparency shows through */
-    /* Keep the image naturally placed; hero-media's align-items:flex-end will ensure it sits at the bottom */
+    background: transparent;
+    /* visibility & stacking to ensure the SVG shows above overlays on mobile */
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+    z-index: 1002;
 }
 
-/* Decorative scroll chevron that sits near the bottom center of the hero */
+/* Decorative scroll chevron */
 .hero-scroll {
     position: absolute;
     left: 50%;
@@ -315,19 +247,13 @@
         transform 0.18s ease,
         opacity 0.12s ease;
 }
-
 .hero-scroll svg {
     width: 28px;
     height: 28px;
     display: block;
 }
 
-.hero-scroll:hover {
-    transform: translateX(-50%) translateY(6px);
-    opacity: 1;
-}
-
-/* If the hero is used on a light background (e.g., section--bg-white), reverse some colors */
+/* If hero is on a light background variant */
 .hero.section--bg-white,
 .hero.section--bg-page {
     color: #10203a;
@@ -336,17 +262,22 @@
     background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
 }
 
-/* Responsiveness: stack content on smaller screens */
+/* -------------------------
+   Responsive behavior
+   ------------------------- */
+
+/* Medium screens: reduce mockup slightly */
 @media (max-width: 980px) {
     .hero-grid {
-        grid-template-columns: 1fr 300px;
+        grid-template-columns: 1fr 360px;
         gap: 22px;
     }
     .phone-mockup {
-        width: 280px;
+        width: 320px;
     }
 }
 
+/* Small screens: stack and overlay the media/logo above everything */
 @media (max-width: 760px) {
     .hero {
         min-height: auto;
@@ -354,15 +285,34 @@
         padding-bottom: 36px;
     }
 
+    /* stack content into single column */
     .hero-grid {
         grid-template-columns: 1fr;
         gap: 18px;
         align-items: start;
     }
 
+    /* Move media first in visual flow and overlay it above the hero content */
     .hero-media {
-        order: -1; /* place media above on small screens if desired */
+        order: -1; /* visually place the media above the copy in document flow */
+        position: absolute; /* overlay above everything in the hero */
+        top: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(360px, 84vw); /* responsive overlay width on small devices */
+        pointer-events: none; /* decorative: avoid intercepting touches */
+        z-index: 1002; /* ensure it appears above the overlay and content */
+        display: flex;
         justify-content: center;
+        align-items: center;
+        min-height: 180px; /* ensure aside has enough height so SVG/img is visible on mobile */
+        height: auto;
+        overflow: visible;
+    }
+
+    /* Make sure inner content pushes down so the overlay doesn't cover the title */
+    .section-inner.hero-inner {
+        padding-top: 220px; /* reserve extra vertical space for the larger overlayed logo */
     }
 
     .hero-copy {
@@ -377,25 +327,48 @@
         justify-content: center;
     }
 
-    .hero-scroll {
-        bottom: 8px;
-    }
-
     .phone-mockup {
-        width: 200px;
+        width: 220px; /* match overlay width */
+        max-width: 78%;
         margin: 0 auto;
         padding: 6px;
     }
+
+    .phone-mockup img {
+        width: 100%;
+        height: auto;
+    }
+
+    .hero-scroll {
+        bottom: 8px;
+    }
 }
 
-/* Small visual polish for reduced-motion users */
+/* Very small screens: slightly smaller overlay and padding */
+@media (max-width: 420px) {
+    .section-inner.hero-inner {
+        padding-top: 120px;
+    }
+    .phone-mockup {
+        width: 160px;
+    }
+    .hero-copy h1 {
+        font-size: clamp(22px, 6.5vw, 32px);
+    }
+
+    /* Ensure the kicker pill sits below the overlayed logo at very small widths */
+    .hero-copy .kicker {
+        transform: none;
+        z-index: 900;
+        margin-top: 60px; /* push kicker down so it displays below the overlayed logo */
+    }
+}
+
+/* Reduced motion safety */
 @media (prefers-reduced-motion: reduce) {
     .btn,
     .hero-scroll,
-    .card,
     .phone-mockup {
         transition: none !important;
     }
 }
-
-/* End of Hero.css */

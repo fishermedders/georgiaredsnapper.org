@@ -5,7 +5,7 @@ export default function Partners() {
   const partnerLogos = [
     {
       name: "GA DNR",
-      src: "/logos/dnr.jpg",
+      src: "/logos/DNR_Logo.svg",
       alt: "Georgia Department of Natural Resources",
     },
     {

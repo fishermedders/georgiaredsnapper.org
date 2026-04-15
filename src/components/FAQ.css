@@ -174,4 +174,41 @@
     .faq-answer {
         padding: 10px 16px 16px;
     }
+
+    /* Make the "Read full FAQs" button in the quick FAQ teaser more compact on small screens */
+    .faq-teaser .btn {
+        padding: 8px 12px;
+        font-size: 0.95rem;
+        border-radius: 8px;
+        display: inline-block;
+        max-width: 220px;
+        width: auto;
+        box-sizing: border-box;
+    }
+
+    /* Ensure the button aligns nicely and doesn't overflow its container */
+    .faq-teaser .section-inner > div {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+}
+
+/* Extra small screens: make the CTA comfortably tappable without overflowing */
+@media (max-width: 420px) {
+    .faq-teaser .btn {
+        width: 100%;
+        max-width: none;
+        padding: 10px 12px;
+        font-size: 0.92rem;
+        text-align: center;
+    }
+
+    /* Center the button block on very small screens */
+    .faq-teaser .section-inner > div {
+        width: 100%;
+        display: block;
+    }
 }

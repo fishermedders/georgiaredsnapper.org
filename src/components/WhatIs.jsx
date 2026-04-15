@@ -55,14 +55,33 @@ export default function WhatIs() {
           </div>
         </div>
 
-        <p style={{ marginTop: 14 }}>
-          <Link to="/about" className="btn" style={{ marginRight: 8 }}>
-            Learn more
-          </Link>
-          <Link to="/season-info" className="btn btn--secondary">
-            Season details
-          </Link>
-        </p>
+        <div style={{ marginTop: 14 }}>
+          <div
+            className="btn-group"
+            style={{
+              display: "flex",
+              gap: 8,
+              flexWrap: "wrap",
+              alignItems: "stretch",
+            }}
+          >
+            <Link
+              to="/about"
+              className="btn"
+              style={{ flex: "1 1 140px", minWidth: 140, textAlign: "center" }}
+            >
+              Learn more
+            </Link>
+
+            <Link
+              to="/season-info"
+              className="btn btn--secondary"
+              style={{ flex: "1 1 140px", minWidth: 140, textAlign: "center" }}
+            >
+              Season details
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );

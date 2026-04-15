@@ -68,13 +68,9 @@ export default function DownloadQuickStart() {
               <Link to="/contact">Contact the project team</Link>
             </li>
           </ul>
-
-          <p className="u-muted" style={{ marginTop: 8 }}>
-            This box is intentionally brief — full instructions and regulatory
-            information are available on the linked pages.
-          </p>
         </aside>
       </div>
+      <br />
     </section>
   );
 }
