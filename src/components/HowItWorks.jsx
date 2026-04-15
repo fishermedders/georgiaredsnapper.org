@@ -32,7 +32,7 @@ export default function HowItWorks() {
                 aria-setsize={steps.length}
               >
                 <span className="step-num" aria-hidden="true">
-                  {i + 1}.
+                  {i + 1}
                 </span>
                 <span className="step-label">{step}</span>
               </div>

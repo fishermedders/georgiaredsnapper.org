@@ -227,6 +227,7 @@
     opacity: 1;
     position: relative;
     z-index: 1002;
+    transform: translateY(0) scale(3) !important;
 }
 
 /* Decorative scroll chevron */
@@ -337,6 +338,7 @@
     .phone-mockup img {
         width: 100%;
         height: auto;
+        transform: translateY(0) scale(1.5) !important;
     }
 
     .hero-scroll {

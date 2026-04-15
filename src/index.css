@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap");
 
-/* Reset body spacing and prevent horizontal overflow on small devices */
+/* Reset body spacing and prevent horizontal overflow on small devices
+   Also reserve scrollbar gutter space so showing/hiding the vertical
+   scrollbar does not cause layout shift when navigating between pages. */
 html,
 body {
     margin: 0;
@@ -8,6 +10,9 @@ body {
     width: 100%;
     /* Prevent accidental horizontal scrolling caused by elements exceeding viewport */
     overflow-x: hidden;
+    /* Reserve vertical scrollbar space and always show scroll track to avoid layout shifts */
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
     -webkit-overflow-scrolling: touch;
 }
 

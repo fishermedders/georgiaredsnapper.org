@@ -20,7 +20,7 @@ export default function Partners() {
     },
     {
       name: "Yamaha Rightwaters",
-      src: "/logos/yamaha.jpg",
+      src: "/logos/yamaha.webp",
       alt: "Yamaha Rightwaters",
     },
   ];
