@@ -7,6 +7,7 @@ import HowItWorksPage from "./pages/HowItWorks.jsx";
 import FAQs from "./pages/FAQs.jsx";
 import SeasonInfo from "./pages/SeasonInfo.jsx";
 import Contact from "./pages/Contact.jsx";
+import Partners from "./components/Partners.jsx";
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route path="/season-info" element={<SeasonInfo />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+
+      <Partners />
     </div>
   );
 }

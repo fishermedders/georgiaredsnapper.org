@@ -28,19 +28,19 @@ export default function FAQ() {
           style={{ marginTop: 12, lineHeight: 1.5 }}
         >
           <li>
-            <strong>Is reporting required?</strong> — Yes. Trip registration and
+            <strong>Is reporting required?</strong> Yes. Trip registration and
             post-trip reporting are required for anglers participating in the
             EFP season.
           </li>
 
           <li>
-            <strong>Bag limit?</strong> — 1 Red Snapper per person per day (no
+            <strong>Bag limit?</strong> 1 Red Snapper per person per day (no
             minimum size under the EFP).
           </li>
 
           <li>
-            <strong>What about cell service?</strong> — The reporting app
-            supports offline logging and will sync when you reconnect.
+            <strong>What about cell service?</strong> The reporting app supports
+            offline logging and will sync when you reconnect.
           </li>
         </ul>
 

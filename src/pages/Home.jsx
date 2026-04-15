@@ -4,7 +4,6 @@ import HowItWorks from "../components/HowItWorks";
 import DownloadQuickStart from "../components/DownloadQuickStart";
 import WhoParticipates from "../components/WhoParticipates";
 import FAQ from "../components/FAQ";
-import Partners from "../components/Partners";
 import "./styles/Home.css";
 
 export default function Home() {
@@ -17,7 +16,6 @@ export default function Home() {
         <DownloadQuickStart />
         <WhoParticipates />
         <FAQ />
-        <Partners />
       </main>
     </>
   );

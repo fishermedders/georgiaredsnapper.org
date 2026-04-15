@@ -174,39 +174,101 @@
     .faq-answer {
         padding: 10px 16px 16px;
     }
-
-    /* Make the "Read full FAQs" button in the quick FAQ teaser more compact on small screens */
-    .faq-teaser .btn {
-        padding: 8px 12px;
-        font-size: 0.95rem;
-        border-radius: 8px;
-        display: inline-block;
-        max-width: 220px;
-        width: auto;
-        box-sizing: border-box;
-    }
-
-    /* Ensure the button aligns nicely and doesn't overflow its container */
-    .faq-teaser .section-inner > div {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 8px;
-        flex-wrap: wrap;
-    }
 }
 
-/* Extra small screens: make the CTA comfortably tappable without overflowing */
-@media (max-width: 420px) {
+/* Quick FAQ teaser: improved card layout and responsive behavior */
+.faq-teaser {
+    padding: 28px 0;
+    background: transparent;
+}
+
+/* Teaser heading (keeps existing .section-inner heading above) */
+.faq-teaser .section-inner > h2,
+.faq-teaser .section-inner > .lead {
+    text-align: center;
+}
+
+/* Replace centered list with responsive card grid and ensure equal-height rows */
+.faq-teaser-list {
+    margin: 12px 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    /* Make each grid row equal height so cards in the same row match */
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+}
+
+/* Each teaser item is a card with compact body text; use full height of grid cell */
+.faq-teaser-list li {
+    background: var(--card-bg, #fff);
+    border: 1px solid var(--panel-border, #e2e8f0);
+    border-radius: 10px;
+    padding: 12px 14px;
+    box-shadow: 0 6px 18px rgba(6, 12, 24, 0.06);
+    text-align: left;
+    color: var(--muted-gray, #4a5568);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    /* Fill the grid cell so all cards in the row match height */
+    height: 100%;
+    /* Allow inner content to distribute so short answers don't leave odd spacing */
+    justify-content: flex-start;
+}
+
+/* Make question (strong) prominent and answer brief under it */
+.faq-teaser-list li strong {
+    display: block;
+    font-size: 0.98rem;
+    color: var(--primary-blue, #2a5a8a);
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+/* Helper: short answer text style */
+.faq-teaser-list li p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--muted-gray, #4a5568);
+    line-height: 1.35;
+}
+
+/* CTA area: center the button and keep it compact on larger screens */
+.faq-teaser .section-inner > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+}
+
+/* Read full FAQs button styling (compact but balanced) */
+.faq-teaser .btn {
+    padding: 10px 14px;
+    font-size: 0.96rem;
+    border-radius: 10px;
+    max-width: 260px;
+    width: auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Mobile adjustments: stack cards single column and make CTA full width */
+@media (max-width: 640px) {
+    .faq-teaser-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
     .faq-teaser .btn {
         width: 100%;
         max-width: none;
-        padding: 10px 12px;
-        font-size: 0.92rem;
-        text-align: center;
+        padding: 12px;
+        font-size: 0.96rem;
     }
 
-    /* Center the button block on very small screens */
     .faq-teaser .section-inner > div {
         width: 100%;
         display: block;
