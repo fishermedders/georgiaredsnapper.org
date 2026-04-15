@@ -93,7 +93,7 @@ export default function About() {
                   program compliance.
                 </p>
                 <p style={{ marginTop: 6 }}>
-                  <Link to="/faqs" className="btn btn--tertiary">
+                  <Link to="/faq" className="btn btn--tertiary">
                     Read FAQs
                   </Link>
                 </p>

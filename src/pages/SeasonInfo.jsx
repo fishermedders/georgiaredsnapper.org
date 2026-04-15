@@ -80,7 +80,7 @@ export default function SeasonInfo() {
 
               <div style={{ marginTop: 12 }}>
                 <Link
-                  to="/faqs"
+                  to="/faq"
                   className="btn btn--secondary"
                   style={{ marginRight: 8 }}
                 >

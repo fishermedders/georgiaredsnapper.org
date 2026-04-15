@@ -45,7 +45,7 @@ export default function FAQ() {
         </ul>
 
         <div style={{ marginTop: 16 }}>
-          <Link to="/faqs" className="btn">
+          <Link to="/faq" className="btn">
             Read full FAQs
           </Link>
         </div>
