@@ -36,6 +36,17 @@
     flex-wrap: wrap;
 }
 
+.download-support {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: var(--fs-xs);
+    color: rgba(255, 255, 255, 0.75);
+}
+.download-support a {
+    color: #fff;
+    font-weight: 600;
+}
+
 /* Quick links aside */
 .quicklinks-panel {
     background: var(--color-bg-white);

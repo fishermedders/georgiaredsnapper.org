@@ -4,26 +4,28 @@ export default function WhoParticipates() {
   return (
     <section className="section section--bg-soft" aria-labelledby="who-heading">
       <div className="section-inner">
-        <h2 id="who-heading">Who Must Participate?</h2>
+        <h2 id="who-heading">Who Needs to Participate?</h2>
 
         <p className="lead">
-          Participation in the state's electronic reporting program is mandatory
-          for all anglers fishing under the EFP in federal waters off Georgia's
-          coast.
+          Using the VESL app is mandatory — not optional. Every angler fishing
+          for red snapper under the EFP must register their trip and report
+          their catch. This is how we earn longer seasons in the future.
         </p>
 
         <div className="compare-grid">
           <div className="compare-box compare-box--required">
-            <header>Required</header>
+            <header>Must Use VESL</header>
             <ul>
               <li>
-                Private recreational anglers fishing for Red Snapper during the
-                EFP season
+                Private recreational anglers targeting red snapper in federal
+                waters during the season
               </li>
-              <li>For-hire captains and guides operating under the EFP</li>
               <li>
-                Any participant retaining Red Snapper during the two-month
-                season
+                For-hire captains and charter guides operating under the EFP
+              </li>
+              <li>
+                Any angler retaining red snapper between July 1 and August 31,
+                2026
               </li>
             </ul>
           </div>
@@ -31,10 +33,8 @@ export default function WhoParticipates() {
           <div className="compare-box compare-box--not-required">
             <header>Not Required</header>
             <ul>
-              <li>Anglers not fishing for Red Snapper during the EFP season</li>
-              <li>
-                Fishing exclusively in state waters not covered by the EFP
-              </li>
+              <li>Anglers not fishing for red snapper during the EFP season</li>
+              <li>Fishing that occurs exclusively in state waters</li>
               <li>
                 Commercial fishers not participating under the recreational EFP
               </li>

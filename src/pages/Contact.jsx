@@ -12,8 +12,7 @@ export default function Contact() {
   const [status, setStatus] = useState(null);
 
   function handleChange(e) {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
   function handleSubmit(e) {
@@ -29,42 +28,44 @@ export default function Contact() {
     <main className="content-container">
       <section className="section section--bg-white">
         <div className="section-inner">
-          <h2>Contact the Georgia Red Snapper Project</h2>
+          <h2>Contact Us</h2>
           <p className="lead">
-            Use the form below to reach the project team about reporting issues,
-            data questions, or partnership inquiries. For official regulatory
-            information, visit the Georgia DNR website.
+            Have a question about the 2026 red snapper season, the VESL app, or
+            the Georgia Red Snapper Project? Here's how to reach us.
           </p>
 
-          <div className="grid grid--cols-2">
+          <div className="grid grid--cols-3">
             <div className="card">
-              <h3 className="card__title">Official Regulatory Information</h3>
+              <h3 className="card__title">📧 Email</h3>
               <p className="card__body">
-                For authoritative rules, season announcements, and enforcement
-                contacts, visit the Georgia DNR website.
+                <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a>
               </p>
-              <p>
-                <a
-                  href="https://gadnr.org"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn--secondary"
-                >
-                  Visit GA DNR
-                </a>
+              <p className="card__body">
+                Best for reporting issues, data questions, and general
+                inquiries.
               </p>
             </div>
 
             <div className="card">
-              <h3 className="card__title">Project &amp; Reporting Questions</h3>
+              <h3 className="card__title">📞 Phone</h3>
               <p className="card__body">
-                This project is operated by the Georgia DNR Coastal Resources
-                Division. Submit a message below and we'll route your request to
-                the appropriate staff.
+                <a href="tel:9125555555">912-555-5555</a>
               </p>
               <p className="card__body">
-                For technical issues with the mobile app, use the app's built-in
-                help feature or the app store listing.
+                Technical support for VESL and reporting help.
+              </p>
+            </div>
+
+            <div className="card">
+              <h3 className="card__title">🌐 Georgia DNR</h3>
+              <p className="card__body">
+                <a href="https://gadnr.org" target="_blank" rel="noreferrer">
+                  gadnr.org
+                </a>
+              </p>
+              <p className="card__body">
+                Official regulatory information, season announcements, and
+                enforcement contacts.
               </p>
             </div>
           </div>
@@ -114,7 +115,7 @@ export default function Contact() {
                   name="subject"
                   value={form.subject}
                   onChange={handleChange}
-                  placeholder="Short summary"
+                  placeholder="e.g. VESL app question, reporting issue"
                 />
               </div>
 
@@ -125,7 +126,7 @@ export default function Contact() {
                   name="message"
                   value={form.message}
                   onChange={handleChange}
-                  placeholder="Write your message here..."
+                  placeholder="Tell us how we can help..."
                   rows={6}
                   required
                 />
@@ -142,9 +143,10 @@ export default function Contact() {
                 <button
                   type="button"
                   className="btn btn--secondary"
-                  onClick={() =>
-                    setForm({ name: "", email: "", subject: "", message: "" })
-                  }
+                  onClick={() => {
+                    setForm({ name: "", email: "", subject: "", message: "" });
+                    setStatus(null);
+                  }}
                 >
                   Reset
                 </button>
@@ -156,24 +158,11 @@ export default function Contact() {
               </div>
 
               <p className="form-disclaimer u-muted">
-                By contacting us you agree to our data handling practices.
-                Personal information is used only to respond to inquiries.
+                Personal information is used only to respond to your inquiry and
+                is not shared publicly.
               </p>
             </form>
           </div>
-        </div>
-      </section>
-
-      <section className="section section--bg-white">
-        <div className="section-inner u-center">
-          <h2>Media &amp; Partnership Inquiries</h2>
-          <p className="lead">
-            For media requests or partnership discussions, include details about
-            your organization in the message form above.
-          </p>
-          <Link to="/" className="btn btn--secondary">
-            Back to Home
-          </Link>
         </div>
       </section>
     </main>

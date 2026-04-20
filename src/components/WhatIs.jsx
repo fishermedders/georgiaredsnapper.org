@@ -8,51 +8,53 @@ export default function WhatIs() {
       aria-labelledby="what-is-heading"
     >
       <div className="section-inner">
-        <h2 id="what-is-heading">What Is the Red Snapper Program?</h2>
+        <h2 id="what-is-heading">What Is the Georgia Red Snapper Project?</h2>
 
         <p className="lead">
-          Georgia DNR is operating an Exempted Fishing Permit (EFP) program that
-          establishes a two-month recreational Red Snapper season beginning in
-          2026. The program uses a state-managed electronic reporting app to
-          register trips and collect catch &amp; effort data.
+          The Georgia Red Snapper Project is a new initiative from the Georgia
+          DNR Coastal Resources Division that opens a 62-day recreational red
+          snapper season — July 1 through August 31, 2026 — in federal waters
+          off the Georgia coast.
         </p>
 
         <div className="what-is-cards">
           <div className="what-is-card">
             <div className="what-is-card__icon">📅</div>
-            <h3>Season Basics</h3>
+            <h3>62-Day Season</h3>
             <p>
-              Two-month season · 1 fish per person per day · No minimum size
-              limit
+              July 1 – August 31, 2026. After 15 years of one- and two-day
+              federal seasons, Georgia anglers now have two full months on the
+              water.
             </p>
           </div>
 
           <div className="what-is-card">
-            <div className="what-is-card__icon">📋</div>
-            <h3>Mandatory Reporting</h3>
+            <div className="what-is-card__icon">📱</div>
+            <h3>Report with the VESL App</h3>
             <p>
-              All participating anglers must register trips and report catch
-              &amp; effort using the Georgia reporting app.{" "}
-              <Link to="/season-info">View season details →</Link>
+              All anglers must register trips and report catch using the free
+              VESL app. It takes less than a minute and works on mobile and
+              desktop.
             </p>
           </div>
 
           <div className="what-is-card">
-            <div className="what-is-card__icon">🤝</div>
-            <h3>Regional Partners</h3>
+            <div className="what-is-card__icon">📊</div>
+            <h3>Better Data, Longer Seasons</h3>
             <p>
-              GA DNR collaborates with South Atlantic partners including SC DNR,
-              NC Marine Fisheries, and Yamaha Rightwaters.
+              Real-time reporting through VESL improves stock assessments and
+              reduces the data uncertainty that led to ultra-short seasons in
+              the past.
             </p>
           </div>
         </div>
 
         <div className="what-is-ctas">
           <Link to="/about" className="btn">
-            Learn More About the Program
+            Learn More
           </Link>
           <Link to="/season-info" className="btn btn--secondary">
-            Season Details &amp; Rules
+            Season Rules &amp; Details
           </Link>
         </div>
       </div>

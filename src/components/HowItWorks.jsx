@@ -2,10 +2,10 @@ import "./HowItWorks.css";
 
 export default function HowItWorks() {
   const steps = [
-    { num: 1, label: "Download the App" },
-    { num: 2, label: "Register Your Trip" },
-    { num: 3, label: "Report Your Catch" },
-    { num: 4, label: "Improve Georgia's Data" },
+    { num: 1, label: "Download the Free VESL App" },
+    { num: 2, label: "Register Your Trip Before You Go" },
+    { num: 3, label: "Fish — July 1 through August 31" },
+    { num: 4, label: "Report Your Catch Within 24 Hours" },
   ];
 
   return (

@@ -1,60 +1,93 @@
 import { Link } from "react-router-dom";
-import "./styles/About.css";
 
 export default function About() {
   return (
     <main className="content-container">
       <section className="section section--bg-white">
         <div className="section-inner">
-          <h2>About the Georgia Red Snapper Program</h2>
+          <h2>About the Georgia Red Snapper Project</h2>
 
           <p className="lead">
-            The Georgia Department of Natural Resources (DNR) is operating a
-            state-managed program under an Exempted Fishing Permit (EFP) that
-            establishes a two-month recreational Red Snapper season in federal
-            waters beginning in 2026. The program uses an electronic reporting
-            platform to register trips and collect catch, discard, effort, and
-            location data.
+            The Georgia Red Snapper Project is a new initiative from the Georgia
+            DNR Coastal Resources Division that gives recreational anglers a
+            62-day red snapper season in federal waters — the longest in over 15
+            years.
           </p>
 
           <div className="grid grid--cols-2">
             <div className="card">
-              <h3 className="card__title">What This Is</h3>
+              <h3 className="card__title">Why This Matters</h3>
               <p className="card__body">
-                A coordinated, state-led program operating under an EFP that
-                establishes a two-month recreational Red Snapper season and uses
-                a state-managed electronic reporting platform to collect trip
-                and catch data.
+                For the last 15 years, federal red snapper seasons in the South
+                Atlantic have been limited to just one or two days per year —
+                sometimes zero — because of uncertainty in the data used to
+                manage the fishery. This project changes that by pairing an
+                expanded season with real-time electronic reporting through the
+                VESL app, producing far better data than traditional survey
+                methods.
               </p>
             </div>
 
             <div className="card">
-              <h3 className="card__title">Why It Matters</h3>
+              <h3 className="card__title">How It Works</h3>
               <p className="card__body">
-                Improved electronic reporting produces higher-quality data to
-                support science-based management and enables longer, more
-                predictable seasons for recreational anglers.
+                Georgia requested the EFP (Exempted Fishing Permit) from the
+                U.S. Secretary of Commerce in November 2025. The permit allows
+                Georgia to operate a two-month season (July 1 – August 31, 2026)
+                with mandatory electronic reporting. If the state demonstrates
+                it can collect high-quality data, the EFP could be extended for
+                two additional years (2027 and 2028).
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section section--bg-page">
+      <section className="section section--bg-soft">
         <div className="section-inner">
-          <h2>Quick Links</h2>
+          <h2>A Regional Effort</h2>
 
           <p className="lead">
-            Use the links below for procedural steps, season rules, and answers
-            to common questions.
+            Georgia isn't alone. South Carolina, North Carolina, and Florida
+            each submitted their own EFP applications. Together, the four states
+            are collaborating to test new approaches for collecting more
+            accurate, real-time recreational fishing data on red snapper.
           </p>
+
+          <div className="grid grid--cols-2">
+            <div className="card">
+              <h3 className="card__title">Funded by Yamaha Rightwaters</h3>
+              <p className="card__body">
+                The initiative is supported by a $300,000 grant from Yamaha
+                Rightwaters, a conservation program from Yamaha Motors focused
+                on sustaining marine resources and recreational fishing
+                opportunities.
+              </p>
+            </div>
+
+            <div className="card">
+              <h3 className="card__title">Biological Sampling</h3>
+              <p className="card__body">
+                In addition to electronic reporting, CRD continues to operate
+                carcass-donation freezers along the Georgia coast to collect
+                age, size, and reproductive data from harvested fish. These
+                samples complement VESL data and help refine stock assessments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--bg-white">
+        <div className="section-inner">
+          <h2>Explore the Project</h2>
 
           <div className="grid grid--cols-3">
             <div className="card">
               <h4 className="card__title">How It Works</h4>
               <p className="card__body">
-                Step-by-step workflow for registering trips, logging catches,
-                and submitting post-trip reports.
+                Step-by-step instructions for downloading VESL, registering
+                trips, and reporting your catch.
               </p>
               <p>
                 <Link to="/how-it-works" className="btn">
@@ -66,8 +99,8 @@ export default function About() {
             <div className="card">
               <h4 className="card__title">Season Information</h4>
               <p className="card__body">
-                Official season dates, bag &amp; size limits, carcass-donation
-                sampling locations, and compliance requirements.
+                Official dates, bag and size limits, reporting deadlines, and
+                everything you need to know before you fish.
               </p>
               <p>
                 <Link to="/season-info" className="btn btn--secondary">
@@ -79,8 +112,8 @@ export default function About() {
             <div className="card">
               <h4 className="card__title">FAQs</h4>
               <p className="card__body">
-                Answers to common questions about reporting, privacy, and
-                program compliance.
+                Answers to common questions about the season, the VESL app,
+                reporting requirements, and more.
               </p>
               <p>
                 <Link to="/faq" className="btn btn--secondary">

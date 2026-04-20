@@ -15,27 +15,34 @@ export default function Hero() {
           className="kicker"
           style={{ background: "rgba(255,255,255,0.15)", color: "#fff" }}
         >
-          Coastal Fishing · Season Tracking
+          July 1 – August 31, 2026
         </span>
-        <h1 className="hero-title">Georgia Red Snapper Program</h1>
+        <h1 className="hero-title">
+          Georgia's First 62-Day Red Snapper Season
+        </h1>
         <p className="hero-lead">
-          The official Georgia reporting app — register trips, report catches,
-          and help build longer, more predictable fishing seasons.
+          After 15 years of one- and two-day seasons, Georgia anglers now have
+          two full months to fish for red snapper in federal waters. Register
+          your trips and report your catch with the free VESL app.
         </p>
 
         <div className="hero-ctas">
           <a
-            href="#download"
+            href="https://apps.apple.com/us/app/vesl/id1540687104"
             className="store-btn"
-            aria-label="Download on the App Store"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download VESL on the App Store"
           >
             <img src="/apple.png" alt="" />
             <span>App Store</span>
           </a>
           <a
-            href="#download"
+            href="https://play.google.com/store/apps/details?id=com.bluefindata.vesl&hl=en_US"
             className="store-btn"
-            aria-label="Get it on Google Play"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Get VESL on Google Play"
           >
             <img src="/android.png" alt="" />
             <span>Google Play</span>
@@ -43,9 +50,9 @@ export default function Hero() {
         </div>
 
         <ul className="hero-features">
-          <li>Quick trip registration — on or offline</li>
-          <li>Mandatory trip and catch reporting for EFP seasons</li>
-          <li>Better data for longer, more predictable seasons</li>
+          <li>1 fish per person per day · No minimum size</li>
+          <li>Free VESL app — register &amp; report in under a minute</li>
+          <li>Your data helps build longer future seasons</li>
         </ul>
       </div>
     </section>

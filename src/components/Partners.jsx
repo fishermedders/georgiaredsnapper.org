@@ -28,22 +28,19 @@ const partners = [
 ];
 
 export default function Partners() {
-  const names = partners.map((p) => p.short);
-  const tagline =
-    names.length <= 2
-      ? names.join(" and ")
-      : names.slice(0, -1).join(", ") + ", and " + names[names.length - 1];
-
   return (
     <footer className="site-footer">
       <div className="footer-inner">
         <div className="footer-top">
           <div className="footer-brand">
-            <h3 className="footer-title">Partners</h3>
+            <h3 className="footer-title">Partners &amp; Funding</h3>
             <p className="footer-tagline">
-              <strong>GeorgiaRedSnapper.org</strong> is a project of the Georgia
-              Department of Natural Resources, made in collaboration with{" "}
-              <span className="footer-partners-text">{tagline}.</span>
+              The Georgia Red Snapper Project is operated by the{" "}
+              <strong>Georgia DNR Coastal Resources Division</strong> and
+              supported by a $300,000 grant from{" "}
+              <strong>Yamaha Rightwaters</strong>. South Carolina, North
+              Carolina, and Florida are collaborating through their own EFP
+              applications.
             </p>
           </div>
 
@@ -51,7 +48,6 @@ export default function Partners() {
             {partners.map((p) => {
               const img = (
                 <img
-                  key={p.short}
                   src={p.src}
                   alt={p.name}
                   loading="lazy"
@@ -82,6 +78,11 @@ export default function Partners() {
           <small>
             &copy; {new Date().getFullYear()} Georgia Department of Natural
             Resources. All rights reserved.
+          </small>
+          <small className="footer-contact">
+            <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a>
+            {" · "}
+            <a href="tel:9125555555">912-555-5555</a>
           </small>
         </div>
       </div>

@@ -11,41 +11,52 @@ export default function DownloadQuickStart() {
       <div className="section-inner">
         <div className="download-layout">
           <div className="download-panel">
-            <h3 id="download-heading">Get the Official Reporting App</h3>
+            <h3 id="download-heading">Download the VESL App</h3>
             <p>
-              Use the Georgia reporting app to register trips and submit catch
-              &amp; effort reports during the EFP season. The app supports
-              offline logging and syncs when you reconnect.
+              VESL is the free app you'll use to register trips and report your
+              catch. It's available on iPhone, Android, and desktop. Reporting
+              takes less than a minute.
             </p>
             <div className="download-buttons">
               <a
-                href="#"
+                href="https://apps.apple.com/us/app/vesl/id1540687104"
                 className="store-btn"
-                aria-label="Download on the App Store"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download VESL on the App Store"
               >
                 <img src="/apple.png" alt="" />
                 <span>App Store</span>
               </a>
               <a
-                href="#"
+                href="https://play.google.com/store/apps/details?id=com.bluefindata.vesl&hl=en_US"
                 className="store-btn"
-                aria-label="Get it on Google Play"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get VESL on Google Play"
               >
                 <img src="/android.png" alt="" />
                 <span>Google Play</span>
               </a>
             </div>
+            <p className="download-support">
+              Need help? Email{" "}
+              <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a>{" "}
+              or call <a href="tel:9125555555">912-555-5555</a>.
+            </p>
           </div>
 
           <aside className="quicklinks-panel" aria-label="Quick links">
             <h3>Quick Links</h3>
             <ul>
               <li>
-                <Link to="/how-it-works">How the reporting workflow works</Link>
+                <Link to="/how-it-works">
+                  Step-by-step reporting instructions
+                </Link>
               </li>
               <li>
                 <Link to="/season-info">
-                  Season details, bag &amp; size limits
+                  Season dates, bag limits &amp; rules
                 </Link>
               </li>
               <li>

@@ -4,16 +4,16 @@ import "./FAQ.css";
 export default function FAQ() {
   const faqs = [
     {
-      q: "Is reporting required?",
-      a: "Yes. Trip registration and post-trip reporting are required for all EFP season participants.",
+      q: "When is the season?",
+      a: "July 1 through August 31, 2026 — 62 days in federal waters off Georgia.",
     },
     {
-      q: "What's the bag limit?",
-      a: "1 Red Snapper per person per day, with no minimum size limit under the EFP.",
+      q: "What's the bag and size limit?",
+      a: "1 red snapper per person per day. There is no minimum size limit.",
     },
     {
-      q: "What about cell service?",
-      a: "The reporting app supports offline logging and will sync automatically when you reconnect.",
+      q: "Do I really have to use the app?",
+      a: "Yes. Registering your trip and reporting your catch through VESL is mandatory. It takes less than a minute.",
     },
   ];
 
@@ -23,12 +23,7 @@ export default function FAQ() {
       aria-labelledby="faq-teaser-heading"
     >
       <div className="section-inner">
-        <h2 id="faq-teaser-heading">Quick FAQs</h2>
-
-        <p className="lead">
-          Short answers to common questions. For detailed guidance, visit the
-          full FAQs page.
-        </p>
+        <h2 id="faq-teaser-heading">Common Questions</h2>
 
         <div className="faq-teaser-grid">
           {faqs.map((f, i) => (
@@ -41,7 +36,7 @@ export default function FAQ() {
 
         <div className="u-center" style={{ marginTop: "1.5rem" }}>
           <Link to="/faq" className="btn">
-            Read All FAQs
+            View All FAQs
           </Link>
         </div>
       </div>
