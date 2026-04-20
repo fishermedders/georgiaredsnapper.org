@@ -69,6 +69,9 @@ export default function SeasonInfo() {
                 <Link to="/how-it-works" className="btn">
                   Step-by-Step Instructions
                 </Link>
+                <a href="#" className="btn btn--secondary">
+                  View an Instructional Video
+                </a>
               </div>
             </div>
           </div>
