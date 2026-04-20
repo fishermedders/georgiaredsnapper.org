@@ -37,10 +37,9 @@ export default function Partners() {
             <p className="footer-tagline">
               The Georgia Red Snapper Project is operated by the{" "}
               <strong>Georgia DNR Coastal Resources Division</strong> and
-              supported by a $300,000 grant from{" "}
-              <strong>Yamaha Rightwaters</strong>. South Carolina, North
-              Carolina, and Florida are collaborating through their own EFP
-              applications.
+              supported by a grant from <strong>Yamaha Rightwaters</strong>.
+              South Carolina, North Carolina, and Florida are collaborating
+              through their own EFP applications.
             </p>
           </div>
 
