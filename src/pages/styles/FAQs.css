@@ -1,307 +1,94 @@
-/* src/pages/FAQs.css
-   Basic page-level styles for the FAQs page, plus lightweight helpers for
-   SeasonInfo and Contact pages so those pages have a consistent baseline.
-   These are intentionally self-contained and use sensible fallbacks for design tokens.
-*/
+/* FAQs.css — FAQ page accordion and layout styles.
+   Tokens, buttons, cards, etc. come from index.css. */
 
-/* --- Design tokens / fallbacks --- */
-:root {
-  --primary-blue: #2a5a8a;
-  --primary-blue-dark: #24476a;
-  --muted: #6b7280;
-  --bg-page: #f6f8fa;
-  --panel-border: #e2e8f0;
-  --line-gray: #cbd5e0;
-  --card-bg: #ffffff;
-  --gutter: 24px;
-  --max-width: 1100px;
-  --radius: 10px;
-  --shadow-sm: 0 6px 14px rgba(29, 40, 58, 0.06);
-  --shadow-md: 0 10px 28px rgba(29, 40, 58, 0.08);
-}
-
-/* --- Page wrapper helpers --- */
-.content-container {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Constrain content for each section */
-.section-inner {
-  max-width: var(--max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 var(--gutter);
-  box-sizing: border-box;
-}
-
-/* Headings */
-h2 {
-  color: var(--primary-blue);
-  text-align: center;
-  margin: 0 0 18px 0;
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-
-/* Sublead / intro text */
-.lead {
-  color: #253342;
-  max-width: 780px;
-  margin: 0 auto 12px auto;
-  text-align: center;
-  line-height: 1.6;
-  font-size: 1.05rem;
-}
-
-/* --- FAQ specific styles --- */
-.faq-section {
-  padding: 36px 0;
-  background: transparent;
-  box-sizing: border-box;
-}
-
-/* Heading decoration (light lines either side) */
-.faq-section h2 {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-.faq-section h2::before,
-.faq-section h2::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: var(--line-gray);
-}
-
-/* Grid layout for FAQ cards */
+/* FAQ grid layout */
 .faq-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 16px;
-  align-items: start;
-  box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: start;
 }
 
-/* FAQ card (details element) */
+/* FAQ accordion item */
 .faq-item {
-  background: var(--card-bg);
-  border: 1px solid var(--panel-border);
-  border-radius: var(--radius);
-  overflow: visible;
-  transition: box-shadow 160ms ease, transform 120ms ease;
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition:
+        box-shadow 0.15s ease,
+        transform 0.1s ease;
 }
-
-/* subtle elevation on open/hover */
 .faq-item[open] {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
 }
 
-/* Summary (the clickable header) */
+/* Summary (clickable question) */
 .faq-item summary {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 16px 20px;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  position: relative;
-  margin: 0;
-  align-items: center;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 700;
+    color: var(--color-text);
+    font-size: var(--fs-base);
 }
-
-/* Remove the native marker for details/summary */
 .faq-item summary::-webkit-details-marker {
-  display: none;
+    display: none;
 }
 
-/* Circular badge with white caret (down) centered vertically */
+/* Caret badge */
 .faq-item summary::before {
-  content: "";
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  flex: 0 0 auto;
-  display: inline-block;
-
-  /* caret SVG (white) over blue gradient background */
-  background-image:
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><polyline points='6 9 12 15 18 9' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/></svg>"),
-    linear-gradient(180deg, var(--primary-blue), var(--primary-blue-dark));
-  background-repeat: no-repeat, no-repeat;
-  background-position: center, center;
-  background-size: 14px 14px, cover;
-  box-shadow: 0 6px 14px rgba(36, 78, 134, 0.12);
-  transition: transform 160ms ease;
+    content: "";
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+    background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><polyline points='6 9 12 15 18 9' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/></svg>"),
+        linear-gradient(
+            180deg,
+            var(--color-primary) 0%,
+            var(--color-primary-dark) 100%
+        );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:
+        14px 14px,
+        cover;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.15s ease;
 }
-
-/* caret rotation when open (visual open state) */
 .faq-item[open] summary::before {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
 }
-
-/* Question text styling: center-aligned to match badge */
-.faq-item summary > * {
-  margin: 0;
-}
-.faq-item summary .question {
-  font-weight: 700;
-  color: #10203a;
-  font-size: 1rem;
-  text-align: left;
-}
-
-/* If you want the question centered within the summary, uncomment:
-.faq-item summary { justify-content: center; text-align: center; }
-.faq-item summary .question { text-align: center; }
-*/
 
 /* Answer area */
 .faq-answer {
-  padding: 12px 20px 18px 20px;
-  color: var(--muted);
-  font-size: 0.98rem;
-  line-height: 1.6;
-  text-align: left;
+    padding: 0 1.25rem 1.25rem;
+    color: var(--color-text-muted);
+    font-size: var(--fs-sm);
+    line-height: 1.6;
 }
-
-/* Links inside answers */
+.faq-answer p {
+    margin: 0;
+}
 .faq-answer a {
-  color: var(--primary-blue);
-  text-decoration: underline;
+    color: var(--color-primary);
 }
 
-/* Responsive: stack FAQs into one column on smaller screens */
-@media (max-width: 900px) {
-  .faq-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .faq-item {
-    border-radius: 8px;
-  }
-
-  .faq-item summary {
-    padding: 14px 16px;
-  }
-
-  .faq-answer {
-    padding: 10px 16px 16px;
-  }
+@media (max-width: 768px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+    .faq-item summary {
+        padding: 0.875rem 1rem;
+    }
+    .faq-answer {
+        padding: 0 1rem 1rem;
+    }
 }
-
-/* --- Lightweight SeasonInfo styles (keeps page coherent) --- */
-.season-info {
-  padding: 36px 0;
-}
-.season-info .card {
-  background: var(--card-bg);
-  border: 1px solid var(--panel-border);
-  border-radius: var(--radius);
-  padding: 18px;
-  box-shadow: var(--shadow-sm);
-}
-.season-info .card__title {
-  color: var(--primary-blue-dark);
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-.season-info ul {
-  margin: 8px 0 0 1rem;
-  padding: 0;
-  color: var(--muted);
-}
-
-/* --- Lightweight Contact page styles --- */
-.contact-page {
-  padding: 36px 0;
-}
-.contact-page .card {
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  padding: 18px;
-  background: var(--card-bg);
-  border: 1px solid var(--panel-border);
-}
-.contact-page form label {
-  display: block;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: #10203a;
-}
-.contact-page input[type="text"],
-.contact-page input[type="email"],
-.contact-page textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid var(--panel-border);
-  box-sizing: border-box;
-  font-size: 0.95rem;
-  color: #0f172a;
-  background: #fff;
-}
-.contact-page textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-.contact-page .form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-@media (max-width: 760px) {
-  .contact-page .form-row {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Form actions */
-.contact-page .form-actions {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  margin-top: 12px;
-}
-.contact-page .btn {
-  padding: 10px 14px;
-  border-radius: 8px;
-  background: var(--primary-blue);
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-weight: 700;
-}
-.contact-page .btn--secondary {
-  background: transparent;
-  color: var(--primary-blue);
-  border: 1px solid var(--panel-border);
-}
-
-/* Accessibility focus states */
-.faq-item summary:focus,
-.contact-page input:focus,
-.contact-page textarea:focus,
-.season-info a:focus {
-  outline: 3px solid rgba(42, 90, 138, 0.12);
-  outline-offset: 3px;
-}
-
-/* Small utilities reused by pages */
-.u-muted { color: var(--muted); }
-.kicker {
-  display: inline-block;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(42,90,138,0.08);
-  color: var(--primary-blue);
-  font-weight: 700;
-  font-size: 12px;
-}
-
-/* End of FAQs.css */

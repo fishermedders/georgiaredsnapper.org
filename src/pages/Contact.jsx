@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles/Contact.css";
 
@@ -9,7 +9,6 @@ export default function Contact() {
     subject: "",
     message: "",
   });
-
   const [status, setStatus] = useState(null);
 
   function handleChange(e) {
@@ -19,44 +18,32 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // Form submission is stubbed out here.
-    // Replace with real API call or integration as needed.
     setStatus("submitting");
-
-    // Simulate async submission for UX
     setTimeout(() => {
       setStatus("success");
-      setForm({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
+      setForm({ name: "", email: "", subject: "", message: "" });
     }, 700);
   }
 
   return (
     <main className="content-container">
-      <section className="section section--bg-white section--edge-to-edge">
+      <section className="section section--bg-white">
         <div className="section-inner">
           <h2>Contact the Georgia Red Snapper Project</h2>
-
           <p className="lead">
-            Use the form below to contact the project team about reporting
-            issues, data questions, or partnership inquiries. For official
-            regulatory information, season decisions, or enforcement matters,
-            please consult the Georgia Department of Natural Resources (DNR)
-            website.
+            Use the form below to reach the project team about reporting issues,
+            data questions, or partnership inquiries. For official regulatory
+            information, visit the Georgia DNR website.
           </p>
 
-          <div className="grid grid--cols-2" style={{ gap: 20, marginTop: 18 }}>
+          <div className="grid grid--cols-2">
             <div className="card">
               <h3 className="card__title">Official Regulatory Information</h3>
               <p className="card__body">
                 For authoritative rules, season announcements, and enforcement
-                contacts, visit the Georgia DNR website:
+                contacts, visit the Georgia DNR website.
               </p>
-              <p style={{ marginTop: 8 }}>
+              <p>
                 <a
                   href="https://gadnr.org"
                   target="_blank"
@@ -66,129 +53,85 @@ export default function Contact() {
                   Visit GA DNR
                 </a>
               </p>
-
-              <p style={{ marginTop: 12 }}>
-                If you need assistance locating a specific office or official
-                contact, the GA DNR site has up-to-date phone numbers and local
-                office addresses.
-              </p>
             </div>
 
             <div className="card">
-              <h3 className="card__title">Project & Reporting Questions</h3>
+              <h3 className="card__title">Project &amp; Reporting Questions</h3>
               <p className="card__body">
                 This project is operated by the Georgia DNR Coastal Resources
-                Division. For inquiries about the reporting platform, data use,
-                or how to participate, submit a message using the form on this
-                page and our team will route your request to the appropriate
-                staff.
+                Division. Submit a message below and we'll route your request to
+                the appropriate staff.
               </p>
-
-              <p style={{ marginTop: 12 }}>
-                For technical issues with the mobile reporting app, please use
-                the app's built-in help/support feature or the app store pages
-                for the VESL app.
+              <p className="card__body">
+                For technical issues with the mobile app, use the app's built-in
+                help feature or the app store listing.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section section--bg-blue-soft section--edge-to-edge">
+      <section className="section section--bg-soft">
         <div className="section-inner">
           <h2>Send Us a Message</h2>
 
-          <div className="card" style={{ marginTop: 12 }}>
-            <form onSubmit={handleSubmit} aria-label="Contact form">
-              <div className="grid grid--cols-2" style={{ gap: 12 }}>
-                <label style={{ display: "block" }}>
-                  <div style={{ fontWeight: 700, marginBottom: 6 }}>Name</div>
+          <div className="card">
+            <form
+              className="contact-form"
+              onSubmit={handleSubmit}
+              aria-label="Contact form"
+            >
+              <div className="form-row">
+                <div className="field">
+                  <label htmlFor="contact-name">Name</label>
                   <input
+                    id="contact-name"
                     name="name"
                     value={form.name}
                     onChange={handleChange}
                     placeholder="Your full name"
                     required
-                    style={{
-                      width: "100%",
-                      padding: "10px 12px",
-                      borderRadius: 8,
-                      border: "1px solid var(--border)",
-                    }}
                   />
-                </label>
-
-                <label style={{ display: "block" }}>
-                  <div style={{ fontWeight: 700, marginBottom: 6 }}>Email</div>
+                </div>
+                <div className="field">
+                  <label htmlFor="contact-email">Email</label>
                   <input
+                    id="contact-email"
                     name="email"
                     type="email"
                     value={form.email}
                     onChange={handleChange}
                     placeholder="you@example.com"
                     required
-                    style={{
-                      width: "100%",
-                      padding: "10px 12px",
-                      borderRadius: 8,
-                      border: "1px solid var(--border)",
-                    }}
                   />
-                </label>
+                </div>
               </div>
 
-              <div style={{ marginTop: 12 }}>
-                <label style={{ display: "block" }}>
-                  <div style={{ fontWeight: 700, marginBottom: 6 }}>
-                    Subject
-                  </div>
-                  <input
-                    name="subject"
-                    value={form.subject}
-                    onChange={handleChange}
-                    placeholder="Short summary"
-                    style={{
-                      width: "100%",
-                      padding: "10px 12px",
-                      borderRadius: 8,
-                      border: "1px solid var(--border)",
-                    }}
-                  />
-                </label>
+              <div className="field">
+                <label htmlFor="contact-subject">Subject</label>
+                <input
+                  id="contact-subject"
+                  name="subject"
+                  value={form.subject}
+                  onChange={handleChange}
+                  placeholder="Short summary"
+                />
               </div>
 
-              <div style={{ marginTop: 12 }}>
-                <label style={{ display: "block" }}>
-                  <div style={{ fontWeight: 700, marginBottom: 6 }}>
-                    Message
-                  </div>
-                  <textarea
-                    name="message"
-                    value={form.message}
-                    onChange={handleChange}
-                    placeholder="Write your message here..."
-                    rows={6}
-                    required
-                    style={{
-                      width: "100%",
-                      padding: "10px 12px",
-                      borderRadius: 8,
-                      border: "1px solid var(--border)",
-                      resize: "vertical",
-                    }}
-                  />
-                </label>
+              <div className="field">
+                <label htmlFor="contact-message">Message</label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="Write your message here..."
+                  rows={6}
+                  required
+                />
               </div>
 
-              <div
-                style={{
-                  marginTop: 14,
-                  display: "flex",
-                  gap: 12,
-                  alignItems: "center",
-                  flexWrap: "wrap",
-                }}
-              >
+              <div className="form-actions">
                 <button
                   className="btn"
                   type="submit"
@@ -196,7 +139,6 @@ export default function Contact() {
                 >
                   {status === "submitting" ? "Sending..." : "Send Message"}
                 </button>
-
                 <button
                   type="button"
                   className="btn btn--secondary"
@@ -206,43 +148,32 @@ export default function Contact() {
                 >
                   Reset
                 </button>
-
                 {status === "success" && (
-                  <span
-                    style={{ color: "var(--primary-blue)", fontWeight: 700 }}
-                  >
+                  <span className="form-success-msg">
                     Message sent — thank you!
                   </span>
                 )}
               </div>
 
-              <p className="u-muted" style={{ marginTop: 12 }}>
+              <p className="form-disclaimer u-muted">
                 By contacting us you agree to our data handling practices.
-                Personal information is used only to respond to inquiries and is
-                not shared publicly.
+                Personal information is used only to respond to inquiries.
               </p>
             </form>
           </div>
         </div>
       </section>
 
-      <section className="section section--bg-white section--edge-to-edge">
-        <div className="section-inner">
-          <h2>Media & Partnership Inquiries</h2>
-
+      <section className="section section--bg-white">
+        <div className="section-inner u-center">
+          <h2>Media &amp; Partnership Inquiries</h2>
           <p className="lead">
-            For media requests or partnership discussions (research, outreach,
-            or funding), please include details about your organization and the
-            nature of the inquiry in the message form. We will route your
-            inquiry to the appropriate team member or provide official contact
-            information from GA DNR when applicable.
+            For media requests or partnership discussions, include details about
+            your organization in the message form above.
           </p>
-
-          <p style={{ marginTop: 12 }}>
-            <Link to="/" className="btn btn--secondary">
-              Back to Home
-            </Link>
-          </p>
+          <Link to="/" className="btn btn--secondary">
+            Back to Home
+          </Link>
         </div>
       </section>
     </main>

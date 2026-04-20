@@ -1,29 +1,83 @@
-@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap");
+/* ============================================================
+   GEORGIA RED SNAPPER — GLOBAL DESIGN SYSTEM
+   Single source of truth for tokens, reset, typography,
+   layout, buttons, cards, and responsive utilities.
+   ============================================================ */
 
-/* Reset body spacing and prevent horizontal overflow on small devices
-   Also reserve scrollbar gutter space so showing/hiding the vertical
-   scrollbar does not cause layout shift when navigating between pages. */
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    /* Prevent accidental horizontal scrolling caused by elements exceeding viewport */
-    overflow-x: hidden;
-    /* Reserve vertical scrollbar space and always show scroll track to avoid layout shifts */
-    overflow-y: scroll;
-    scrollbar-gutter: stable;
-    -webkit-overflow-scrolling: touch;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+/* --- Design Tokens --- */
+:root {
+    /* Colors */
+    --color-primary: #1b5e8a;
+    --color-primary-dark: #143d5e;
+    --color-primary-light: #e8f1f8;
+    --color-accent: #e8853d;
+    --color-text: #1a2332;
+    --color-text-muted: #5a6577;
+    --color-bg: #f5f7fa;
+    --color-bg-white: #ffffff;
+    --color-bg-soft: #edf2f7;
+    --color-border: #dfe4ea;
+    --color-success: #2d8a4e;
+    --color-danger: #c1432e;
+
+    /* Spacing */
+    --max-width: 1120px;
+    --gutter: 24px;
+
+    /* Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.07);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    /* Typography */
+    --font-family:
+        "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        sans-serif;
+    --fs-xs: 0.75rem;
+    --fs-sm: 0.875rem;
+    --fs-base: 1rem;
+    --fs-lg: 1.125rem;
+    --fs-xl: 1.25rem;
+    --fs-2xl: 1.5rem;
+    --fs-3xl: 1.875rem;
+    --fs-4xl: 2.25rem;
 }
 
-/* Use border-box globally to avoid unexpected width calculations and horizontal overflow */
+/* --- Reset --- */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-/* Ensure media scale to their containers on small screens to prevent overflow */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--fs-base);
+    color: var(--color-text);
+    background: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+}
+
 img,
 svg,
 video,
@@ -34,51 +88,356 @@ picture {
     display: block;
 }
 
-/* Provide safe horizontal gutters for narrow viewports so content cannot extend to the edge */
-.section-inner,
-.content-container,
-.main,
-.section {
-    padding-left: 16px;
-    padding-right: 16px;
-    box-sizing: border-box;
+/* --- Typography --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 0.75rem 0;
+    color: var(--color-primary-dark);
+    line-height: 1.2;
+    font-weight: 700;
 }
 
-/* Slightly reduce gutters on very small screens */
-@media (max-width: 420px) {
-    .section-inner,
-    .content-container,
-    .main,
+h1 {
+    font-size: var(--fs-4xl);
+    font-weight: 800;
+    color: var(--color-primary);
+}
+h2 {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: center;
+}
+h3 {
+    font-size: var(--fs-xl);
+    font-weight: 700;
+}
+h4 {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+}
+
+p {
+    margin: 0 0 1rem 0;
+    color: var(--color-text-muted);
+    font-size: var(--fs-base);
+    line-height: 1.65;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+a:hover {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+}
+
+.lead {
+    font-size: var(--fs-lg);
+    color: var(--color-text);
+    max-width: 740px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+    line-height: 1.65;
+}
+
+.kicker {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(27, 94, 138, 0.1);
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: var(--fs-xs);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+/* Section heading with decorative side lines */
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.section-heading::before,
+.section-heading::after {
+    content: "";
+    flex: 1;
+    max-width: 120px;
+    height: 1px;
+    background: var(--color-border);
+}
+
+/* --- Layout --- */
+.content-container {
+    width: 100%;
+    padding: 0;
+}
+
+.section {
+    width: 100%;
+    padding: 3.5rem 0;
+}
+
+.section-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
+/* Section background variants */
+.section--bg-white {
+    background: var(--color-bg-white);
+}
+.section--bg-page {
+    background: var(--color-bg);
+}
+.section--bg-soft {
+    background: var(--color-bg-soft);
+}
+.section--bg-primary {
+    background: var(--color-primary);
+    color: #fff;
+}
+.section--bg-primary h2,
+.section--bg-primary h3,
+.section--bg-primary p {
+    color: #fff;
+}
+.section--bg-gradient {
+    background: linear-gradient(
+        135deg,
+        var(--color-primary) 0%,
+        var(--color-primary-dark) 100%
+    );
+    color: #fff;
+}
+
+/* --- Grid --- */
+.grid {
+    display: grid;
+    gap: 1.25rem;
+}
+.grid--cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+.grid--cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 900px) {
+    .grid--cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 640px) {
+    .grid--cols-2,
+    .grid--cols-3 {
+        grid-template-columns: 1fr;
+    }
     .section {
-        padding-left: 12px;
-        padding-right: 12px;
+        padding: 2.5rem 0;
     }
 }
 
-/* Base typography token */
-* {
-    font-family: "Google Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: normal;
-    font-style: normal;
-    font-variation-settings: "GRAD" 0;
+/* --- Cards --- */
+.card {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
 }
 
-/* Safety: enforce no element can exceed viewport width due to transforms or large fixed widths.
-   This is intentionally conservative — it prevents rare cases where embedded content pushes past 100%.
-   Most layout issues should be addressed by fixing the offending component, but this rule reduces
-   immediate horizontal scrolling while keeping content accessible. */
-body > * {
-    max-width: 100vw;
+.card__title {
+    font-size: var(--fs-base);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary-dark);
+}
+.card__body {
+    color: var(--color-text-muted);
+    font-size: var(--fs-sm);
+    line-height: 1.5;
 }
 
-/* Ensure utility elements like pull-out nav panels respect viewport padding on mobile */
-@media (max-width: 768px) {
-    .nav-links,
-    .navbar-container,
-    .download-quickstart-content {
-        max-width: calc(100vw - 32px);
-        margin-left: auto;
-        margin-right: auto;
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: var(--color-primary);
+    color: #fff;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: var(--fs-sm);
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        background 0.12s ease;
+    box-shadow: var(--shadow-sm);
+    white-space: nowrap;
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background: var(--color-primary-dark);
+    color: #fff;
+    text-decoration: none;
+}
+.btn:active {
+    transform: translateY(0);
+}
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn--secondary {
+    background: var(--color-bg-white);
+    color: var(--color-primary);
+    border: 1px solid var(--color-border);
+    box-shadow: none;
+}
+.btn--secondary:hover {
+    background: var(--color-primary-light);
+    color: var(--color-primary-dark);
+}
+
+.btn--accent {
+    background: var(--color-accent);
+    color: #fff;
+}
+.btn--accent:hover {
+    background: #cf7432;
+}
+
+/* --- Store buttons --- */
+.store-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.625rem 1rem;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(
+        180deg,
+        #2868a0 0%,
+        var(--color-primary-dark) 100%
+    );
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: var(--fs-sm);
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease;
+    border: none;
+}
+.store-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    color: #fff;
+    text-decoration: none;
+}
+.store-btn img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* --- Utilities --- */
+.u-center {
+    text-align: center;
+}
+.u-muted {
+    color: var(--color-text-muted);
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+/* --- Focus states --- */
+a:focus-visible,
+.btn:focus-visible,
+summary:focus-visible {
+    outline: 3px solid rgba(27, 94, 138, 0.25);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* --- Responsive helpers --- */
+@media (max-width: 640px) {
+    h1 {
+        font-size: var(--fs-3xl);
+    }
+    h2 {
+        font-size: var(--fs-xl);
+    }
+    .lead {
+        font-size: var(--fs-base);
+    }
+    .section-inner {
+        padding: 0 1rem;
+    }
+}
+
+/* --- Print --- */
+@media print {
+    .btn,
+    .store-btn,
+    nav,
+    footer {
+        display: none !important;
+    }
+    .section {
+        padding: 1rem 0;
+    }
+    body {
+        background: #fff;
+        color: #000;
+    }
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
     }
 }

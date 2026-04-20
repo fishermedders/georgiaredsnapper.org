@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import Home from "./pages/Home.jsx";
@@ -12,10 +12,9 @@ import Partners from "./components/Partners.jsx";
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
       <ScrollToTop />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -24,9 +23,8 @@ function App() {
         <Route path="/season-info" element={<SeasonInfo />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-
       <Partners />
-    </div>
+    </>
   );
 }
 

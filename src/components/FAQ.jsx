@@ -1,52 +1,47 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "./FAQ.css";
 
-/**
- * FAQ (teaser)
- *
- * Condensed FAQ used on the Home page. Displays a short set of high-level
- * Q&As and links to the full FAQ page for complete details.
- */
-
 export default function FAQ() {
+  const faqs = [
+    {
+      q: "Is reporting required?",
+      a: "Yes. Trip registration and post-trip reporting are required for all EFP season participants.",
+    },
+    {
+      q: "What's the bag limit?",
+      a: "1 Red Snapper per person per day, with no minimum size limit under the EFP.",
+    },
+    {
+      q: "What about cell service?",
+      a: "The reporting app supports offline logging and will sync automatically when you reconnect.",
+    },
+  ];
+
   return (
     <section
-      className="faq-teaser section section--bg-white section--edge-to-edge"
+      className="section section--bg-white"
       aria-labelledby="faq-teaser-heading"
     >
       <div className="section-inner">
         <h2 id="faq-teaser-heading">Quick FAQs</h2>
 
         <p className="lead">
-          Short answers to common questions about the EFP season and reporting.
-          For the full list and detailed guidance, visit the FAQs page.
+          Short answers to common questions. For detailed guidance, visit the
+          full FAQs page.
         </p>
 
-        <ul
-          className="faq-teaser-list"
-          style={{ marginTop: 12, lineHeight: 1.5 }}
-        >
-          <li>
-            <strong>Is reporting required?</strong> Yes. Trip registration and
-            post-trip reporting are required for anglers participating in the
-            EFP season.
-          </li>
+        <div className="faq-teaser-grid">
+          {faqs.map((f, i) => (
+            <div key={i} className="faq-teaser-card">
+              <h4>{f.q}</h4>
+              <p>{f.a}</p>
+            </div>
+          ))}
+        </div>
 
-          <li>
-            <strong>Bag limit?</strong> 1 Red Snapper per person per day (no
-            minimum size under the EFP).
-          </li>
-
-          <li>
-            <strong>What about cell service?</strong> The reporting app supports
-            offline logging and will sync when you reconnect.
-          </li>
-        </ul>
-
-        <div style={{ marginTop: 16 }}>
+        <div className="u-center" style={{ marginTop: "1.5rem" }}>
           <Link to="/faq" className="btn">
-            Read full FAQs
+            Read All FAQs
           </Link>
         </div>
       </div>

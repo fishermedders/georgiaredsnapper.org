@@ -1,156 +1,67 @@
-/* WhatIs.css
-   - Removes default list bullets
-   - Replaces emoji checkmarks visually with styled checkmark badges (non-emoji)
-   - Keeps cards and grid layout polished and consistent with site tokens
-*/
+/* WhatIs.css — "What Is" section on home page. Tokens from index.css. */
 
-/* Grid wrapper (constrain content when .section-inner not present) */
-.card-grid {
+.what-is-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    max-width: var(--max-width, 1100px);
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 var(--gutter, 24px);
-    box-sizing: border-box;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 1.5rem;
 }
 
-/* Info Cards */
-.info-card {
-    background: var(--card-bg, #fff);
-    border: 1px solid var(--border, #e1e8ed);
-    border-radius: 8px;
-    padding: 20px;
-    text-align: left;
-    box-shadow: 0 6px 12px rgba(29, 40, 58, 0.04);
+.what-is-card {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+.what-is-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
 }
 
-/* Card header treatment */
-.info-card h3 {
-    background: linear-gradient(
-        90deg,
-        rgba(42, 90, 138, 0.08),
-        rgba(42, 90, 138, 0.04)
-    );
-    padding: 10px;
-    margin: -20px -20px 15px -20px;
-    font-size: 1.05rem;
-    color: var(--primary-blue-dark, #24476a);
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    font-weight: 700;
+.what-is-card__icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1;
 }
 
-/* Paragraphs inside card */
-.info-card p {
-    margin: 0 0 12px 0;
-    color: var(--muted, #6b7280);
-    font-size: 0.95rem;
+.what-is-card h3 {
+    font-size: var(--fs-lg);
+    color: var(--color-primary-dark);
+    margin-bottom: 0.5rem;
+}
+
+.what-is-card p {
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
     line-height: 1.5;
-}
-
-/* Lists: remove default bullets and spacing */
-.info-card ul {
-    list-style: none;
     margin: 0;
-    padding: 0;
 }
-
-/* List items:
-   - Provide space for a circular check badge rendered with CSS (::before)
-   - Use ::first-letter to visually hide any leading emoji characters (e.g., "✔️") that may exist in the DOM.
-     This lets us keep the JSX unchanged while removing emoji glyphs visually.
-*/
-.info-card li {
-    position: relative;
-    padding-left: 40px;
-    margin-bottom: 12px;
-    color: var(--primary-blue-dark, #24476a);
-    font-weight: 700;
-    font-size: 0.95rem;
-    line-height: 1.3;
-    align-items: center;
-    display: flex;
-    gap: 10px;
-}
-
-/* Visually hide a leading emoji or single leading character if present in the markup.
-   Note: this uses ::first-letter styling to make such characters transparent and not take layout space.
-*/
-.info-card li::first-letter {
-    color: transparent;
-    font-size: 0;
-    line-height: 0;
-}
-
-/* Check badge: circular, gradient background with a white check SVG centered */
-.info-card li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    /* Place the SVG on top of the gradient so the check is always visible.
-       Use a dark stroke color for the SVG check to ensure contrast on light
-       and dark backgrounds. The gradient is provided as the second background layer. */
-    background-image:
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M20 6L9 17l-5-5' stroke='%230f172a' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>"),
-        linear-gradient(180deg, #2f6eaf 0%, #244e86 100%);
-    background-repeat: no-repeat;
-    /* Center the SVG and cover the circle with the gradient */
-    background-position: center;
-    background-size:
-        12px 12px,
-        cover;
-    box-shadow:
-        0 4px 10px rgba(36, 78, 134, 0.18),
-        inset 0 -2px 6px rgba(255, 255, 255, 0.06);
-}
-
-/* Slight hover/active polish on card items */
-.info-card li:hover::before {
-    transform: translateY(-50%) scale(1.06);
-    box-shadow:
-        0 6px 18px rgba(36, 78, 134, 0.22),
-        inset 0 -2px 6px rgba(255, 255, 255, 0.08);
-}
-
-/* Last list item spacing fix */
-.info-card li:last-child {
-    margin-bottom: 0;
-}
-
-/* Responsive tweaks for small screens */
-@media (max-width: 640px) {
-    .card-grid {
-        grid-template-columns: 1fr;
-        padding: 0 14px;
-    }
-
-    .info-card h3 {
-        font-size: 1rem;
-        padding: 8px;
-        margin-bottom: 12px;
-    }
-
-    .info-card li {
-        padding-left: 36px;
-        font-size: 0.95rem;
-    }
-
-    .info-card li::before {
-        width: 22px;
-        height: 22px;
-        background-size: 10px 10px;
-    }
-}
-
-/* Optional utility: if you want a smaller/secondary list visual inside the cards */
-.info-card ul.info-list--muted li {
-    color: var(--muted, #6b7280);
+.what-is-card a {
     font-weight: 600;
+}
+
+.what-is-ctas {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .what-is-cards {
+        grid-template-columns: 1fr;
+    }
+    .what-is-ctas {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .what-is-ctas .btn {
+        width: 100%;
+    }
 }

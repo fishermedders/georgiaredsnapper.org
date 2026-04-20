@@ -1,267 +1,87 @@
-/* RedSnapperWebsite\GeorgiaRedSnapper.org
-   src\components\DownloadQuickStart.css
+/* DownloadQuickStart.css — Download + Quick Links. Tokens from index.css. */
 
-   Responsive styles for the Download / Quick Links panel on the Home page.
-
-   Goals:
-   - Desktop: two-column layout (app panel | quick links)
-   - Tablet & Mobile: stack so the "Official Georgia Reporting App" panel
-     appears above the "Quick links" pane.
-   - Hide the large phone mockup on small screens to conserve vertical space.
-   - Ensure store buttons and quick-links are touch-friendly on mobile.
-*/
-
-/* Container layout (desktop default) */
-.download-quickstart {
-    background-color: #e9eff5;
-    border-bottom: 1px solid #d0d9e3;
-    padding: 18px 0;
-}
-
-.download-quickstart-content {
+.download-layout {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-    box-sizing: border-box;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1.5rem;
     align-items: start;
 }
 
-/* App/download panel */
-.download-box {
-    background: linear-gradient(90deg, #1a4a7a 0%, #3a7abd 100%);
-    color: white;
-    border-radius: 12px;
-    display: flex;
-    padding: 24px;
-    align-items: center;
-    overflow: hidden;
-    gap: 20px;
-    box-shadow: 0 10px 30px rgba(42, 90, 138, 0.18);
-    min-height: 120px;
-}
-
-/* Keep text block flexible */
-.download-text {
-    flex: 1 1 0;
-    min-width: 0;
-}
-
-/* Headline */
-.download-box h3 {
+.download-panel {
+    background: linear-gradient(
+        135deg,
+        var(--color-primary) 0%,
+        var(--color-primary-dark) 100%
+    );
     color: #fff;
-    font-size: 1.35rem;
-    margin: 0 0 8px 0;
-    font-weight: 900;
-    letter-spacing: 0.2px;
-    line-height: 1.05;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+}
+.download-panel h3 {
+    color: #fff;
+    font-size: var(--fs-xl);
+    margin-bottom: 0.75rem;
+}
+.download-panel p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--fs-sm);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
 }
 
-/* Lead paragraph */
-.download-box .lead {
-    margin: 0 0 10px 0;
-    color: rgba(255, 255, 255, 0.92);
-    font-size: 0.98rem;
-    line-height: 1.4;
-}
-
-/* Store buttons (App Store / Google Play) */
-.store-buttons {
+.download-buttons {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 12px;
-}
-
-.store-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 14px;
-    border-radius: 10px;
-    background: linear-gradient(180deg, #2f6eaf 0%, #244e86 100%);
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.95rem;
-    box-shadow: 0 8px 20px rgba(36, 78, 134, 0.16);
-    border: none;
-    transition:
-        transform 0.12s ease,
-        box-shadow 0.12s ease,
-        opacity 0.12s ease;
-}
-
-.store-btn:hover,
-.store-btn:focus {
-    transform: translateY(-3px);
-    opacity: 0.98;
-    box-shadow: 0 12px 36px rgba(36, 78, 134, 0.18);
-}
-
-.store-btn img {
-    width: 28px;
-    height: 28px;
-    display: block;
-    object-fit: contain;
-}
-
-/* Phone mockup (visual only). Keep but allow hiding on small screens. */
-.phone-mockup {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 10px;
-    box-sizing: border-box;
-    flex: 0 0 160px;
-}
-
-.phone-mockup img {
-    transform: translateY(0) scale(1);
-    max-width: 100%;
-    height: auto;
-    display: block;
-    background: transparent;
-    object-fit: contain;
+    gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 /* Quick links aside */
-.quick-start-box {
-    background: linear-gradient(180deg, #f6fbff 0%, #ffffff 100%);
-    border: 1px solid rgba(36, 78, 134, 0.06);
-    border-radius: 12px;
-    padding: 18px;
-    text-align: left;
-    box-shadow: 0 10px 28px rgba(29, 40, 58, 0.05);
+.quicklinks-panel {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
 }
-
-.quick-start-box h3 {
-    margin: 0 0 10px 0;
-    color: var(--primary-blue-dark, #24476a);
-    font-size: 1.08rem;
-    font-weight: 800;
-    letter-spacing: 0.2px;
+.quicklinks-panel h3 {
+    font-size: var(--fs-lg);
+    color: var(--color-primary-dark);
+    margin-bottom: 1rem;
 }
-
-/* Quick links list */
-.quick-start-box ul {
+.quicklinks-panel ul {
+    list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    gap: 10px;
-    margin-top: 8px;
+    gap: 0.25rem;
 }
-
-.quick-start-box li {
-    list-style: none;
-    margin: 0;
-}
-
-/* Links inside quick-start: make them obvious and tappable */
-.quick-start-box a {
-    display: inline-block;
-    padding: 10px 12px;
-    border-radius: 8px;
+.quicklinks-panel li a {
+    display: block;
+    padding: 0.625rem 0.875rem;
+    border-radius: var(--radius-sm);
     text-decoration: none;
-    color: #244e86;
-    font-weight: 700;
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: var(--fs-sm);
     transition:
-        background 0.12s ease,
-        color 0.12s ease;
+        background 0.12s,
+        color 0.12s;
+}
+.quicklinks-panel li a:hover {
+    background: var(--color-primary-light);
+    color: var(--color-primary-dark);
 }
 
-.quick-start-box a:hover,
-.quick-start-box a:focus {
-    background: rgba(36, 78, 134, 0.04);
-    color: #1b3f63;
-    outline: none;
-}
-
-/* Utility: ensure no horizontal overflow */
-.download-quickstart,
-.download-quickstart-content,
-.download-box,
-.quick-start-box {
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-/* --------------------------
-   Responsive rules (mobile)
-   -------------------------- */
 @media (max-width: 768px) {
-    /* Stack columns: app/download panel first, quick links second */
-    .download-quickstart-content {
+    .download-layout {
         grid-template-columns: 1fr;
-        gap: 14px;
-        padding: 14px;
     }
-
-    /* Force the download box to act like a vertical card */
-    .download-box {
+    .download-buttons {
         flex-direction: column;
-        align-items: flex-start;
-        padding: 18px;
-        gap: 12px;
     }
-
-    /* Hide the DownloadQuickStart mockup on small screens only (do not hide hero mockup) */
-    .download-quickstart .phone-mockup {
-        display: none;
-    }
-
-    /* Store buttons should lay out horizontally when space permits, but wrap */
-    .store-buttons {
-        flex-direction: row;
-        gap: 10px;
+    .download-buttons .store-btn {
         width: 100%;
-    }
-
-    .store-buttons .store-btn {
-        flex: 1 1 0;
         justify-content: center;
-        padding: 10px;
-        font-size: 0.95rem;
-    }
-
-    /* Ensure quick-links box sits below (it naturally does because of grid order),
-     but make it full width and readable */
-    .quick-start-box {
-        width: 100%;
-        padding: 14px;
-    }
-
-    .quick-start-box a {
-        display: block;
-        width: 100%;
-        padding: 12px;
-    }
-}
-
-/* Tighter scaling for very small screens */
-@media (max-width: 420px) {
-    .download-box h3 {
-        font-size: 1.12rem;
-    }
-
-    .download-box .lead {
-        font-size: 0.95rem;
-    }
-
-    .store-btn img {
-        width: 22px;
-        height: 22px;
-    }
-
-    .store-buttons .store-btn {
-        font-size: 0.92rem;
-        padding: 10px;
-    }
-
-    .quick-start-box h3 {
-        font-size: 1rem;
     }
 }

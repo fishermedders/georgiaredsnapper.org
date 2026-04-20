@@ -1,276 +1,41 @@
-/* FAQ.css
-   Replaces the previous checkmark with a centered blue circular badge that contains
-   a white caret. The caret visually indicates the open/closed state (rotates on open).
-   Also centers the badge and the question text within each summary and tightens left padding.
-   The answer area is centered within the card but keeps readable left-aligned text.
-*/
+/* FAQ.css — FAQ teaser cards on home page. Tokens from index.css. */
 
-:root {
-    --primary-blue: #2a5a8a;
-    --primary-blue-dark: #24476a;
-    --muted-gray: #4a5568;
-    --panel-border: #e2e8f0;
-    --line-gray: #cbd5e0;
-}
-
-/* Container for the FAQ section (keeps previous layout behavior) */
-.faq-section {
-    padding: 40px 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-/* Heading with side lines (keeps existing visual style) */
-.faq-section h2 {
-    color: var(--primary-blue);
-    font-size: 1.8rem;
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-.faq-section h2::before,
-.faq-section h2::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: var(--line-gray);
-}
-
-/* Grid of FAQ items */
-.faq-grid {
+.faq-teaser-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    text-align: left;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 1.25rem;
 }
 
-/* Each FAQ item is a card using <details> so we style that container */
-.faq-item {
-    background: #fff;
-    border: 1px solid var(--panel-border);
-    border-radius: 8px;
-    overflow: hidden;
+.faq-teaser-card {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    box-shadow: var(--shadow-sm);
     transition:
-        box-shadow 0.18s ease,
-        transform 0.12s ease;
+        transform 0.15s,
+        box-shadow 0.15s;
+}
+.faq-teaser-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
 }
 
-/* Open state subtle shadow */
-.faq-item[open] {
-    box-shadow: 0 8px 24px rgba(6, 10, 22, 0.06);
+.faq-teaser-card h4 {
+    font-size: var(--fs-base);
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
 }
-
-/* SUMMARY - center badge and question text
-   We render the blue circular badge as ::before and place the question text below it
-   (column layout) so the badge and the text are visually centered within the card.
-*/
-.faq-item summary {
-    padding: 18px 20px;
-    font-weight: 700;
-    color: #1f2937;
-    cursor: pointer;
-    list-style: none; /* hide default marker */
-    display: flex;
-    flex-direction: column; /* stack badge above the label */
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    position: relative;
-    margin: 0;
-    text-align: center; /* center the question text */
-}
-
-/* Remove the default browser details marker in a robust way */
-.faq-item summary::-webkit-details-marker {
-    display: none;
-}
-
-/* Blue circular badge with white caret (down caret by default)
-   The caret is an inline SVG embedded in the background for crisp rendering.
-*/
-.faq-item summary::before {
-    content: "";
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: block;
-    flex: 0 0 auto;
-
-    /* Background: caret SVG (white) on top of a blue gradient */
-    background-image:
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><polyline points='6 9 12 15 18 9' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/></svg>"),
-        linear-gradient(
-            180deg,
-            var(--primary-blue) 0%,
-            var(--primary-blue-dark) 100%
-        );
-    background-repeat: no-repeat, no-repeat;
-    background-position: center, center;
-    background-size:
-        14px 14px,
-        cover;
-
-    box-shadow:
-        0 6px 14px rgba(36, 78, 134, 0.14),
-        inset 0 -2px 6px rgba(255, 255, 255, 0.03);
-    transition: transform 0.18s ease;
-}
-
-/* When the panel is open, rotate the caret to point up (visual open state) */
-.faq-item[open] summary::before {
-    transform: rotate(180deg);
-}
-
-/* Question text: keep it centered and readable */
-.faq-item summary > * {
-    vertical-align: middle;
-}
-
-/* ANSWER styling: center the answer area within the card but left-align the paragraph content
-   so it remains easy to read. This avoids large left padding while keeping alignment with the badge.
-*/
-.faq-answer {
-    padding: 12px 20px 20px;
-    color: var(--muted-gray);
-    font-size: 0.95rem;
+.faq-teaser-card p {
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
     line-height: 1.5;
-    text-align: left;
-    max-width: 880px;
-    margin: 0 auto; /* center the text block under the badge/question */
-}
-
-/* Accessibility: keyboard focus visible on summary */
-.faq-item summary:focus {
-    outline: 3px solid rgba(42, 90, 138, 0.1);
-    outline-offset: 4px;
-    border-radius: 6px;
-}
-
-/* Responsive: single-column stack on narrow screens, keep centered layout */
-@media (max-width: 768px) {
-    .faq-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .faq-item {
-        margin: 0;
-    }
-
-    .faq-item summary {
-        padding: 16px;
-        gap: 10px;
-    }
-
-    .faq-item summary::before {
-        width: 34px;
-        height: 34px;
-        background-size:
-            12px 12px,
-            cover;
-    }
-
-    .faq-answer {
-        padding: 10px 16px 16px;
-    }
-}
-
-/* Quick FAQ teaser: improved card layout and responsive behavior */
-.faq-teaser {
-    padding: 28px 0;
-    background: transparent;
-}
-
-/* Teaser heading (keeps existing .section-inner heading above) */
-.faq-teaser .section-inner > h2,
-.faq-teaser .section-inner > .lead {
-    text-align: center;
-}
-
-/* Replace centered list with responsive card grid and ensure equal-height rows */
-.faq-teaser-list {
-    margin: 12px 0 0 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 12px;
-    /* Make each grid row equal height so cards in the same row match */
-    grid-auto-rows: 1fr;
-    align-items: stretch;
-}
-
-/* Each teaser item is a card with compact body text; use full height of grid cell */
-.faq-teaser-list li {
-    background: var(--card-bg, #fff);
-    border: 1px solid var(--panel-border, #e2e8f0);
-    border-radius: 10px;
-    padding: 12px 14px;
-    box-shadow: 0 6px 18px rgba(6, 12, 24, 0.06);
-    text-align: left;
-    color: var(--muted-gray, #4a5568);
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    /* Fill the grid cell so all cards in the row match height */
-    height: 100%;
-    /* Allow inner content to distribute so short answers don't leave odd spacing */
-    justify-content: flex-start;
-}
-
-/* Make question (strong) prominent and answer brief under it */
-.faq-teaser-list li strong {
-    display: block;
-    font-size: 0.98rem;
-    color: var(--primary-blue, #2a5a8a);
-    font-weight: 800;
-    margin-bottom: 4px;
-}
-
-/* Helper: short answer text style */
-.faq-teaser-list li p {
     margin: 0;
-    font-size: 0.95rem;
-    color: var(--muted-gray, #4a5568);
-    line-height: 1.35;
 }
 
-/* CTA area: center the button and keep it compact on larger screens */
-.faq-teaser .section-inner > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 16px;
-}
-
-/* Read full FAQs button styling (compact but balanced) */
-.faq-teaser .btn {
-    padding: 10px 14px;
-    font-size: 0.96rem;
-    border-radius: 10px;
-    max-width: 260px;
-    width: auto;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-/* Mobile adjustments: stack cards single column and make CTA full width */
-@media (max-width: 640px) {
-    .faq-teaser-list {
+@media (max-width: 768px) {
+    .faq-teaser-grid {
         grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .faq-teaser .btn {
-        width: 100%;
-        max-width: none;
-        padding: 12px;
-        font-size: 0.96rem;
-    }
-
-    .faq-teaser .section-inner > div {
-        width: 100%;
-        display: block;
     }
 }

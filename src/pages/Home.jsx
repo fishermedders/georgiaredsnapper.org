@@ -4,19 +4,16 @@ import HowItWorks from "../components/HowItWorks";
 import DownloadQuickStart from "../components/DownloadQuickStart";
 import WhoParticipates from "../components/WhoParticipates";
 import FAQ from "../components/FAQ";
-import "./styles/Home.css";
 
 export default function Home() {
   return (
-    <>
-      <main className="content-container">
-        <Hero />
-        <WhatIs />
-        <HowItWorks />
-        <DownloadQuickStart />
-        <WhoParticipates />
-        <FAQ />
-      </main>
-    </>
+    <main className="content-container">
+      <Hero />
+      <WhatIs />
+      <HowItWorks />
+      <DownloadQuickStart />
+      <WhoParticipates />
+      <FAQ />
+    </main>
   );
 }

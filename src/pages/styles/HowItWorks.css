@@ -1,0 +1,34 @@
+/* HowItWorks page — workflow step cards. Tokens from index.css. */
+
+.workflow-steps {
+  display: grid;
+  gap: 0.875rem;
+  margin-top: 1rem;
+}
+
+.workflow-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.workflow-step__number {
+  min-width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--color-primary), var(--color-primary-dark));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: var(--fs-sm);
+  flex-shrink: 0;
+}
+
+.workflow-step__content .card__title {
+  margin: 0;
+}
+.workflow-step__content .card__body {
+  margin: 0.375rem 0 0;
+}

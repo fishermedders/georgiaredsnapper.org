@@ -1,0 +1,10 @@
+/* App.css — App-level layout. All design tokens live in index.css. */
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+#root > .content-container,
+#root > main {
+    flex: 1;
+}

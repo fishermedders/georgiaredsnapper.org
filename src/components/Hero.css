@@ -1,377 +1,93 @@
-/* RedSnapperWebsite\GeorgiaRedSnapper.org
-   src\components\Hero.css
+/* Hero.css — Hero section. Tokens from index.css. */
 
-   Updated hero stylesheet:
-   - Larger, more prominent media/logo on desktop.
-   - On narrow screens the hero media is lifted above the rest of the content
-     (overlay effect) so the logo visually sits on top of the hero.
-   - Keeps blur/overlay layers for background legibility.
-   - Ensures responsive sizing and prevents layout overflow.
-*/
-
-/* Base hero section */
 .hero {
     position: relative;
-    width: 100%;
-    min-height: 60vh;
+    min-height: 520px;
     display: flex;
     align-items: center;
-    color: #fff;
-    overflow: hidden;
-}
-
-/* Blurred background (uses the section background-image). Keeps behind content. */
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: inherit;
+    justify-content: center;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(8px) saturate(0.95);
-    transform: scale(1.04);
-    z-index: 0;
-    pointer-events: none;
+    overflow: hidden;
+    color: #fff;
 }
 
-/* Dark overlay to aid legibility */
-.hero::after {
-    content: "";
+/* Dark overlay */
+.hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
         180deg,
-        rgba(6, 10, 22, 0.62),
-        rgba(6, 10, 22, 0.44)
+        rgba(10, 20, 35, 0.7) 0%,
+        rgba(10, 20, 35, 0.55) 100%
     );
     z-index: 1;
-    pointer-events: none;
 }
 
-/* Constrained inner content */
-.section-inner.hero-inner {
+/* Content */
+.hero-content {
     position: relative;
-    z-index: 2; /* content above overlay */
-    display: block;
-    box-sizing: border-box;
-    padding: 40px 18px;
+    z-index: 2;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem var(--gutter);
+    text-align: center;
 }
 
-/* Grid layout: primary content left, media right (desktop) */
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 640px; /* larger media column on desktop for a more prominent logo */
-    gap: 32px;
-    align-items: center;
-    justify-items: start;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Copy area */
-.hero-copy {
-    color: inherit;
-    text-align: left;
-}
-
-/* Kicker */
-.hero-copy .kicker {
-    display: inline-block;
-    /* slightly stronger background for contrast against the mockup */
-    background: rgba(255, 255, 255, 0.14);
-    color: #ffffff;
-    padding: 6px 10px;
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 0.4px;
-    margin-bottom: 12px;
-    position: relative;
-    /* lower z-index so the overlayed logo sits above the kicker on narrow screens */
-    z-index: 900;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
-}
-
-/* Title & lead */
-.hero-copy h1 {
-    margin: 6px 0 14px 0;
-    font-size: clamp(28px, 4.6vw, 44px);
-    line-height: 1.04;
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 800;
-    /* Force white heading so it remains visible against the hero image/overlay */
-    color: #ffffff !important;
-    position: relative;
-    z-index: 1008;
-    text-shadow: 0 8px 24px rgba(4, 10, 20, 0.45);
+    color: #fff;
+    margin: 0.5rem 0 1rem;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    line-height: 1.1;
 }
 
-.hero-copy .lead {
-    margin-bottom: 20px;
-    color: rgba(255, 255, 255, 0.92);
-    font-size: clamp(14px, 1.7vw, 18px);
-    max-width: 58ch;
-    line-height: 1.55;
+.hero-lead {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 580px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.6;
 }
 
-/* CTA cluster */
 .hero-ctas {
     display: flex;
-    gap: 12px;
-    align-items: center;
+    gap: 0.75rem;
+    justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 18px;
+    margin-bottom: 1.5rem;
 }
 
-/* Store button visuals */
-.store-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 14px;
-    border-radius: 10px;
-    background: linear-gradient(180deg, #2f6eaf 0%, #244e86 100%);
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.95rem;
-    box-shadow: 0 8px 20px rgba(36, 78, 134, 0.16);
-    transition:
-        transform 0.12s ease,
-        box-shadow 0.12s ease,
-        opacity 0.12s ease;
-}
-.store-btn:hover,
-.store-btn:focus {
-    transform: translateY(-3px);
-    opacity: 0.98;
-    box-shadow: 0 12px 36px rgba(36, 78, 134, 0.18);
-}
-.store-btn img {
-    width: 28px;
-    height: 28px;
-    display: block;
-    object-fit: contain;
-}
-
-/* Hero features */
 .hero-features {
     list-style: none;
     padding: 0;
-    margin: 12px 0 0 0;
+    margin: 0;
     display: flex;
-    gap: 18px;
+    gap: 1.25rem;
+    justify-content: center;
     flex-wrap: wrap;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--fs-sm);
     font-weight: 600;
-    font-size: 13px;
+    color: rgba(255, 255, 255, 0.88);
 }
 .hero-features li::before {
-    content: "•";
-    color: #ffdd9b;
-    font-size: 18px;
-    margin-right: 6px;
-    opacity: 0.95;
-    transform: translateY(-1px);
+    content: "✓ ";
+    color: var(--color-accent);
+    font-weight: 800;
 }
 
-/* Media column (phone mockup / logo). On desktop this is inline to the right. */
-.hero-media {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* center media vertically by default */
-    pointer-events: none;
-    padding-bottom: 0; /* override small bottom padding so element height is driven by content */
-    position: relative;
-    z-index: 1002; /* ensure media can be stacked above overlay when needed */
-    min-height: 160px; /* ensure aside has visible height so contained img/SVG can render */
-    height: auto; /* allow image to define rendered height */
-    flex: 0 0 auto; /* prevent flex child growth/shrink causing collapse */
-    overflow: visible;
-}
-
-/* Phone/mockup container: larger on desktop to make logo prominent */
-.phone-mockup {
-    width: min(
-        760px,
-        92vw
-    ); /* larger on desktop, but never wider than viewport */
-    max-width: 100%;
-    height: auto;
-    min-height: 120px; /* ensure there is height even if image takes time to render */
-    transform: translateY(0);
-    filter: drop-shadow(0 22px 56px rgba(6, 12, 24, 0.5));
-    border-radius: 0;
-    overflow: visible;
-    background: transparent;
-    padding: 0;
-    box-sizing: border-box;
-    display: block;
-    position: relative;
-    z-index: 1001;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Ensure the displayed image scales nicely and remains visible */
-.phone-mockup img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    background: transparent;
-    /* visibility & stacking to ensure the SVG shows above overlays on mobile */
-    visibility: visible;
-    opacity: 1;
-    position: relative;
-    z-index: 1002;
-    transform: translateY(0) scale(3) !important;
-    user-select: none;
-}
-
-/* Decorative scroll chevron */
-.hero-scroll {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 18px;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    color: rgba(255, 255, 255, 0.95);
-    text-decoration: none;
-    z-index: 2;
-    opacity: 0.95;
-    transition:
-        transform 0.18s ease,
-        opacity 0.12s ease;
-}
-.hero-scroll svg {
-    width: 28px;
-    height: 28px;
-    display: block;
-}
-
-/* If hero is on a light background variant */
-.hero.section--bg-white,
-.hero.section--bg-page {
-    color: #10203a;
-}
-.hero.section--bg-white .hero::before {
-    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
-}
-
-/* -------------------------
-   Responsive behavior
-   ------------------------- */
-
-/* Medium screens: reduce mockup slightly */
-@media (max-width: 980px) {
-    .hero-grid {
-        grid-template-columns: 1fr 360px;
-        gap: 22px;
-    }
-    .phone-mockup {
-        width: 320px;
-    }
-}
-
-/* Small screens: stack and overlay the media/logo above everything */
-@media (max-width: 760px) {
+@media (max-width: 640px) {
     .hero {
-        min-height: auto;
-        padding-top: 36px;
-        padding-bottom: 36px;
+        min-height: 420px;
     }
-
-    /* stack content into single column */
-    .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-        align-items: start;
+    .hero-content {
+        padding: 3rem 1rem;
     }
-
-    /* Move media first in visual flow and overlay it above the hero content */
-    .hero-media {
-        order: -1; /* visually place the media above the copy in document flow */
-        position: absolute; /* overlay above everything in the hero */
-        top: 12px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: min(360px, 84vw); /* responsive overlay width on small devices */
-        pointer-events: none; /* decorative: avoid intercepting touches */
-        z-index: 1002; /* ensure it appears above the overlay and content */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 180px; /* ensure aside has enough height so SVG/img is visible on mobile */
-        height: auto;
-        overflow: visible;
-    }
-
-    /* Make sure inner content pushes down so the overlay doesn't cover the title */
-    .section-inner.hero-inner {
-        padding-top: 220px; /* reserve extra vertical space for the larger overlayed logo */
-    }
-
-    .hero-copy {
-        text-align: center;
-    }
-
-    .hero-ctas {
-        justify-content: center;
-    }
-
     .hero-features {
-        justify-content: center;
-    }
-
-    .phone-mockup {
-        width: 220px; /* match overlay width */
-        max-width: 78%;
-        margin: 0 auto;
-        padding: 6px;
-    }
-
-    .phone-mockup img {
-        width: 100%;
-        height: auto;
-        transform: translateY(0) scale(1.5) !important;
-    }
-
-    .hero-scroll {
-        bottom: 8px;
-    }
-}
-
-/* Very small screens: slightly smaller overlay and padding */
-@media (max-width: 420px) {
-    .section-inner.hero-inner {
-        padding-top: 120px;
-    }
-    .phone-mockup {
-        width: 160px;
-    }
-    .hero-copy h1 {
-        font-size: clamp(22px, 6.5vw, 32px);
-    }
-
-    /* Ensure the kicker pill sits below the overlayed logo at very small widths */
-    .hero-copy .kicker {
-        transform: none;
-        z-index: 900;
-        margin-top: 60px; /* push kicker down so it displays below the overlayed logo */
-    }
-}
-
-/* Reduced motion safety */
-@media (prefers-reduced-motion: reduce) {
-    .btn,
-    .hero-scroll,
-    .phone-mockup {
-        transition: none !important;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
     }
 }

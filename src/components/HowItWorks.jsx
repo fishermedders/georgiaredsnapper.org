@@ -1,57 +1,41 @@
-import React from "react";
 import "./HowItWorks.css";
 
 export default function HowItWorks() {
   const steps = [
-    "Download VESL App",
-    "Register Your Trip",
-    "Report Your Catch",
-    "Improve Georgia's Data",
+    { num: 1, label: "Download the App" },
+    { num: 2, label: "Register Your Trip" },
+    { num: 3, label: "Report Your Catch" },
+    { num: 4, label: "Improve Georgia's Data" },
   ];
 
   return (
     <section
       id="how-it-works"
-      className="section how-it-works section--bg-blue-soft section--edge-to-edge"
-      aria-labelledby="how-it-works-heading"
+      className="section section--bg-soft"
+      aria-labelledby="how-heading"
     >
       <div className="section-inner">
-        <h2 id="how-it-works-heading">How It Works</h2>
+        <h2 id="how-heading">How It Works</h2>
 
-        <nav
+        <div
           className="steps-row"
           role="list"
-          aria-label="Steps to participate and report"
+          aria-label="Steps to participate"
         >
           {steps.map((step, i) => (
-            <React.Fragment key={step}>
-              <div
-                className="step-item"
-                role="listitem"
-                aria-posinset={i + 1}
-                aria-setsize={steps.length}
-              >
+            <div className="step-wrapper" key={step.num}>
+              <div className="step-item" role="listitem">
                 <span className="step-num" aria-hidden="true">
-                  {i + 1}
+                  {step.num}
                 </span>
-                <span className="step-label">{step}</span>
+                <span className="step-label">{step.label}</span>
               </div>
-
-              {/* Render a simple arrow between steps (decorative) */}
               {i < steps.length - 1 && (
                 <span className="step-arrow" aria-hidden="true">
-                  <svg
-                    width="28"
-                    height="18"
-                    viewBox="0 0 28 18"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                    focusable="false"
-                  >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path
-                      d="M1 9h22M22 9l-6-6M22 9l-6 6"
-                      fill="none"
-                      stroke="#244e86"
+                      d="M5 12h14M13 5l6 7-6 7"
+                      stroke="currentColor"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -59,9 +43,9 @@ export default function HowItWorks() {
                   </svg>
                 </span>
               )}
-            </React.Fragment>
+            </div>
           ))}
-        </nav>
+        </div>
       </div>
     </section>
   );

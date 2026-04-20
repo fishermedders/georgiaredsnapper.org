@@ -1,84 +1,56 @@
-/* Required/Not Required Styling
-   - Tightened paddings, card-style boxes, and responsive behavior.
-   - Uses design tokens where available (fallback values included).
-*/
+/* WhoParticipates.css — Required/Not Required comparison. Tokens from index.css. */
+
+.compare-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    max-width: 760px;
+    margin: 1.5rem auto 0;
+}
+
 .compare-box {
-    background: var(--card-bg, #ffffff);
-    border: 1px solid var(--border, #e6e9ee);
-    border-radius: 10px;
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: 0 6px 16px rgba(29, 40, 58, 0.04);
-    display: flex;
-    flex-direction: column;
-    min-height: 150px;
+    box-shadow: var(--shadow-sm);
 }
 
-/* Header inside the compare card */
 .compare-box header {
-    padding: 14px 16px;
-    color: #fff;
+    padding: 0.75rem 1.25rem;
     font-weight: 700;
+    font-size: var(--fs-sm);
     text-transform: uppercase;
-    letter-spacing: 0.6px;
-    font-size: 0 ninerem;
+    letter-spacing: 0.5px;
+    color: #fff;
 }
 
-/* Use more robust token names, with fallbacks */
-.required header {
-    background: linear-gradient(90deg, var(--danger, #d9534f), #b94844);
+.compare-box--required header {
+    background: linear-gradient(90deg, var(--color-danger), #a33a26);
 }
-.not-required header {
-    background: linear-gradient(90deg, var(--success, #5cb85c), #489f49);
+.compare-box--not-required header {
+    background: linear-gradient(90deg, var(--color-success), #237a3e);
 }
 
-/* Body / list inside the card */
 .compare-box ul {
     list-style: none;
     margin: 0;
-    padding: 12px 16px;
-    color: var(--primary-blue-dark, #24476a);
+    padding: 1rem 1.25rem;
+}
+.compare-box li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.06);
+    color: var(--color-text);
+    font-size: var(--fs-sm);
     font-weight: 600;
-    flex: 1 1 auto;
+    line-height: 1.4;
 }
-
-.compare-box ul li {
-    padding: 8px 0;
-    border-bottom: 1px dashed rgba(36, 78, 134, 0.06);
-}
-
-.compare-box ul li:last-child {
+.compare-box li:last-child {
     border-bottom: none;
 }
 
-/* Grid */
-.compare-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 18px;
-    max-width: 760px; /* tightened width to avoid overly-wide appearance */
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 var(--gutter, 16px);
-    box-sizing: border-box;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
+@media (max-width: 640px) {
     .compare-grid {
         grid-template-columns: 1fr;
-        gap: 14px;
-    }
-
-    .compare-box {
-        min-height: auto;
-    }
-
-    .compare-box header {
-        padding: 12px;
-        font-size: 0.95rem;
-    }
-
-    .compare-box ul {
-        padding: 10px 12px;
     }
 }

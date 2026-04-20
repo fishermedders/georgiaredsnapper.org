@@ -1,271 +1,118 @@
-/* RedSnapperWebsite\GeorgiaRedSnapper.org
-   src\components\Partners.css
+/* Partners.css — Footer/partners section. Tokens from index.css. */
 
-   Footer styles for the Partners component.
-   - Displays a professional footer with a tagline and partner logos.
-   - Logos are responsive, evenly sized, and wrap gracefully on small screens.
-   - The layout is accessible and keeps a clean visual hierarchy.
-*/
-
-:root {
-    --footer-bg: #ffffff;
-    --footer-border: #eef2f6;
-    --muted: #6b7280;
-    --accent: #244e86;
-    --card-shadow: 0 8px 24px rgba(6, 12, 24, 0.06);
-    --gutter: 20px;
-    --max-width: 1100px;
+.site-footer {
+    background: var(--color-bg-white);
+    border-top: 1px solid var(--color-border);
+    padding: 2rem 0 1.5rem;
+    color: var(--color-text-muted);
+    font-size: var(--fs-sm);
 }
 
-/* Footer base */
-.partners-section {
-    background: var(--footer-bg);
-    border-top: 1px solid var(--footer-border);
-    border-bottom: 1px solid var(--footer-border);
-    padding: 28px 0;
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.45;
-}
-
-/* Inner container centers content and constrains width */
-.partners-inner {
+.footer-inner {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 var(--gutter);
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    align-items: stretch;
 }
 
-/* Top area contains title + tagline */
-.partners-top {
+.footer-top {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    gap: 18px;
-    width: 100%;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
-/* Brand / tagline block */
-.partners-brand {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    min-width: 0;
+.footer-brand {
+    flex: 1;
+    min-width: 260px;
 }
 
-/* Title "Partners" */
-.partners-title {
-    margin: 0;
+.footer-title {
+    margin: 0 0 0.5rem;
+    font-size: var(--fs-sm);
     font-weight: 700;
-    color: #10203a;
-    font-size: 0.95rem;
-    letter-spacing: 0.6px;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text);
 }
 
-/* Tagline text */
-.partners-tagline {
+.footer-tagline {
     margin: 0;
-    color: var(--muted);
-    font-size: 0.95rem;
-    max-width: 820px;
+    color: var(--color-text-muted);
+    font-size: var(--fs-sm);
+    line-height: 1.5;
+    max-width: 520px;
+}
+.footer-partners-text {
+    color: var(--color-primary);
+    font-weight: 600;
 }
 
-/* Partner list inline text within tagline (emphasized) */
-/* Use the site's primary blue token (falls back to --accent) so the tagline
-   color matches the rest of the site */
-.partners-list {
-    color: var(--primary-blue, var(--accent));
-    font-weight: 700;
-}
-
-/* Logos strip */
-.logo-strip {
+/* Logo row */
+.footer-logos {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-end;
-    gap: 24px;
-    margin-top: 6px;
+    gap: 1.5rem;
 }
 
-/* Individual partner logo container */
-.partner-logo {
+.footer-logo {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    padding: 6px;
-    border-radius: 8px;
-    background: transparent;
-    transition:
-        transform 160ms ease,
-        box-shadow 160ms ease;
+    padding: 0.25rem;
+    border-radius: var(--radius-sm);
+    transition: transform 0.15s ease;
 }
-
-/* Visual hover/focus on logos */
-.partner-logo:focus-within,
-.partner-logo:hover {
+.footer-logo:hover {
     transform: translateY(-2px);
-    box-shadow: var(--card-shadow);
 }
 
-/* Logo image sizing, preserved aspect ratio */
-/* Uniform logo container and image sizing
-   - Give each partner container a responsive width constraint so logos
-     (including non-square SVGs) can scale properly.
-   - Make images use width: 100% (and height: auto) so SVG intrinsic aspect
-     ratios render correctly and the images fill their container. */
-.partner-logo {
+.footer-logo a {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 6px;
-    box-sizing: border-box;
-    /* Provide a sensible responsive range for the container */
-    min-width: 80px;
-    max-width: 220px;
-    width: auto; /* allow grid/flex to size the container */
-    line-height: 0;
-    flex: 0 0 auto;
-}
-
-.partner-logo img,
-.partner-logo-img {
-    display: block;
-    width: 100%; /* fill the partner container */
-    height: auto; /* preserve aspect ratio (important for SVGs) */
-    max-width: 100%; /* never exceed container width */
-    max-height: 72px; /* visual height cap on desktop */
-    object-fit: contain;
-    filter: grayscale(18%) contrast(95%);
-    transition:
-        filter 220ms ease,
-        transform 160ms ease;
-    flex: 0 0 auto;
-}
-
-/* Ensure logos do not shrink unexpectedly in flex/grid cells */
-.partner-logo,
-.partner-logo-img {
-    flex: 0 0 auto;
-    line-height: 0;
-}
-
-/* Special sizing for the Georgia DNR mark so it displays slightly larger
-   and remains visually prominent (matches design intent). This targets
-   logos whose alt text contains "Georgia" which matches the DNR image's alt. */
-/* Special sizing for the Georgia DNR mark so it displays slightly larger
-   and remains visually prominent. Targets the partner-logo-img class as well
-   so fallback raster file receives the same treatment. */
-.partner-logo img[alt*="Georgia"],
-.partner-logo-img[alt*="Georgia"] {
-    max-height: 72px;
-    max-width: 260px;
-    /* Ensure it remains crisp and prominent */
-    filter: none;
-    transform: translateY(0);
-}
-
-/* Bring logos to full color on hover/focus for visual emphasis */
-.partner-logo:focus-within img,
-.partner-logo:hover img {
-    filter: none;
-    transform: translateY(0);
-}
-
-/* Small caption / legal line under logos */
-.partners-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    margin-top: 8px;
-}
-
-/* Copyright / note */
-.partners-note {
-    color: var(--muted);
-    font-size: 0 ninerem;
-}
-
-/* Accessibility: make anchor inside logo keyboard-friendly */
-.partner-logo a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     text-decoration: none;
-    color: inherit;
-    outline: none;
-}
-.partner-logo a:focus {
-    box-shadow: 0 0 0 3px rgba(36, 78, 134, 0.12);
-    border-radius: 8px;
 }
 
-/* Responsive behavior */
-@media (max-width: 900px) {
-    .partners-top {
+.footer-logo-img {
+    height: 48px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+    filter: grayscale(20%) contrast(0.95);
+    transition: filter 0.15s ease;
+}
+.footer-logo:hover .footer-logo-img {
+    filter: none;
+}
+
+/* Georgia DNR logo slightly larger */
+.footer-logo-img[alt*="Georgia"] {
+    height: 56px;
+    max-width: 220px;
+    filter: none;
+}
+
+/* Bottom bar */
+.footer-bottom {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: var(--fs-xs);
+}
+
+@media (max-width: 768px) {
+    .footer-top {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+        gap: 1.5rem;
     }
-
-    .logo-strip {
-        justify-content: flex-start;
-        gap: 18px;
-        order: 2;
-        width: 100%;
+    .footer-logos {
+        gap: 1rem;
     }
-
-    .partners-brand {
-        order: 1;
+    .footer-logo-img {
+        height: 36px;
+        max-width: 140px;
     }
-
-    .partner-logo img {
-        max-height: 44px;
-    }
-}
-
-@media (max-width: 560px) {
-    .partners-inner {
-        gap: 12px;
-    }
-
-    .logo-strip {
-        gap: 12px;
-    }
-
-    .partner-logo img {
-        max-height: 36px;
-        max-width: 100px;
-    }
-
-    .partners-tagline {
-        font-size: 0.92rem;
-    }
-
-    .partners-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-}
-
-/* Print-friendly (minimize decorative effects) */
-@media print {
-    .partners-section {
-        border: none;
-        background: transparent;
-        color: #000;
-        box-shadow: none;
-    }
-
-    .partner-logo img {
-        filter: none !important;
+    .footer-logo-img[alt*="Georgia"] {
+        height: 44px;
     }
 }
