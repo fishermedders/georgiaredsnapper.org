@@ -10,7 +10,7 @@ const partners = [
   {
     name: "Yamaha Rightwaters",
     short: "Yamaha Rightwaters",
-    src: "/logos/yamaha.webp",
+    src: "/logos/yamaha.png",
     href: null,
   },
   {

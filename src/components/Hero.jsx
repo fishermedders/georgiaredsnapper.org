@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import "./Hero.css";
 
-const HERO_IMAGE = "/hero.webp";
+const HERO_IMAGE = "/hero.png";
 
 export default function Hero() {
   const { key } = useLocation();

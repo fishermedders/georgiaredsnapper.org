@@ -1,10 +1,13 @@
 /* App.css — App-level layout. All design tokens live in index.css. */
-#root {
+#root,
+#grsp-root {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 #root > .content-container,
-#root > main {
+#root > main,
+#grsp-root > .content-container,
+#grsp-root > main {
     flex: 1;
 }
