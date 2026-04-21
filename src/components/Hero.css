@@ -91,3 +91,33 @@
         align-items: center;
     }
 }
+
+/* ── Hero entrance animation: fade + deblur + slight rise ── */
+@keyframes heroFadeDeblur {
+    0% {
+        opacity: 0;
+        filter: blur(12px);
+        transform: translateY(18px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+.hero-fade-in {
+    opacity: 0;
+    animation: heroFadeDeblur 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    will-change: opacity, filter, transform;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .hero-fade-in {
+        animation: none;
+        opacity: 1;
+        filter: none;
+        transform: none;
+    }
+}

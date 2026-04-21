@@ -20,9 +20,7 @@ export default function WhoParticipates() {
                 Private recreational anglers targeting red snapper in federal
                 waters during the season
               </li>
-              <li>
-                For-hire captains and charter guides operating under the EFP
-              </li>
+              <li>For-hire captains operating under the EFP</li>
               <li>
                 Any angler retaining red snapper between July 1 and August 31,
                 2026
