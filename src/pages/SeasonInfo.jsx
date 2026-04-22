@@ -159,7 +159,7 @@ export default function SeasonInfo() {
               <p className="card__body">
                 Email{" "}
                 <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a>{" "}
-                or call <a href="tel:9125555555">912-555-5555</a> for help with
+                or call <a href="tel:9122647218">912-264-7218</a> for help with
                 reporting, the VESL app, or general questions.
               </p>
               <div className="season-actions">

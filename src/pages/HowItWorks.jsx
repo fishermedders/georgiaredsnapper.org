@@ -76,7 +76,7 @@ export default function HowItWorksPage() {
               <p className="card__body">
                 Email{" "}
                 <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a>{" "}
-                or call <a href="tel:9125555555">912-555-5555</a> for technical
+                or call <a href="tel:9122647218">912-264-7218</a> for technical
                 support with VESL or reporting.
               </p>
             </div>

@@ -81,7 +81,7 @@ export default function Partners() {
           <small className="footer-contact">
             <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a>
             {" · "}
-            <a href="tel:9125555555">912-555-5555</a>
+            <a href="tel:9122647218">912-264-7218</a>
           </small>
         </div>
       </div>

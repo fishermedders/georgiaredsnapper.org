@@ -49,7 +49,7 @@ export default function Contact() {
             <div className="card">
               <h3 className="card__title">📞 Phone</h3>
               <p className="card__body">
-                <a href="tel:9125555555">912-555-5555</a>
+                <a href="tel:9122647218">912-264-7218</a>
               </p>
               <p className="card__body">
                 Technical support for VESL and reporting help.
