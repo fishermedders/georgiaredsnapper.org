@@ -57,9 +57,15 @@ export default function Contact() {
             </div>
 
             <div className="card">
-              <h3 className="card__title">🌐 Georgia DNR</h3>
+              <h3 className="card__title">
+                🌐 Coastal Resources Division of Georgia DNR
+              </h3>
               <p className="card__body">
-                <a href="https://gadnr.org" target="_blank" rel="noreferrer">
+                <a
+                  href="https://coastalgadnr.org"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   gadnr.org
                 </a>
               </p>
@@ -152,7 +158,7 @@ export default function Contact() {
                 </button>
                 {status === "success" && (
                   <span className="form-success-msg">
-                    Message sent — thank you!
+                    Message sent! Thank you!
                   </span>
                 )}
               </div>

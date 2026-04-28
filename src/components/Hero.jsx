@@ -23,7 +23,7 @@ export default function Hero() {
             animationDelay: "0.1s",
           }}
         >
-          July 1 – August 31, 2026
+          July 1 - August 31, 2026
         </span>
         <h1
           className="hero-title hero-fade-in"
@@ -36,8 +36,8 @@ export default function Hero() {
           style={{ animationDelay: "0.4s" }}
         >
           After 15 years of one- and two-day seasons, Georgia anglers now have
-          two full months to fish for red snapper in federal waters. Register
-          your trips and report your catch with the free VESL app.
+          two full months to harvest red snapper in federal waters. Anglers must
+          register their trips and report their catch with the free VESL app.
         </p>
 
         <div
@@ -71,7 +71,9 @@ export default function Hero() {
           style={{ animationDelay: "0.7s" }}
         >
           <li>1 fish per person per day · No minimum size</li>
-          <li>Free VESL app — register &amp; report in under a minute</li>
+          <li>
+            Free VESL app: register once then report each trip in under a minute
+          </li>
           <li>Your data helps build longer future seasons</li>
         </ul>
       </div>

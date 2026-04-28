@@ -10,7 +10,7 @@ export default function About() {
           <p className="lead">
             The Georgia Red Snapper Project is a new initiative from the Georgia
             DNR Coastal Resources Division that gives recreational anglers a
-            62-day red snapper season in federal waters — the longest in over 15
+            62-day red snapper season in federal waters, the longest in over 15
             years.
           </p>
 
@@ -19,8 +19,8 @@ export default function About() {
               <h3 className="card__title">Why This Matters</h3>
               <p className="card__body">
                 For the last 15 years, federal red snapper seasons in the South
-                Atlantic have been limited to just one or two days per year —
-                sometimes zero — because of uncertainty in the data used to
+                Atlantic have been limited to just one or two days per year
+                (sometimes zero) because of uncertainty in the data used to
                 manage the fishery. This project changes that by pairing an
                 expanded season with real-time electronic reporting through the
                 VESL app, producing far better data than traditional survey
@@ -33,7 +33,7 @@ export default function About() {
               <p className="card__body">
                 Georgia requested the EFP (Exempted Fishing Permit) from the
                 U.S. Secretary of Commerce in November 2025. The permit allows
-                Georgia to operate a two-month season (July 1 – August 31, 2026)
+                Georgia to operate a two-month season (July 1 - August 31, 2026)
                 with mandatory electronic reporting. If the state demonstrates
                 it can collect high-quality data, the EFP could be extended for
                 two additional years (2027 and 2028).
@@ -56,7 +56,16 @@ export default function About() {
 
           <div className="grid grid--cols-2">
             <div className="card">
-              <h3 className="card__title">Funded by Yamaha Rightwaters</h3>
+              <h3 className="card__title">
+                Funded by{" "}
+                <a
+                  href="https://www.yamahaboats.com/yamaha-rightwaters/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Yamaha Rightwaters
+                </a>
+              </h3>
               <p className="card__body">
                 The initiative is supported by a $300,000 grant from Yamaha
                 Rightwaters, a conservation program from Yamaha Motors focused
@@ -66,7 +75,15 @@ export default function About() {
             </div>
 
             <div className="card">
-              <h3 className="card__title">Biological Sampling</h3>
+              <h3 className="card__title">
+                <a
+                  href="https://coastalgadnr.org/MarineCarcass"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Biological Sampling
+                </a>
+              </h3>
               <p className="card__body">
                 In addition to electronic reporting, CRD continues to operate
                 carcass-donation freezers along the Georgia coast to collect

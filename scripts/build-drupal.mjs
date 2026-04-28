@@ -18,7 +18,7 @@
  *        • dist-drupal/drupal-embed.html — paste into Drupal's HTML source
  *
  * Configuration
- * ─────────────
+ *
  *   ASSET_BASE  (env var)  Base URL for images on the Drupal server.
  *                           Defaults to  /sites/default/files/crd/AppRedSnapper
  *
@@ -39,18 +39,18 @@ import {
 import { join, extname, relative } from "path";
 import { fileURLToPath } from "url";
 
-// ── Paths ──────────────────────────────────────────────────────────────────
+//  Paths
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const ROOT = join(__dirname, "..");
 const DIST = join(ROOT, "dist-drupal");
 const PUBLIC = join(ROOT, "public");
 
-// ── Configurable asset base (no trailing slash) ────────────────────────────
+//  Configurable asset base (no trailing slash)
 const ASSET_BASE = (
   process.env.ASSET_BASE || "/sites/default/files/crd/AppRedSnapper"
 ).replace(/\/+$/, "");
 
-// ── Image extensions we care about ─────────────────────────────────────────
+//  Image extensions we care about
 const IMAGE_EXTS = new Set([
   ".png",
   ".jpg",
@@ -62,7 +62,7 @@ const IMAGE_EXTS = new Set([
   ".bmp",
 ]);
 
-// ── Helpers ────────────────────────────────────────────────────────────────
+//  Helpers
 /** Recursively collect every file path under `dir`. */
 function walkDir(dir, list = []) {
   for (const entry of readdirSync(dir)) {
@@ -87,7 +87,7 @@ function escapeScriptClose(str) {
   return str.replace(/<\/script/gi, "<\\/script");
 }
 
-// ── Locate build output ────────────────────────────────────────────────────
+//  Locate build output
 const htmlPath = join(DIST, "drupal.html");
 if (!existsSync(htmlPath)) {
   console.error("✘ Build output not found at", htmlPath);
@@ -99,7 +99,7 @@ if (!existsSync(htmlPath)) {
 
 let html = readFileSync(htmlPath, "utf-8");
 
-// ── Build a list of public-folder image paths to rewrite ───────────────────
+//  Build a list of public-folder image paths to rewrite
 const publicImages = walkDir(PUBLIC)
   .filter((f) => IMAGE_EXTS.has(extname(f).toLowerCase()))
   .map((f) => "/" + relative(PUBLIC, f).replace(/\\/g, "/"));
@@ -123,11 +123,11 @@ for (const imgPath of publicImages) {
   }
 }
 
-// ── Write the full standalone page (for local QA in a browser) ─────────────
+//  Write the full standalone page (for local QA in a browser)
 const fullPath = join(DIST, "drupal-full.html");
 writeFileSync(fullPath, html, "utf-8");
 
-// ── Extract CSS & JS from the singlefile HTML ─────────────────────────────
+//  Extract CSS & JS from the singlefile HTML
 let appCss = "";
 {
   const re = /<style[^>]*>([\s\S]*?)<\/style>/gi;
@@ -154,7 +154,7 @@ let classicJs = "";
   }
 }
 
-// ── Build the self-bootstrapping embed snippet ─────────────────────────────
+//  Build the self-bootstrapping embed snippet
 //
 // Structure of the output:
 //
@@ -171,7 +171,7 @@ let classicJs = "";
 const bootstrapCode = `
 (function () {
   function boot() {
-    /* ── Read payloads ── */
+    /* Read payloads */
     var cssEl = document.querySelector('script[type="text/grsp-css"]');
     var modEl = document.querySelector('script[type="text/grsp-mod"]');
     var clsEl = document.querySelector('script[type="text/grsp-cls"]');
@@ -181,7 +181,7 @@ const bootstrapCode = `
     var moduleJs = modEl.textContent;
     var classicJs = clsEl ? clsEl.textContent : '';
 
-    /* ── Nuke Drupal head contents ── */
+    /* Nuke Drupal head contents */
     // Remove every stylesheet, inline style, script, and misc link
     var kill = document.querySelectorAll(
       'link[rel="stylesheet"], style, script, link[as="script"], link[rel="preload"]'
@@ -190,12 +190,12 @@ const bootstrapCode = `
       if (kill[i].parentNode) kill[i].parentNode.removeChild(kill[i]);
     }
 
-    /* ── Nuke Drupal body ── */
+    /* Nuke Drupal body */
     document.body.className = '';
     document.body.removeAttribute('style');
     document.body.innerHTML = '';
 
-    /* ── Rebuild <head> essentials ── */
+    /* Rebuild <head> essentials */
     // Charset
     if (!document.querySelector('meta[charset]')) {
       var mc = document.createElement('meta');
@@ -210,12 +210,12 @@ const bootstrapCode = `
       document.head.appendChild(mv);
     }
 
-    /* ── Inject app CSS ── */
+    /*  Inject app CSS  */
     var style = document.createElement('style');
     style.textContent = appCss;
     document.head.appendChild(style);
 
-    /* ── Create mount point ── */
+    /*  Create mount point  */
     // Keep body hidden until React paints
     document.body.style.opacity = '0';
     document.body.style.transition = 'opacity 0.35s ease';
@@ -224,14 +224,14 @@ const bootstrapCode = `
     root.id = 'grsp-root';
     document.body.appendChild(root);
 
-    /* ── Inject classic (non-module) JS if present ── */
+    /*  Inject classic (non-module) JS if present  */
     if (classicJs.trim()) {
       var cs = document.createElement('script');
       cs.textContent = classicJs;
       document.body.appendChild(cs);
     }
 
-    /* ── Inject module JS (the React app) ── */
+    /*  Inject module JS (the React app)  */
     var ms = document.createElement('script');
     ms.type = 'module';
     ms.textContent = moduleJs;
@@ -275,11 +275,11 @@ snippetParts.push(
 
 const snippet = snippetParts.join("\n");
 
-// ── Write embed ────────────────────────────────────────────────────────────
+//  Write embed
 const embedPath = join(DIST, "drupal-embed.html");
 writeFileSync(embedPath, snippet, "utf-8");
 
-// ── Summary ────────────────────────────────────────────────────────────────
+//  Summary
 const kb = (s) => (Buffer.byteLength(s, "utf-8") / 1024).toFixed(1);
 
 console.log("\n✔ Done!\n");

@@ -7,7 +7,7 @@ export default function WhoParticipates() {
         <h2 id="who-heading">Who Needs to Participate?</h2>
 
         <p className="lead">
-          Using the VESL app is mandatory — not optional. Every angler fishing
+          Using the VESL app is mandatory, not optional. Every angler fishing
           for red snapper under the EFP must register their trip and report
           their catch. This is how we earn longer seasons in the future.
         </p>
@@ -20,7 +20,6 @@ export default function WhoParticipates() {
                 Private recreational anglers targeting red snapper in federal
                 waters during the season
               </li>
-              <li>For-hire captains operating under the EFP</li>
               <li>
                 Any angler retaining red snapper between July 1 and August 31,
                 2026
@@ -32,7 +31,10 @@ export default function WhoParticipates() {
             <header>Not Required</header>
             <ul>
               <li>Anglers not fishing for red snapper during the EFP season</li>
-              <li>Fishing that occurs exclusively in state waters</li>
+              <li>
+                Fishing that occurs exclusively in state waters 0-3 miles off
+                the Georgia coast
+              </li>
               <li>
                 Commercial fishers not participating under the recreational EFP
               </li>

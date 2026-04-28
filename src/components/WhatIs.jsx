@@ -13,8 +13,8 @@ export default function WhatIs() {
         <p className="lead">
           The Georgia Red Snapper Project is a new initiative from the Georgia
           DNR Coastal Resources Division that opens a 62-day recreational red
-          snapper season — July 1 through August 31, 2026 — in federal waters
-          off the Georgia coast.
+          snapper season, July 1 through August 31, 2026, in federal waters
+          (3-200 miles) off the Georgia coast.
         </p>
 
         <div className="what-is-cards">
@@ -22,7 +22,7 @@ export default function WhatIs() {
             <div className="what-is-card__icon">📅</div>
             <h3>62-Day Season</h3>
             <p>
-              July 1 – August 31, 2026. After 15 years of one- and two-day
+              July 1 - August 31, 2026. After 15 years of one- and two-day
               federal seasons, Georgia anglers now have two full months on the
               water.
             </p>
@@ -32,9 +32,9 @@ export default function WhatIs() {
             <div className="what-is-card__icon">📱</div>
             <h3>Report with the VESL App</h3>
             <p>
-              All anglers must register trips and report catch using the free
-              VESL app. It takes less than a minute and works on mobile and
-              desktop.
+              All anglers must register trips prior to departure and report
+              catch within 24 hours using the free VESL app. It takes less than
+              a minute and works on mobile and desktop.
             </p>
           </div>
 

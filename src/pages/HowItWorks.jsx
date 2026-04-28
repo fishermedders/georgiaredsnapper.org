@@ -8,16 +8,16 @@ export default function HowItWorksPage() {
       body: "VESL is free and available on iPhone, Android, and desktop. Download it from your app store or visit the VESL website. You'll create an account the first time you open it.",
     },
     {
-      title: "Create a Trip Ticket Before You Go",
+      title: "Create a Trip Report Before You Go",
       body: "Before heading out, register your trip in VESL. You can do this up to 5 days in advance. Enter basic trip details like the date, number of anglers, and where you plan to fish.",
     },
     {
-      title: "Go Fishing — July 1 Through August 31",
+      title: "Go Fishing: July 1 Through August 31",
       body: "The 2026 season runs from July 1 through August 31 in federal waters off Georgia. You may keep 1 red snapper per person per day with no minimum size limit.",
     },
     {
       title: "Report Your Catch Within 24 Hours",
-      body: "After your trip, open VESL and report what you caught — including both harvested and released fish. You must submit your report within 24 hours of your trip departure time. It takes less than a minute.",
+      body: "After your trip, open VESL and report what you caught, including both harvested and released fish. You must submit your report within 24 hours of your trip departure time. It takes less than a minute. Anglers will need to submit a report for trips that are weathered out or turn into fishing for species other than red snapper.",
     },
   ];
 
@@ -28,7 +28,7 @@ export default function HowItWorksPage() {
           <h2>How to Participate</h2>
           <p className="lead">
             Using the VESL app is mandatory for everyone fishing for red snapper
-            under the EFP. Here's exactly what you need to do — it's
+            under the EFP. Here's exactly what you need to do. It's
             straightforward and takes very little time.
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function HowItWorksPage() {
             <div className="card">
               <h3 className="card__title">Know the Rules</h3>
               <p className="card__body">
-                1 fish per person per day, no minimum size, July 1 – Aug 31
+                1 fish per person per day, no minimum size, July 1 - Aug 31
                 only. See <Link to="/season-info">Season Information</Link> for
                 full details.
               </p>

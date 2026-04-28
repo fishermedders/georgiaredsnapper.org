@@ -3,14 +3,14 @@ import "./styles/SeasonInfo.css";
 
 export default function SeasonInfo() {
   const rules = [
-    "Season: July 1 – August 31, 2026 (62 days)",
-    "Waters: Federal waters off the Georgia coast",
+    "Season: July 1 - August 31, 2026 (62 days)",
+    "Waters: Federal waters (3-200 miles) off the Georgia coast",
     "Bag limit: 1 red snapper per person per day",
     "Size limit: No minimum size",
     "Trip registration: Required before departure via the VESL app (can be done up to 5 days in advance)",
     "Catch reporting: Required within 24 hours of trip departure time via VESL",
     "Must report: Both harvested and released red snapper",
-    "Applies to: Private recreational anglers and for-hire operations",
+    "Applies to: Private recreational anglers",
   ];
 
   return (
@@ -39,7 +39,7 @@ export default function SeasonInfo() {
               <h3 className="card__title">How to Register &amp; Report</h3>
               <p className="card__body">
                 <strong>Before your trip:</strong> Open the VESL app and create
-                a trip ticket. You can do this up to 5 days in advance.
+                a trip report. You can do this up to 5 days in advance.
               </p>
               <p className="card__body">
                 <strong>After your trip:</strong> Report all harvested and
@@ -83,7 +83,7 @@ export default function SeasonInfo() {
           <h2>Why Reporting Matters</h2>
           <p className="lead">
             For 15 years, data uncertainty kept federal red snapper seasons to
-            just 1–2 days. VESL reporting provides the real-time, high-quality
+            just 1-2 days. VESL reporting provides the real-time, high-quality
             data needed to support longer seasons going forward.
           </p>
 
@@ -92,7 +92,7 @@ export default function SeasonInfo() {
               <h3 className="card__title">What Your Data Does</h3>
               <ul className="benefits-list">
                 <li>
-                  Provides real-time catch and effort information to fisheries
+                  Provides real-time catch and trip information to fisheries
                   managers
                 </li>
                 <li>
@@ -113,14 +113,17 @@ export default function SeasonInfo() {
               <h3 className="card__title">Future Seasons</h3>
               <p className="card__body">
                 If Georgia demonstrates it can collect high-quality data through
-                VESL, the EFP could be extended for two additional years — 2027
+                VESL, the EFP could be extended for two additional years: 2027
                 and 2028. Your participation directly affects whether this
                 continues.
               </p>
               <p className="card__body">
-                CRD also continues operating carcass-donation freezers along the
-                coast to collect age, size, and reproductive samples that
-                complement electronic reporting.
+                CRD also continues operating{" "}
+                <a href="https://coastalgadnr.org/MarineCarcass">
+                  carcass-donation freezers
+                </a>{" "}
+                along the coast to collect age, size, and reproductive samples
+                that complement electronic reporting.
               </p>
             </div>
           </div>
@@ -143,13 +146,17 @@ export default function SeasonInfo() {
             <div className="card">
               <h3 className="card__title">Resources</h3>
               <p className="card__body">
-                <a href="https://gadnr.org" target="_blank" rel="noreferrer">
-                  Georgia DNR — Coastal Resources Division
+                <a
+                  href="https://coastalgadnr.org"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Georgia DNR: Coastal Resources Division
                 </a>
               </p>
               <p className="card__body">
                 <a href="https://sedarweb.org" target="_blank" rel="noreferrer">
-                  SEDAR 73 (2024) — Stock Assessment
+                  SEDAR 73 (2024) Stock Assessment
                 </a>
               </p>
             </div>

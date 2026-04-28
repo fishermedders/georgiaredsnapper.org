@@ -155,7 +155,7 @@ a:hover {
     background: rgba(27, 94, 138, 0.1);
     color: var(--color-primary);
     font-weight: 700;
-    font-size: var(--fs-xs);
+    font-size: var(--fs-s);
     letter-spacing: 0.5px;
     text-transform: uppercase;
     margin-bottom: 0.75rem;

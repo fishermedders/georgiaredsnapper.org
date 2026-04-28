@@ -5,7 +5,7 @@ export default function FAQ() {
   const faqs = [
     {
       q: "When is the season?",
-      a: "July 1 through August 31, 2026 — 62 days in federal waters off Georgia.",
+      a: "July 1 through August 31, 2026. 62 days in federal waters off Georgia.",
     },
     {
       q: "What's the bag and size limit?",

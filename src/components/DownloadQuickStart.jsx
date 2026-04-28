@@ -60,7 +60,7 @@ export default function DownloadQuickStart() {
                 </Link>
               </li>
               <li>
-                <Link to="/faq">Frequently asked questions</Link>
+                <Link to="/faq">Frequently asked questions (FAQs)</Link>
               </li>
               <li>
                 <Link to="/contact">Contact the project team</Link>
