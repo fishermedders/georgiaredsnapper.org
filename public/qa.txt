@@ -36,7 +36,7 @@ Q: What if I don't have cell service on the water?
 A: Register your trip before you leave (while you have service). VESL supports offline use for logging catches, and data will sync when you reconnect. Make sure to register before departure since that requires a connection.
 
 Q: What happens if I don't report?
-A: Noncompliance can result in being denied future participation in the EFP program. Reporting is how we prove this model works. If the data is good, the EFP could be extended through 2027 and 2028.
+A: Noncompliance can result in being denied future participation in the EFP program. Reporting is how we prove this model works. If the data are good, the EFP could be extended through 2027 and 2028.
 
 Q: Why has the season been so short in the past?
 A: Federal red snapper seasons in the South Atlantic have been limited to 1-2 days per year (sometimes zero) for the last 15 years, primarily due to uncertainty in the data used to manage the fishery. Better data from VESL can change that.
