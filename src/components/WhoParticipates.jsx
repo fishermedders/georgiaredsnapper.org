@@ -7,9 +7,9 @@ export default function WhoParticipates() {
         <h2 id="who-heading">Who Needs to Participate?</h2>
 
         <p className="lead">
-          Using the VESL app is mandatory, not optional. Every angler fishing
-          for red snapper under the EFP must register their trip and report
-          their catch. This is how we earn longer seasons in the future.
+          Reporting through VESL is mandatory, not optional. Every angler
+          fishing for red snapper under the EFP must register their trip and
+          report their catch. This is how we earn longer seasons in the future.
         </p>
 
         <div className="compare-grid">

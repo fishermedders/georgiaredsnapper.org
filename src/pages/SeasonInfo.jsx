@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { VESL_URL } from "../utils/constants.js";
 import "./styles/SeasonInfo.css";
 
 export default function SeasonInfo() {
@@ -38,8 +39,9 @@ export default function SeasonInfo() {
             <div className="card">
               <h3 className="card__title">How to Register &amp; Report</h3>
               <p className="card__body">
-                <strong>Before your trip:</strong> Open the VESL app and create
-                a trip report. You can do this up to 5 days in advance.
+                <strong>Before your trip:</strong> Open the VESL app or website
+                and create a trip report. You can do this up to 5 days in
+                advance.
               </p>
               <p className="card__body">
                 <strong>After your trip:</strong> Report all harvested and
@@ -47,23 +49,11 @@ export default function SeasonInfo() {
                 takes less than a minute.
               </p>
               <p className="card__body">
-                <strong>Need the app?</strong> VESL is free on{" "}
-                <a
-                  href="https://apps.apple.com/us/app/vesl/id1540687104"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  iPhone
+                <strong>Need the app?</strong>{" "}
+                <a href={VESL_URL} target="_blank" rel="noreferrer">
+                  Access VESL for free
                 </a>
-                ,{" "}
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.bluefindata.vesl&hl=en_US"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Android
-                </a>
-                , and desktop.
+                . Works on iPhone, Android, and desktop.
               </p>
               <div className="season-actions">
                 <Link to="/how-it-works" className="btn">
@@ -167,7 +157,7 @@ export default function SeasonInfo() {
                 Email{" "}
                 <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a>{" "}
                 or call <a href="tel:9122647218">912-264-7218</a> for help with
-                reporting, the VESL app, or general questions.
+                reporting, reporting through VESL, or general questions.
               </p>
               <div className="season-actions">
                 <Link to="/contact" className="btn">

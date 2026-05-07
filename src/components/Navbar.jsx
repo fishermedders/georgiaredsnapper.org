@@ -57,7 +57,6 @@ export default function Navbar() {
     { to: "/how-it-works", label: "How It Works" },
     { to: "/faq", label: "FAQs" },
     { to: "/season-info", label: "Season Info" },
-    { to: "/stats", label: "Stats" },
     { to: "/contact", label: "Contact" },
   ];
 

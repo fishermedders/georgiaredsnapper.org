@@ -30,8 +30,9 @@ export default function Contact() {
         <div className="section-inner">
           <h2>Contact Us</h2>
           <p className="lead">
-            Have a question about the 2026 red snapper season, the VESL app, or
-            the Georgia Red Snapper Project? Here's how to reach us.
+            Have a question about the 2026 red snapper season, the VESL
+            reporting process, or the Georgia Red Snapper Project? Here's how to
+            reach us.
           </p>
 
           <div className="grid grid--cols-3">
@@ -121,7 +122,7 @@ export default function Contact() {
                   name="subject"
                   value={form.subject}
                   onChange={handleChange}
-                  placeholder="e.g. VESL app question, reporting issue"
+                  placeholder="e.g. VESL related question, reporting issue"
                 />
               </div>
 

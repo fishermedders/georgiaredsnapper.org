@@ -2,7 +2,7 @@ import "./HowItWorks.css";
 
 export default function HowItWorks() {
   const steps = [
-    { num: 1, label: "Download the Free VESL App" },
+    { num: 1, label: "Register with VESL" },
     { num: 2, label: "Register Your Trip Before You Go" },
     { num: 3, label: "Fish: July 1 Through August 31" },
     { num: 4, label: "Report Your Catch Within 24 Hours" },

@@ -7,14 +7,27 @@ import App from "./App.jsx";
 const BASE = "/RedSnapper1";
 
 // ── Hash → pretty-URL normalisation ──
-// Drupal sub-route pages (e.g. /RedSnapper/about) redirect to
-// /RedSnapper#about.  Before React mounts we convert the hash back
-// to the pretty path so BrowserRouter picks up the correct route
-// and the address bar shows the canonical URL.
-const hash = window.location.hash.slice(1); // strip leading '#'
-if (hash) {
-  const pretty = hash.startsWith("/") ? hash : `/${hash}`;
-  window.history.replaceState(null, "", `${BASE}${pretty}`);
+// Drupal sub-route pages redirect to the main page with a hash that
+// encodes the intended route.  Two formats are supported:
+//
+//   #about          → /about          (plain page route)
+//   #faq/vesl-app   → /faq#vesl-app   (page route + in-page fragment)
+//
+// The second format lets FAQ dummy pages preserve the permalink
+// fragment so the correct accordion item auto-expands on load.
+const _hash = window.location.hash.slice(1); // strip leading '#'
+if (_hash) {
+  const slash = _hash.indexOf("/");
+  if (slash !== -1) {
+    // e.g. "faq/vesl-app" → /BASE/faq#vesl-app
+    const page = _hash.slice(0, slash);
+    const subfragment = _hash.slice(slash + 1);
+    window.history.replaceState(null, "", `${BASE}/${page}#${subfragment}`);
+  } else {
+    // e.g. "about" → /BASE/about
+    const pretty = _hash.startsWith("/") ? _hash : `/${_hash}`;
+    window.history.replaceState(null, "", `${BASE}${pretty}`);
+  }
 }
 
 // ── Mount ──

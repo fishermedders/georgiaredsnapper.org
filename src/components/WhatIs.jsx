@@ -30,7 +30,7 @@ export default function WhatIs() {
 
           <div className="what-is-card">
             <div className="what-is-card__icon">📱</div>
-            <h3>Report with the VESL App</h3>
+            <h3>Report through VESL</h3>
             <p>
               All anglers must register trips prior to departure and report
               catch within 24 hours using the free VESL app. It takes less than

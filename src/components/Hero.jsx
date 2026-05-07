@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import { VESL_URL } from "../utils/constants.js";
 import "./Hero.css";
 
 const HERO_IMAGE = "/hero.png";
@@ -35,9 +36,9 @@ export default function Hero() {
           className="hero-lead hero-fade-in"
           style={{ animationDelay: "0.4s" }}
         >
-          After 15 years of one- and two-day seasons, Georgia anglers now have
+          After 15 years of one and two-day seasons, Georgia anglers now have
           two full months to harvest red snapper in federal waters. Anglers must
-          register their trips and report their catch with the free VESL app.
+          register their trips and report their catch through VESL.
         </p>
 
         <div
@@ -45,24 +46,12 @@ export default function Hero() {
           style={{ animationDelay: "0.55s" }}
         >
           <a
-            href="https://apps.apple.com/us/app/vesl/id1540687104"
-            className="store-btn"
+            href={VESL_URL}
+            className="btn"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Download VESL on the App Store"
           >
-            <img src="/apple.png" alt="" />
-            <span>App Store</span>
-          </a>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.bluefindata.vesl&hl=en_US"
-            className="store-btn"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Get VESL on Google Play"
-          >
-            <img src="/android.png" alt="" />
-            <span>Google Play</span>
+            Access VESL for free
           </a>
         </div>
 
@@ -72,7 +61,8 @@ export default function Hero() {
         >
           <li>1 fish per person per day · No minimum size</li>
           <li>
-            Free VESL app: register once then report each trip in under a minute
+            Free VESL app and website: register once then report each trip in
+            under a minute
           </li>
           <li>Your data helps build longer future seasons</li>
         </ul>

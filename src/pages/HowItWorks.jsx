@@ -5,7 +5,7 @@ export default function HowItWorksPage() {
   const workflowSteps = [
     {
       title: "Download the VESL App",
-      body: "VESL is free and available on iPhone, Android, and desktop. Download it from your app store or visit the VESL website. You'll create an account the first time you open it.",
+      body: "VESL is free and available on iPhone, Android, and desktop. Register by visiting the VESL website. You'll create an account the first time you open it.",
     },
     {
       title: "Create a Trip Report Before You Go",
@@ -27,8 +27,8 @@ export default function HowItWorksPage() {
         <div className="section-inner">
           <h2>How to Participate</h2>
           <p className="lead">
-            Using the VESL app is mandatory for everyone fishing for red snapper
-            under the EFP. Here's exactly what you need to do. It's
+            Reporting through VESL is mandatory for everyone fishing for red
+            snapper under the EFP. Here's exactly what you need to do. It's
             straightforward and takes very little time.
           </p>
         </div>

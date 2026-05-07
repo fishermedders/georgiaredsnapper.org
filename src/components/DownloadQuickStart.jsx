@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { VESL_URL } from "../utils/constants.js";
 import "./DownloadQuickStart.css";
 
 export default function DownloadQuickStart() {
@@ -11,32 +12,25 @@ export default function DownloadQuickStart() {
       <div className="section-inner">
         <div className="download-layout">
           <div className="download-panel">
-            <h3 id="download-heading">Download the VESL App</h3>
+            <h3 id="download-heading">Onboard with VESL</h3>
             <p>
-              VESL is the free app you'll use to register trips and report your
-              catch. It's available on iPhone, Android, and desktop. Reporting
-              takes less than a minute.
+              Before you fish, you need a free VESL account. Onboarding takes
+              just a few minutes and only needs to be done once. Use the link
+              below to get started.
+            </p>
+            <p>
+              Once you're onboarded, you can access VESL anytime through their
+              mobile app (iPhone or Android) or directly through their website,
+              whichever is most convenient for you.
             </p>
             <div className="download-buttons">
               <a
-                href="https://apps.apple.com/us/app/vesl/id1540687104"
-                className="store-btn"
+                href={VESL_URL}
+                className="btn"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Download VESL on the App Store"
               >
-                <img src="/apple.png" alt="" />
-                <span>App Store</span>
-              </a>
-              <a
-                href="https://play.google.com/store/apps/details?id=com.bluefindata.vesl&hl=en_US"
-                className="store-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Get VESL on Google Play"
-              >
-                <img src="/android.png" alt="" />
-                <span>Google Play</span>
+                Access VESL for free
               </a>
             </div>
             <p className="download-support">

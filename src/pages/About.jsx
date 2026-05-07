@@ -22,9 +22,8 @@ export default function About() {
                 Atlantic have been limited to just one or two days per year
                 (sometimes zero) because of uncertainty in the data used to
                 manage the fishery. This project changes that by pairing an
-                expanded season with real-time electronic reporting through the
-                VESL app, producing far better data than traditional survey
-                methods.
+                expanded season with real-time electronic reporting through
+                VESL, producing far better data than traditional survey methods.
               </p>
             </div>
 

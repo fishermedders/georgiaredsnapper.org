@@ -25,6 +25,12 @@ const partners = [
     src: "/logos/sc-dnr.png",
     href: null,
   },
+  {
+    name: "Florida Fish and Wildlife Conservation Commission",
+    short: "FL FWC",
+    src: "/logos/fl_fwc.png",
+    href: null,
+  },
 ];
 
 export default function Partners() {

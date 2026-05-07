@@ -9,7 +9,6 @@ const ROUTE_TITLES = {
   "/how-it-works": "How It Works",
   "/faq": "FAQs",
   "/season-info": "Season Info",
-  "/stats": "Stats",
   "/contact": "Contact",
 };
 
