@@ -45,8 +45,7 @@ export default function SeasonInfo() {
               </p>
               <p className="card__body">
                 <strong>After your trip:</strong> Report all harvested and
-                released red snapper within 24 hours of your departure time. It
-                takes less than a minute.
+                released red snapper within 24 hours of your departure time.
               </p>
               <p className="card__body">
                 <strong>Need the app?</strong>{" "}

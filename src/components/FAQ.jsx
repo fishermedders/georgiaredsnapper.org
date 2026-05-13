@@ -13,7 +13,7 @@ export default function FAQ() {
     },
     {
       q: "Do I really have to use the app?",
-      a: "Yes. Registering your trip and reporting your catch through VESL is mandatory. It takes less than a minute.",
+      a: "Yes. Registering your trip and reporting your catch through VESL is mandatory. It is a quick, mandatory process.",
     },
   ];
 

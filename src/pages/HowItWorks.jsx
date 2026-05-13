@@ -17,7 +17,7 @@ export default function HowItWorksPage() {
     },
     {
       title: "Report Your Catch Within 24 Hours",
-      body: "After your trip, open VESL and report what you caught, including both harvested and released fish. You must submit your report within 24 hours of your trip departure time. It takes less than a minute. Anglers will need to submit a report for trips that are weathered out or turn into fishing for species other than red snapper.",
+      body: "After your trip, open VESL and report what you caught, including both harvested and released fish. You must submit your report within 24 hours of your trip departure time. Anglers will need to complete open trip reports for trips that are cancelled before opening a new trip.",
     },
   ];
 

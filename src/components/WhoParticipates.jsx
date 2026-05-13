@@ -31,10 +31,7 @@ export default function WhoParticipates() {
             <header>Not Required</header>
             <ul>
               <li>Anglers not fishing for red snapper during the EFP season</li>
-              <li>
-                Fishing that occurs exclusively in state waters 0-3 miles off
-                the Georgia coast
-              </li>
+              <li>Anglers fishing on a chartered fishing trip.</li>
               <li>
                 Commercial fishers not participating under the recreational EFP
               </li>

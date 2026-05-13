@@ -33,8 +33,8 @@ export default function WhatIs() {
             <h3>Report through VESL</h3>
             <p>
               All anglers must register trips prior to departure and report
-              catch within 24 hours using the free VESL app. It takes less than
-              a minute and works on mobile and desktop.
+              catch within 24 hours using the free VESL app. It is a quick
+              process that can be accessed on mobile and desktop.
             </p>
           </div>
 

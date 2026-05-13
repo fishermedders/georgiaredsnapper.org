@@ -38,7 +38,8 @@ export default function Hero() {
         >
           After 15 years of one and two-day seasons, Georgia anglers now have
           two full months to harvest red snapper in federal waters. Anglers must
-          register their trips and report their catch through VESL.
+          use Bluefin Data's VESL reporting platform to record their trips and
+          report their catch.
         </p>
 
         <div
@@ -51,7 +52,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Access VESL for free
+            Join the Waitlist Now
           </a>
         </div>
 
@@ -61,8 +62,7 @@ export default function Hero() {
         >
           <li>1 fish per person per day · No minimum size</li>
           <li>
-            Free VESL app and website: register once then report each trip in
-            under a minute
+            Free VESL app and website: register once, then report each trip
           </li>
           <li>Your data helps build longer future seasons</li>
         </ul>

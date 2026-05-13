@@ -66,18 +66,18 @@ Q: What if my trip is cancelled?
 F: trip-cancelled
 A: You will need to complete the trip report and note that the trip was cancelled.
 
-Q: What do I need to do if I'm going on a charter trip?
+Q: If I am a private recreational angler going on a charter trip, what do I need to do?
 F: charter-trips
-A: You will not need to create or complete a trip report since charter captains already have mandatory tirp reporting in offshore wates in the South Atlantic.
+A: You will not need to create or complete a trip report since charter captains already have mandatory trip reporting in offshore waters in the South Atlantic.
 
 Q: Does every angler have to report their individual catch and trip information?
-F: ever-angler-required
-A: Yes.
+F: every-angler
+A: Yes. Every angler will need to individually report their catch and trip information.
 
 Q: Can one person on the boat report the catch and trip information for the whole trip?
 F: one-person-report
-A: No, each licensed angler has to complete a trip report. An adult will be able to report for children and young adults that do not have to be licensed.
+A: No, each licensed angler has to complete a trip report. An adult will be able to report for children under 16 years of age and young adults that do not have to be licensed.
 
 Q: Where do I find my GADNR Customer ID Number?
 F: find-customer-id
-A: Log in to you GADNR Customer account at GoOutdoorsGeorgia.com. Your 10-digit Customer ID number will display on the main login page below your name.
+A: Log in to your GADNR Customer account at GoOutdoorsGeorgia.com. Your 10-digit Customer ID number will display on the main login page below your name.
