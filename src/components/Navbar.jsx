@@ -130,6 +130,30 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
+          <li className="nav-crd-home-item">
+            <a
+              href="https://coastalgadnr.org"
+              className="nav-crd-home"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M19 12H5M12 5l-7 7 7 7" />
+              </svg>
+              CRD Home
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
