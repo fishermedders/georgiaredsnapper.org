@@ -5,31 +5,31 @@ const partners = [
     name: "Georgia Department of Natural Resources",
     short: "GA DNR",
     src: "/logos/DNR_Logo.svg",
-    href: "https://gadnr.org",
+    href: "https://coastalgadnr.org",
   },
   {
     name: "Yamaha Rightwaters",
     short: "Yamaha Rightwaters",
     src: "/logos/yamaha.png",
-    href: null,
+    href: "https://www.yamahaboats.com/yamaha-rightwaters/",
   },
   {
     name: "NC Marine Fisheries",
     short: "NC Marine Fisheries",
     src: "/logos/nc-marine.png",
-    href: null,
+    href: "https://www.deq.nc.gov/about/divisions/marine-fisheries/managing-fisheries/red-snapper-exempted-fishing-permit-season-2026",
   },
   {
     name: "SC Department of Natural Resources",
     short: "SC DNR",
     src: "/logos/sc-dnr.png",
-    href: null,
+    href: "https://www.dnr.sc.gov/",
   },
   {
     name: "Florida Fish and Wildlife Conservation Commission",
     short: "FL FWC",
     src: "/logos/fl_fwc.png",
-    href: null,
+    href: "https://myfwc.com/fishing/saltwater/recreational/atlantic-red-snapper/",
   },
 ];
 
@@ -86,10 +86,20 @@ export default function Partners() {
             &copy; {new Date().getFullYear()} Georgia Department of Natural
             Resources. All rights reserved.
           </small>
+          <small className="footer-photo-credit">
+            Photography courtesy of{" "}
+            <a
+              href="https://returnemright.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Return 'Em Right
+            </a>
+          </small>
           <small className="footer-contact">
             <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a>
-            {" · "}
-            <a href="tel:9122647218">912-264-7218</a>
+            {" · toll-free "}
+            <a href="tel:84476274357">844-SNAP-HELP</a>
           </small>
         </div>
       </div>

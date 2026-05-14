@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { CONTACT_FORM_URL } from "../utils/constants.js";
 import "./styles/Contact.css";
 
 export default function Contact() {
@@ -15,13 +16,33 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     setStatus("submitting");
-    setTimeout(() => {
-      setStatus("success");
-      setForm({ name: "", email: "", subject: "", message: "" });
-    }, 700);
+    try {
+      const res = await fetch(CONTACT_FORM_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: form.subject || "(no subject)",
+          message: form.message,
+          _replyto: form.email,
+        }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setForm({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -48,9 +69,9 @@ export default function Contact() {
             </div>
 
             <div className="card">
-              <h3 className="card__title">📞 Phone</h3>
+              <h3 className="card__title">📞 Phone (toll-free)</h3>
               <p className="card__body">
-                <a href="tel:9122647218">912-264-7218</a>
+                <a href="tel:84476274357">844-SNAP-HELP</a>
               </p>
               <p className="card__body">
                 Technical support for VESL and reporting help.
@@ -67,7 +88,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  gadnr.org
+                  CoastalGaDNR.org
                 </a>
               </p>
               <p className="card__body">
@@ -160,6 +181,15 @@ export default function Contact() {
                 {status === "success" && (
                   <span className="form-success-msg">
                     Message sent! Thank you!
+                  </span>
+                )}
+                {status === "error" && (
+                  <span className="form-error-msg">
+                    Something went wrong. Please email us directly at{" "}
+                    <a href="mailto:RedSnapper@dnr.ga.gov">
+                      RedSnapper@dnr.ga.gov
+                    </a>
+                    .
                   </span>
                 )}
               </div>

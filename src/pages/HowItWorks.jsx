@@ -9,7 +9,7 @@ export default function HowItWorksPage() {
     },
     {
       title: "Create a Trip Report Before You Go",
-      body: "Before heading out, register your trip in VESL. You can do this up to 5 days in advance. Enter basic trip details like the date, number of anglers, and where you plan to fish.",
+      body: "Before heading out, register your trip in VESL. You can do this up to 5 days in advance. Enter basic trip details like the date, and departure location.",
     },
     {
       title: "Go Fishing: July 1 Through August 31",
@@ -17,7 +17,7 @@ export default function HowItWorksPage() {
     },
     {
       title: "Report Your Catch Within 24 Hours",
-      body: "After your trip, open VESL and report what you caught, including both harvested and released fish. You must submit your report within 24 hours of your trip departure time. Anglers will need to complete open trip reports for trips that are cancelled before opening a new trip.",
+      body: "After your trip, open VESL and report what you caught, including both harvested and released fish. You must submit your report within 24 hours of your trip departure time. Anglers will need to complete open trip reports, including for trips that are cancelled before opening a new trip.",
     },
   ];
 
@@ -27,7 +27,7 @@ export default function HowItWorksPage() {
         <div className="section-inner">
           <h2>How to Participate</h2>
           <p className="lead">
-            Reporting through VESL is mandatory for everyone fishing for red
+            Reporting through VESL is mandatory for anglers fishing for red
             snapper under the EFP. Here's exactly what you need to do. It's
             straightforward and takes very little time.
           </p>
@@ -57,13 +57,6 @@ export default function HowItWorksPage() {
           <h2>Before You Head Out</h2>
           <div className="grid grid--cols-3">
             <div className="card">
-              <h3 className="card__title">Download VESL</h3>
-              <p className="card__body">
-                Get the VESL app on your phone or use the desktop version. Set
-                up your account and have it ready before your first trip.
-              </p>
-            </div>
-            <div className="card">
               <h3 className="card__title">Know the Rules</h3>
               <p className="card__body">
                 1 fish per person per day, no minimum size, July 1 - Aug 31
@@ -76,8 +69,8 @@ export default function HowItWorksPage() {
               <p className="card__body">
                 Email{" "}
                 <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a>{" "}
-                or call <a href="tel:9122647218">912-264-7218</a> for technical
-                support with VESL or reporting.
+                or call toll-free <a href="tel:84476274357">844-SNAP-HELP</a>{" "}
+                for technical support with VESL or reporting.
               </p>
             </div>
           </div>

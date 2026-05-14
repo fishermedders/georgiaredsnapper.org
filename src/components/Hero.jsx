@@ -30,7 +30,7 @@ export default function Hero() {
           className="hero-title hero-fade-in"
           style={{ animationDelay: "0.25s" }}
         >
-          Georgia's First 62-Day Red Snapper Season
+          Georgia's Red Snapper Season
         </h1>
         <p
           className="hero-lead hero-fade-in"

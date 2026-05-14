@@ -36,7 +36,7 @@ export default function DownloadQuickStart() {
             <p className="download-support">
               Need help? Email{" "}
               <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a>{" "}
-              or call <a href="tel:9122647218">912-264-7218</a>.
+              or call toll-free <a href="tel:84476274357">844-SNAP-HELP</a>.
             </p>
           </div>
 
@@ -58,6 +58,12 @@ export default function DownloadQuickStart() {
               </li>
               <li>
                 <Link to="/contact">Contact the project team</Link>
+              </li>
+              <li>
+                <Link to="https://safmc.net/best-fishing-practices/">
+                  Learn about Best Fishing Practices for Red Snapper and Federal
+                  Gear Requirements
+                </Link>
               </li>
             </ul>
           </aside>

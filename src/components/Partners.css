@@ -109,6 +109,20 @@
     text-decoration: underline;
 }
 
+.footer-photo-credit {
+    color: var(--color-text-muted);
+    opacity: 0.75;
+}
+.footer-photo-credit a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.footer-photo-credit a:hover {
+    opacity: 1;
+    color: var(--color-primary);
+}
+
 @media (max-width: 768px) {
     .footer-top {
         flex-direction: column;

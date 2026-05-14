@@ -33,9 +33,9 @@ export default function About() {
                 Georgia requested the EFP (Exempted Fishing Permit) from the
                 U.S. Secretary of Commerce in November 2025. The permit allows
                 Georgia to operate a two-month season (July 1 - August 31, 2026)
-                with mandatory electronic reporting. If the state demonstrates
-                it can collect high-quality data, the EFP could be extended for
-                two additional years (2027 and 2028).
+                with mandatory electronic reporting for anglers. If the state
+                demonstrates it can collect high-quality data, the EFP could be
+                extended for two additional years (2027 and 2028).
               </p>
             </div>
           </div>

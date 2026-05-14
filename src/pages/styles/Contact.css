@@ -70,6 +70,16 @@
     font-size: var(--fs-sm);
 }
 
+.form-error-msg {
+    color: var(--color-danger);
+    font-weight: 600;
+    font-size: var(--fs-sm);
+}
+.form-error-msg a {
+    color: var(--color-danger);
+    font-weight: 700;
+}
+
 /* Disclaimer text */
 .form-disclaimer {
     margin-top: 0.75rem;

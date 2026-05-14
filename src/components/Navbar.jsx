@@ -69,14 +69,9 @@ export default function Navbar() {
           aria-label="Georgia Red Snapper home"
         >
           <img
-            src="/GRSP_Logo.svg"
-            alt="Georgia Red Snapper Logo"
+            src="/Web Icon.png"
+            alt="Georgia Red Snapper Program"
             className="logo-main"
-          />
-          <img
-            src="/logos/DNR_Logo.svg"
-            alt="Georgia DNR"
-            className="logo-dnr"
           />
         </Link>
 

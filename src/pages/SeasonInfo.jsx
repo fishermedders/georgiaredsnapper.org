@@ -155,8 +155,9 @@ export default function SeasonInfo() {
               <p className="card__body">
                 Email{" "}
                 <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a>{" "}
-                or call <a href="tel:9122647218">912-264-7218</a> for help with
-                reporting, reporting through VESL, or general questions.
+                or call toll-free <a href="tel:84476274357">844-SNAP-HELP</a>{" "}
+                for help with reporting, reporting through VESL, or general
+                questions.
               </p>
               <div className="season-actions">
                 <Link to="/contact" className="btn">

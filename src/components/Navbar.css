@@ -27,10 +27,7 @@
 }
 .logo-main {
     height: 44px;
-}
-.logo-dnr {
-    height: 32px;
-    opacity: 0.9;
+    width: auto;
 }
 
 /* Nav links — desktop */
