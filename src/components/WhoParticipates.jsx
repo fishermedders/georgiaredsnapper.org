@@ -18,20 +18,22 @@ const RESULTS = {
     heading: "As the captain, you are responsible for reporting.",
     items: [
       "Your Georgia Saltwater Fishing Guide license",
-      "Your South Atlantic Snapper-Grouper Charter/Headboat permit",
-      "A VESL catch report covering your entire party, submitted within 24 hours",
+      "Your NOAA Federal South Atlantic Snapper-Grouper Charter/Headboat permit",
+      "Continue mandatory reporting through the Southeast For-Hire Integrated Electronic Reporting (SEFHIER) Program as currently required by for-hire operators with South Atlantic federal fishing permits.",
     ],
     note: null,
   },
   charterPassenger: {
     color: "green",
-    heading: "You don't need to do anything individually.",
+    heading:
+      "If your captain has the optional Georgia For-Hire Customer License, you don't need to do anything individually.",
     items: [
       "No personal fishing license required for red snapper",
       "No VESL account or registration required",
       "No catch reporting required on your end",
     ],
     note: "Your captain's licenses cover your party. Just fish and enjoy the trip.",
+    //TODO: extra line note "If your captain does not have the customer license, you will need a valid Georgia recreational fishing license and Saltwater Information Program (SIP) Permit.
   },
 };
 
@@ -103,7 +105,7 @@ function LicenseQuiz() {
               onClick={() => setRole("captain")}
               type="button"
             >
-              Captain / operator
+              Captain
             </button>
             <button
               className={`quiz-option${role === "passenger" ? " quiz-option--selected" : ""}`}
