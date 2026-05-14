@@ -45,17 +45,7 @@ export default function Hero() {
         <div
           className="hero-ctas hero-fade-in"
           style={{ animationDelay: "0.55s" }}
-        >
-          <a
-            href={VESL_URL}
-            className="btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Join the Waitlist Now
-          </a>
-        </div>
-
+        ></div>
         <ul
           className="hero-features hero-fade-in"
           style={{ animationDelay: "0.7s" }}

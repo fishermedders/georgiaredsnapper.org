@@ -19,18 +19,19 @@ export default function DownloadQuickStart() {
               below to get started.
             </p>
             <p>
-              Once you're onboarded, you can access VESL anytime through their
-              mobile app (iPhone or Android) or directly through their website,
-              whichever is most convenient for you.
+              You can then access VESL anytime through their mobile app (iPhone
+              or Android) or directly through their website, whichever is most
+              convenient for you.
             </p>
             <div className="download-buttons">
               <a
                 href={VESL_URL}
-                className="btn"
+                className="btn btn--secondary"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Access VESL for free
+                Click Here for the latest updates with the VESL Reporting
+                Platform
               </a>
             </div>
             <p className="download-support">
