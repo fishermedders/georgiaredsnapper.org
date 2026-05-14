@@ -11,7 +11,7 @@ const RESULTS = {
       "A VESL trip registration, created before you leave the dock",
       "A completed VESL catch report, submitted within 24 hours of departure",
     ],
-    note: null,
+    notes: [],
   },
   charterCaptain: {
     color: "blue",
@@ -21,7 +21,7 @@ const RESULTS = {
       "Your NOAA Federal South Atlantic Snapper-Grouper Charter/Headboat permit",
       "Continue mandatory reporting through the Southeast For-Hire Integrated Electronic Reporting (SEFHIER) Program as currently required by for-hire operators with South Atlantic federal fishing permits.",
     ],
-    note: null,
+    notes: [],
   },
   charterPassenger: {
     color: "green",
@@ -32,8 +32,10 @@ const RESULTS = {
       "No VESL account or registration required",
       "No catch reporting required on your end",
     ],
-    note: "Your captain's licenses cover your party. Just fish and enjoy the trip.",
-    //TODO: extra line note "If your captain does not have the customer license, you will need a valid Georgia recreational fishing license and Saltwater Information Program (SIP) Permit.
+    notes: [
+      "Your captain's licenses cover your party. Just fish and enjoy the trip.",
+      "If your captain does not have the customer license, you will need a valid Georgia recreational fishing license and Saltwater Information Program (SIP) Permit.",
+    ],
   },
 };
 
@@ -123,11 +125,17 @@ function LicenseQuiz() {
           <p className="quiz-result__heading">{result.heading}</p>
           <ul className="quiz-result__list">
             {result.items.map((item, i) => (
-              <li key={i}>{item}</li>
+              <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
             ))}
           </ul>
-          {result.note && <p className="quiz-result__note">{result.note}</p>}
-          {resultKey !== "charterPassenger" && (
+          {result.notes?.map((note, i) => (
+            <p
+              key={i}
+              className="quiz-result__note"
+              dangerouslySetInnerHTML={{ __html: note }}
+            />
+          ))}
+          {resultKey === "private" && (
             <a
               href={VESL_URL}
               className="btn quiz-result__cta"
