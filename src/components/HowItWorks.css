@@ -50,6 +50,16 @@
     color: #fff;
 }
 
+.step-label a {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.step-label a:hover {
+    opacity: 0.85;
+}
+
 .step-arrow {
     display: inline-flex;
     align-items: center;

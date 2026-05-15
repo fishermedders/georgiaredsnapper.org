@@ -4,8 +4,22 @@ import "./styles/HowItWorks.css";
 export default function HowItWorksPage() {
   const workflowSteps = [
     {
-      title: "Download the VESL App",
-      body: "VESL is free and available on iPhone, Android, and desktop. Register by visiting the VESL website. You'll create an account the first time you open it.",
+      title: "Onboard with VESL",
+      body: (
+        <>
+          VESL is the free reporting app that Georgia DNR uses to collect data
+          on the season. It is accessible through apps on iPhone and Android, as
+          well as through their website. Register by{" "}
+          <a
+            href="https://bfdl.ink/to/red-snapper?and=Georgia"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            visiting the VESL website
+          </a>
+          . You&rsquo;ll create an account the first time you open it.
+        </>
+      ),
     },
     {
       title: "Create a Trip Report Before You Go",

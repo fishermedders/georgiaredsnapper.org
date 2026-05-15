@@ -36,10 +36,10 @@ export default function Hero() {
           className="hero-lead hero-fade-in"
           style={{ animationDelay: "0.4s" }}
         >
-          After 15 years of one and two-day seasons, Georgia anglers now have
-          two full months to harvest red snapper in federal waters. Anglers must
-          use Bluefin Data's VESL reporting platform to record their trips and
-          report their catch.
+          After 15 years of seasons made up of just a few days, Georgia anglers
+          now have two full months to harvest red snapper in federal waters.
+          Anglers must use Bluefin Data's VESL reporting platform to record
+          their trips and report their catch.
         </p>
 
         <div
