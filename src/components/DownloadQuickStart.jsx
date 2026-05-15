@@ -36,7 +36,8 @@ export default function DownloadQuickStart() {
             <p className="download-support">
               Need help? Email{" "}
               <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a>{" "}
-              or call toll-free <a href="tel:84476274357">844-SNAP-HELP</a>.
+              or call toll-free <a href="tel:84476274357">844-SNAP-HELP</a>{" "}
+              (8a.m. - 8p.m. EST).
             </p>
           </div>
 

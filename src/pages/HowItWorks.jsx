@@ -84,7 +84,8 @@ export default function HowItWorksPage() {
                 Email{" "}
                 <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a>{" "}
                 or call toll-free <a href="tel:84476274357">844-SNAP-HELP</a>{" "}
-                for technical support with VESL or reporting.
+                (8a.m. - 8p.m. EST) for technical support with VESL or
+                reporting.
               </p>
             </div>
           </div>

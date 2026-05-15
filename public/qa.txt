@@ -72,7 +72,7 @@ A: The 2024 SEDAR 73 stock assessment update shows South Atlantic red snapper ar
 Q: Where do I get help with VESL?
 F: get-help
 T: App
-A: Email <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a> or call toll free <a href="tel:84476274357">844-SNAP-HELP</a>. How-to videos will be available soon at GeorgiaRedSnapper.com.
+A: Email <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a> or call toll free <a href="tel:84476274357">844-SNAP-HELP</a> (8a.m. - 8p.m. EST). How-to videos will be available soon at GeorgiaRedSnapper.com.
 
 Q: What if my trip is cancelled?
 F: trip-cancelled

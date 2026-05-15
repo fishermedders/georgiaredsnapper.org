@@ -99,7 +99,7 @@ export default function Partners() {
           <small className="footer-contact">
             <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a>
             {" · toll-free "}
-            <a href="tel:84476274357">844-SNAP-HELP</a>
+            <a href="tel:84476274357">844-SNAP-HELP</a> (8a.m. - 8p.m. EST)
           </small>
         </div>
       </div>

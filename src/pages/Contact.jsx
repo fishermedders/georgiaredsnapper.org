@@ -71,7 +71,7 @@ export default function Contact() {
             <div className="card">
               <h3 className="card__title">📞 Phone (toll-free)</h3>
               <p className="card__body">
-                <a href="tel:84476274357">844-SNAP-HELP</a>
+                <a href="tel:84476274357">844-SNAP-HELP</a> (8a.m. - 8p.m. EST)
               </p>
               <p className="card__body">
                 Technical support for VESL and reporting help.

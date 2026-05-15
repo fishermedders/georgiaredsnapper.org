@@ -156,8 +156,8 @@ export default function SeasonInfo() {
                 Email{" "}
                 <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a>{" "}
                 or call toll-free <a href="tel:84476274357">844-SNAP-HELP</a>{" "}
-                for help with reporting, reporting through VESL, or general
-                questions.
+                (8a.m. - 8p.m. EST) for help with reporting, reporting through
+                VESL, or general questions.
               </p>
               <div className="season-actions">
                 <Link to="/contact" className="btn">
