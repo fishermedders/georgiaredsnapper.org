@@ -30,8 +30,7 @@ export default function DownloadQuickStart() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Click Here for the latest updates with the VESL Reporting
-                Platform
+                Click here to register with the VESL Reporting Platform
               </a>
             </div>
             <p className="download-support">

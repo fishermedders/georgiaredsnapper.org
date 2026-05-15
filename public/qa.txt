@@ -6,11 +6,12 @@
 # Format:
 #   Q: Your question goes here (one line)
 #   F: url-fragment-for-permalink
+#   T: Tag1, Tag2   (comma-separated topic tags)
 #   A: The answer goes here (one line)
 #
 # Rules:
 #   * Only a # at the very start of a line is a comment.
-#   * Only Q:, F:, or A: at the very start of a line is a marker.
+#   * Only Q:, F:, T:, or A: at the very start of a line is a marker.
 #   * Colons and # signs inside a question or answer are fine.
 #   * F: fragments must be URL-safe: lowercase, numbers, hyphens only.
 #   * Blank lines are ignored -- put as many as you like for readability.
@@ -20,72 +21,90 @@
 
 Q: When is the 2026 red snapper season?
 F: season-dates
+T: Season
 A: July 1 through August 31, 2026. A 62-day season in federal waters off Georgia.
 
 Q: What are the bag and size limits?
 F: bag-limits
+T: Regulations
 A: 1 red snapper per person per day. There is no minimum size limit.
 
 Q: What is VESL and do I have to use it?
 F: vesl-app
+T: App, Reporting
 A: VESL is a free reporting platform available on iPhone, Android, and through the VESL website. You will use VESL to register your trips and report your catch. Yes, using it is mandatory for everyone fishing for red snapper under the EFP.
 
 Q: When do I register my trip?
 F: trip-registration
+T: App, Reporting
 A: Before you leave the dock. You can create a trip report in VESL up to 5 days in advance.
 
 Q: When do I report my catch?
 F: catch-reporting
+T: App, Reporting
 A: Within 24 hours of your trip departure time. You must report both harvested and released red snapper. It only takes a few minutes.
 
 Q: What if I don't have cell service on the water?
 F: offline
+T: App
 A: Register your trip before you leave (while you have service). VESL supports offline use for logging catches, and data will sync when you reconnect. Make sure to register before departure since that requires a connection.
 
 Q: What happens if I don't report?
 F: non-reporting
+T: Reporting
 A: Noncompliance can result in being denied future participation in the EFP program. Reporting is how we prove this model works. If the data are good, the EFP could be extended through 2027 and 2028.
 
 Q: Why has the season been so short in the past?
 F: short-seasons
+T: Season
 A: Federal red snapper seasons in the South Atlantic have been limited to 1-2 days per year (sometimes zero) for the last 15 years, primarily due to uncertainty in the data used to manage the fishery. Better data from VESL can change that.
 
 Q: Is this just Georgia?
 F: other-states
+T: Season
 A: Georgia is one of four South Atlantic states participating. South Carolina, North Carolina, and Florida each submitted their own EFP applications. The states are collaborating to test better data-collection approaches.
 
 Q: Is this risky for the red snapper population?
 F: stock-risk
+T: Science
 A: The 2024 SEDAR 73 stock assessment update shows South Atlantic red snapper are not overfished and the stock is rebuilding ahead of schedule. Because the fish retained under the EFP would otherwise be discarded, the program presents low risk when paired with mandatory reporting and monitoring.
 
 Q: Where do I get help with VESL?
 F: get-help
+T: App
 A: Email <a href="mailto:RedSnapper@DNR.Ga.Gov">RedSnapper@DNR.Ga.Gov</a> or call toll free <a href="tel:84476274357">844-SNAP-HELP</a>. How-to videos will be available soon at GeorgiaRedSnapper.com.
 
 Q: What if my trip is cancelled?
 F: trip-cancelled
+T: App, Reporting
 A: You will need to complete the trip report and note that the trip was cancelled.
 
 Q: If I am a private recreational angler going on a charter trip, what do I need to do?
 F: charter-trips
+T: Reporting
 A: You will not need to create or complete a trip report since charter captains already have mandatory trip reporting in offshore waters in the South Atlantic.
 
 Q: Does every angler have to report their individual catch and trip information?
 F: every-angler
+T: Reporting
 A: Yes. Every angler will need to individually report their catch and trip information.
 
 Q: Can one person on the boat report the catch and trip information for the whole trip?
 F: one-person-report
-A: No, each licensed angler has to complete a trip report. An adult will be able to report for children under 16 years of age and young adults that do not have to be licensed.
+T: Reporting
+A: No, each licensed angler has to complete a trip report. An adult will be able to report for children under 16 years of age that do not have to be licensed.
 
 Q: Where do I find my GADNR Customer ID Number?
 F: find-customer-id
+T: App
 A: Log in to your GADNR Customer account at <a href="https://www.gooutdoorsgeorgia.com/" target="_blank">GoOutdoorsGeorgia.com</a>. Your 10-digit Customer ID number will display on the main login page below your name.
 
 Q: Do federal regulations like the use of descending devices that were in place previously still apply?
 F: federal-regulations
+T: Regulations
 A: Yes, a descending device must be on board any recreational, for hire, and commercial vessel fishing for or possessing snapper grouper species and is required to be readily available. To be considered readily available, this device must be attached to a minimum of 16 oz of weight and 60 feet of line. A descending device still in the package or in the console does not qualify as readily available.  At least one dehooking device is required and must be used as needed to remove hooks embedded in South Atlantic snapper grouper with minimum damage. The hook removal device must be constructed to allow the hook to be secured and the barb shielded without re-engaging during the removal process. The dehooking end must be blunt, and all edges rounded. The device must be of a size appropriate to secure the range of hook sizes and styles used in the South Atlantic snapper grouper fishery. Non-stainless steel hooks must be used when fishing for South Atlantic snapper grouper with hook-and-line gear and natural baits. Non-stainless steel hooks rust out of a fish more quickly than stainless steel if the hook were to stay in the fish. Learn more about federal requirements at <a href="https://safmc.net/best-fishing-practices/" target="_blank">https://safmc.net/best-fishing-practices/</a>.
 
-Q: Can I leave Georgia, fish for red snapper off Florida during Florida’s season (May 22 to June 20), and bring the fish back to Georgia?
+Q: Can I leave Georgia, fish for red snapper off Florida during Florida's season (May 22 to June 20), and bring the fish back to Georgia?
 F: interstate-fish
-A: No. What matters is where the fish are landed. If you leave Georgia and return to a Georgia dock with red snapper during a time when Georgia’s season is closed, you are in violation — even if the fish were caught legally off Florida. To keep red snapper legally, the fish must be landed in a state with an open season at the time of landing.
+T: Regulations
+A: No. What matters is where the fish are landed. If you leave Georgia and return to a Georgia dock with red snapper during a time when Georgia's season is closed, you are in violation — even if the fish were caught legally off Florida. To keep red snapper legally, the fish must be landed in a state with an open season at the time of landing.

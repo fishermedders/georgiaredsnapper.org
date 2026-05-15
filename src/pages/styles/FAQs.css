@@ -1,6 +1,159 @@
 /* FAQs.css — FAQ page accordion and layout styles.
    Tokens, buttons, cards, etc. come from index.css. */
 
+/* ── Search + filter controls ────────────────────────────────────────────── */
+
+.faq-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    margin-bottom: 1.75rem;
+}
+
+/* Search input */
+.faq-search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.faq-search-icon {
+    position: absolute;
+    left: 0.9rem;
+    color: var(--color-text-muted);
+    pointer-events: none;
+    flex-shrink: 0;
+}
+
+.faq-search-input {
+    width: 100%;
+    padding: 0.7rem 1rem 0.7rem 2.6rem;
+    font-family: var(--font-family);
+    font-size: var(--fs-base);
+    color: var(--color-text);
+    background: var(--color-bg-white);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    outline: none;
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.faq-search-input::placeholder {
+    color: var(--color-text-muted);
+    opacity: 0.75;
+}
+
+.faq-search-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(27, 94, 138, 0.12);
+}
+
+/* Remove the browser-native clear button on Chromium */
+.faq-search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Tag filter row */
+.faq-tag-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    align-items: center;
+}
+
+.faq-tag-filter {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.8rem;
+    font-family: var(--font-family);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    background: var(--color-bg-white);
+    border: 1.5px solid var(--color-border);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.faq-tag-filter:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+}
+
+.faq-tag-filter--active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+}
+
+.faq-tag-filter--active:hover {
+    background: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    color: #fff;
+}
+
+/* Per-category colour accents for the top filter row */
+.faq-tag-filter--season:hover,
+.faq-tag-filter--season.faq-tag-filter--active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+}
+
+.faq-tag-filter--regulations:hover,
+.faq-tag-filter--regulations.faq-tag-filter--active {
+    background: var(--color-danger);
+    border-color: var(--color-danger);
+    color: #fff;
+}
+
+.faq-tag-filter--science:hover,
+.faq-tag-filter--science.faq-tag-filter--active {
+    background: var(--color-success);
+    border-color: var(--color-success);
+    color: #fff;
+}
+
+/* Result count line */
+.faq-result-count {
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.faq-result-count strong {
+    color: var(--color-text);
+    font-weight: 700;
+}
+
+.faq-clear-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: var(--font-family);
+    font-size: var(--fs-sm);
+    color: var(--color-primary);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.faq-clear-link:hover {
+    color: var(--color-primary-dark);
+}
+
+/* ── FAQ grid layout ────────────────────────────────────────────────────────── */
+
 /* FAQ grid layout */
 .faq-grid {
     display: grid;
@@ -28,7 +181,7 @@
 .faq-item summary {
     list-style: none;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.875rem;
     padding: 1rem 1.25rem;
     cursor: pointer;
@@ -38,10 +191,100 @@
     font-size: var(--fs-base);
 }
 
-/* Question text — grows to fill available space */
-.faq-question-text {
+/* Body: stacks question text above tag pills */
+.faq-summary-body {
     flex: 1;
     min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    /* Nudge down slightly so the first line aligns with the caret centre */
+    padding-top: 0.35rem;
+}
+
+/* Question text */
+.faq-question-text {
+    line-height: 1.4;
+}
+
+/* Tag pills on each FAQ item */
+.faq-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.faq-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15rem 0.55rem;
+    font-family: var(--font-family);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-radius: 999px;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    /* Default (App / Reporting): primary-blue scheme */
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    border-color: rgba(27, 94, 138, 0.2);
+}
+
+.faq-tag:hover,
+.faq-tag--selected {
+    background: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+}
+
+/* Season — orange */
+.faq-tag--season {
+    background: #fff0e4;
+    color: #c4621a;
+    border-color: rgba(196, 98, 26, 0.25);
+}
+.faq-tag--season:hover,
+.faq-tag--season.faq-tag--selected {
+    background: var(--color-accent);
+    color: #fff;
+    border-color: var(--color-accent);
+}
+
+/* Regulations — red */
+.faq-tag--regulations {
+    background: #fdf0ee;
+    color: #9b3522;
+    border-color: rgba(155, 53, 34, 0.25);
+}
+.faq-tag--regulations:hover,
+.faq-tag--regulations.faq-tag--selected {
+    background: var(--color-danger);
+    color: #fff;
+    border-color: var(--color-danger);
+}
+
+/* Science — green */
+.faq-tag--science {
+    background: #eaf6ee;
+    color: #1e6b39;
+    border-color: rgba(30, 107, 57, 0.25);
+}
+.faq-tag--science:hover,
+.faq-tag--science.faq-tag--selected {
+    background: var(--color-success);
+    color: #fff;
+    border-color: var(--color-success);
+}
+
+/* Search-match highlight */
+mark.faq-highlight {
+    background: #fff176;
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 1px;
 }
 
 /* Permalink icon */
@@ -116,7 +359,7 @@
     display: none;
 }
 
-/* Caret badge */
+/* Caret badge — aligns with the first line of .faq-summary-body */
 .faq-item summary::before {
     content: "";
     width: 32px;
@@ -165,5 +408,9 @@
     }
     .faq-answer {
         padding: 0 1rem 1rem;
+    }
+    .faq-tag-filter {
+        font-size: var(--fs-xs);
+        padding: 0.25rem 0.65rem;
     }
 }

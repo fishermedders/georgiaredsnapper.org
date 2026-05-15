@@ -7,7 +7,7 @@ const RESULTS = {
     color: "blue",
     heading: "You will need a few things.",
     items: [
-      "A valid <a href='https://georgiawildlife.com/licenses-permits-passes'>Georgia recreational fishing license</a> and <a href='https://coastalgadnr.org/SIP'>Saltwater Information Program</a> (SIP) Permit",
+      "A valid <a href='https://georgiawildlife.com/licenses-permits-passes' target='_blank' rel='noopener noreferrer'>Georgia recreational fishing license</a> and <a href='https://coastalgadnr.org/SIP'>Saltwater Information Program</a> (SIP) Permit",
       "A VESL trip registration, created before you leave the dock",
       "A completed VESL catch report, submitted within 24 hours of departure",
     ],
@@ -19,8 +19,8 @@ const RESULTS = {
       "As the captain, you are responsible for reporting, and will need:",
     items: [
       "Your <a href='https://coastalgadnr.org/sites/default/files/crd/pdf/marfish/2026GuideLic.pdf'>Georgia Saltwater Fishing Guide license</a>",
-      "Your <a href='https://www.fisheries.noaa.gov/southeast/resources-fishing/southeast-permits-information'>NOAA Federal South Atlantic Snapper-Grouper Charter/Headboat permit</a>",
-      "Continue mandatory reporting through the <a href='https://www.fisheries.noaa.gov/southeast/recreational-fishing-data/southeast-hire-integrated-electronic-reporting-program'>Southeast For-Hire Integrated Electronic Reporting</a> (SEFHIER) Program as currently required by for-hire operators with South Atlantic federal fishing permits.",
+      "Your <a href='https://www.fisheries.noaa.gov/southeast/resources-fishing/southeast-permits-information' target='_blank' rel='noopener noreferrer'>NOAA Federal South Atlantic Snapper-Grouper Charter/Headboat permit</a>",
+      "Continue mandatory reporting through the <a href='https://www.fisheries.noaa.gov/southeast/recreational-fishing-data/southeast-hire-integrated-electronic-reporting-program' target='_blank' rel='noopener noreferrer'>Southeast For-Hire Integrated Electronic Reporting</a> (SEFHIER) Program as currently required by for-hire operators with South Atlantic federal fishing permits.",
     ],
     notes: [],
   },
@@ -35,7 +35,7 @@ const RESULTS = {
     ],
     notes: [
       "Your captain's licenses cover your party. Just fish and enjoy the trip.",
-      "NOTE: If your captain does not have the customer license, you will need a valid <a href='https://georgiawildlife.com/licenses-permits-passes'>Georgia recreational fishing license</a> and <a href='https://coastalgadnr.org/SIP'>Saltwater Information Program</a> (SIP) Permit.",
+      "NOTE: If your captain does not have the customer license, you will need a valid <a href='https://georgiawildlife.com/licenses-permits-passes' target='_blank' rel='noopener noreferrer'>Georgia recreational fishing license</a> and <a href='https://coastalgadnr.org/SIP'>Saltwater Information Program</a> (SIP) Permit.",
     ],
   },
 };

@@ -23,15 +23,17 @@ export default function useFAQs() {
 
     let cancelled = false;
 
-    fetch(FAQ_URL)
+    fetch(`${FAQ_URL}?v=${Date.now()}`)
       .then((res) => {
-        if (!res.ok) throw new Error(`Failed to load FAQs (HTTP ${res.status})`);
+        if (!res.ok)
+          throw new Error(`Failed to load FAQs (HTTP ${res.status})`);
         return res.text();
       })
       .then((text) => {
         if (cancelled) return;
         const parsed = parseQA(text);
-        if (parsed.length === 0) throw new Error("FAQ file was empty or had no valid Q/A pairs");
+        if (parsed.length === 0)
+          throw new Error("FAQ file was empty or had no valid Q/A pairs");
         _cache = parsed;
         setFaqs(parsed);
       })
