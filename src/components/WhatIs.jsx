@@ -56,6 +56,12 @@ export default function WhatIs() {
           <Link to="/season-info" className="btn btn--secondary">
             Season Rules &amp; Details
           </Link>
+          <Link
+            to="/how-it-works#data-collected"
+            className="btn btn--secondary"
+          >
+            Data Collected in Trip Report
+          </Link>
         </div>
       </div>
     </section>

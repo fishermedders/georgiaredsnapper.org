@@ -42,8 +42,15 @@ export default function HowItWorksPage() {
           <h2>How to Participate</h2>
           <p className="lead">
             Reporting through VESL is mandatory for anglers fishing for red
-            snapper under the EFP. Here's exactly what you need to do. It's
-            straightforward and takes very little time.
+            snapper under the{" "}
+            <a
+              href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf"
+              target="_blank"
+            >
+              EFP
+            </a>
+            . Here's exactly what you need to do. It's straightforward and takes
+            very little time.
           </p>
         </div>
       </section>
@@ -62,6 +69,46 @@ export default function HowItWorksPage() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="data-collected" className="section section--bg-soft">
+        <div className="section-inner">
+          <h2>What Data Are Collected?</h2>
+          <p className="lead">
+            VESL collects a small set of trip and catch details. And the data
+            you provide to us are confidential. Here’s exactly what you’ll be
+            asked to provide.
+          </p>
+          <div className="grid grid--cols-3">
+            <div className="card data-card">
+              <span className="data-phase data-phase--before">
+                Prior to fishing
+              </span>
+              <ul className="data-items">
+                <li>Trip date &amp; start time</li>
+                <li>Departure county &amp; site</li>
+              </ul>
+            </div>
+            <div className="card data-card">
+              <span className="data-phase data-phase--after">
+                At trip completion
+              </span>
+              <ul className="data-items">
+                <li>Trip end time</li>
+                <li>Depth fished</li>
+                <li>Red snapper harvested &amp; released</li>
+                <li>Hours spent fishing</li>
+              </ul>
+            </div>
+            <div className="card data-card">
+              <span className="data-phase data-phase--optional">Optional</span>
+              <ul className="data-items">
+                <li>Fishing location</li>
+                <li>Habitat type (artificial reef, natural bottom, or both)</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -86,6 +133,27 @@ export default function HowItWorksPage() {
                 or call toll-free <a href="tel:84476274357">844-SNAP-HELP</a>{" "}
                 (8a.m. - 8p.m. EST) for technical support with VESL or
                 reporting.
+              </p>
+            </div>
+            <div className="card">
+              <h3 className="card__title">
+                Opportunity to Receive Free Descending Devices
+              </h3>
+              <p className="card__body">
+                <a href="https://returnemright.org/" target="_blank">
+                  Return 'Em Right
+                </a>{" "}
+                is expanding and anglers fishing in the South Atlantic can now
+                get a free SeaQualizer descending device (attached to a lead
+                weight) and fish release hook for the cost of shipping ($12) if
+                they complete the{" "}
+                <a
+                  href="https://returnemright.org/about-us/gear-signup/"
+                  target="_blank"
+                >
+                  online training module
+                </a>
+                .
               </p>
             </div>
           </div>

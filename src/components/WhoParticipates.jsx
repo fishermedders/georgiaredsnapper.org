@@ -163,8 +163,15 @@ export default function WhoParticipates() {
 
         <p className="lead">
           Reporting through VESL is mandatory, not optional. Every angler
-          fishing for red snapper under the EFP must register their trip and
-          report their catch. This is how we earn longer seasons in the future.
+          fishing for red snapper under the{" "}
+          <a
+            href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf"
+            target="_blank"
+          >
+            EFP
+          </a>{" "}
+          must register their trip and report their catch. Anglers will not be
+          required to provide their fishing location.
         </p>
 
         <div className="compare-grid">
@@ -185,10 +192,25 @@ export default function WhoParticipates() {
           <div className="compare-box compare-box--not-required">
             <header>Not Required</header>
             <ul>
-              <li>Anglers not fishing for red snapper during the EFP season</li>
+              <li>
+                Anglers not fishing for red snapper during the{" "}
+                <a
+                  href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf"
+                  target="_blank"
+                >
+                  EFP
+                </a>{" "}
+                season
+              </li>
               <li>Anglers fishing on a chartered fishing trip.</li>
               <li>
-                Commercial fishers not participating under the recreational EFP
+                Commercial fishers not participating under the recreational{" "}
+                <a
+                  href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf"
+                  target="_blank"
+                >
+                  EFP
+                </a>
               </li>
             </ul>
           </div>

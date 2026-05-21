@@ -3,8 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
-
-const BASE = "/RedSnapper";
+import { BASE } from "./utils/base.js";
 
 // ── Hash → pretty-URL normalisation ──
 // Drupal sub-route pages redirect to the main page with a hash that

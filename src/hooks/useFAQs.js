@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import parseQA from "../utils/parseQA.js";
+import { IS_STAGING } from "../utils/base.js";
 
+const FAQ_FILE = IS_STAGING ? "qa_staging.txt" : "qa.txt";
 const FAQ_URL = import.meta.env.DEV
-  ? "/qa.txt"
-  : "https://coastalgadnr.org/sites/default/files/crd/AppRedSnapper/qa.txt";
+  ? `/${FAQ_FILE}`
+  : `https://coastalgadnr.org/sites/default/files/crd/AppRedSnapper/${FAQ_FILE}`;
 
 // Module-level cache — survives across mounts (route changes) but
 // not across full page reloads, so the latest file is always picked up.

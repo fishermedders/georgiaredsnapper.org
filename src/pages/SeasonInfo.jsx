@@ -102,9 +102,15 @@ export default function SeasonInfo() {
               <h3 className="card__title">Future Seasons</h3>
               <p className="card__body">
                 If Georgia demonstrates it can collect high-quality data through
-                VESL, the EFP could be extended for two additional years: 2027
-                and 2028. Your participation directly affects whether this
-                continues.
+                VESL, the{" "}
+                <a
+                  href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf"
+                  target="_blank"
+                >
+                  EFP
+                </a>{" "}
+                could be extended for two additional years: 2027 and 2028. Your
+                participation directly affects whether this continues.
               </p>
               <p className="card__body">
                 CRD also continues operating{" "}
@@ -126,9 +132,15 @@ export default function SeasonInfo() {
           <p className="lead">
             The 2024 SEDAR 73 stock assessment update indicates South Atlantic
             red snapper are not overfished and the stock is rebuilding ahead of
-            schedule. Because fish retained under the EFP would otherwise be
-            discarded, the program presents low risk when paired with mandatory
-            reporting.
+            schedule. Because fish retained under the{" "}
+            <a
+              href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf"
+              target="_blank"
+            >
+              EFP
+            </a>{" "}
+            would otherwise be discarded, the program presents low risk when
+            paired with mandatory reporting.
           </p>
 
           <div className="grid grid--cols-2">
