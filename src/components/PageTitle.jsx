@@ -10,6 +10,7 @@ const ROUTE_TITLES = {
   "/faq": "FAQs",
   "/season-info": "Season Info",
   "/contact": "Contact",
+  "/timeline": "Timeline",
 };
 
 export default function PageTitle() {

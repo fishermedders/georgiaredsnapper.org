@@ -9,11 +9,14 @@ import HowItWorksPage from "./pages/HowItWorks.jsx";
 import FAQs from "./pages/FAQs.jsx";
 import SeasonInfo from "./pages/SeasonInfo.jsx";
 import Contact from "./pages/Contact.jsx";
+import Timeline from "./pages/Timeline.jsx";
 import Partners from "./components/Partners.jsx";
+import AnnouncementModal from "./components/AnnouncementModal.jsx";
 
 function App() {
   return (
     <>
+      <AnnouncementModal />
       <Navbar />
       <ScrollToTop />
       <PageTitle />
@@ -24,6 +27,7 @@ function App() {
         <Route path="/faq" element={<FAQs />} />
         <Route path="/season-info" element={<SeasonInfo />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/timeline" element={<Timeline />} />
       </Routes>
       <Partners />
     </>
