@@ -83,7 +83,7 @@ export default function Timeline() {
                     regulations for 2026.
                   </li>
                   <li>
-                    If high-quality data is collected through{" "}
+                    If high-quality data are collected through{" "}
                     <strong>mandatory VESL electronic reporting</strong>, the
                     EFP could be extended for two additional years (2027–2028).
                   </li>

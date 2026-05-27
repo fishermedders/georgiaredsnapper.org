@@ -110,13 +110,21 @@ T: Regulations
 A: No. What matters is where the fish are landed. If you leave Georgia and return to a Georgia dock with red snapper during a time when Georgia's season is closed, you are in violation — even if the fish were caught legally off Florida. To keep red snapper legally, the fish must be landed in a state with an open season at the time of landing.
 
 Q: Will I be required to report my fishing location?
+F: report-location
+T: Reporting
 A: No. Fishing location is one of two optional questions, along with habitat type (artificial reef, natural bottom, or both).
 
 Q: What data will be collected for each trip?
-A: with short summary sentence and hyperlink to list above. Also need to consider adding a statement in this response re: data are confidential. SC used “The data you provide to us are confidential.”
+F: trip-data
+T: Reporting, App
+A: Information on what data are collected for each trip is available on <a href="https://CoastalGaDNR.org/RedSnapper/how-it-works#trip-data" target="_blank">the "How It Works" page</a>.
 
 Q: Will there be a method to report my trip that is not electronic?
-A: We are currently in the process of developing a paper version of the trip report that can be used by anglers not wanting to use the VESL app or website.
+F: non-electronic
+T: Reporting
+A: We are currently in the process of developing an alternate version of the trip report that can be used by anglers who are unable to report electronically through the VESL app or website.
 
 Q: What else can I do to help collect data throughout the year and for species beyond just red snapper?
+F: other-data-programs
+T: Science
 A: The South Atlantic Fishery Management Council (SAFMC) is currently looking for commercial, for-hire, and recreational fishermen to participate in the SAFMC Release Project. Learn more at <a href="https://safmc.net/citizen-science/safmc-release/" target="_blank">https://safmc.net/citizen-science/safmc-release/</a>.
