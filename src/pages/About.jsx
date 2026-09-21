@@ -10,7 +10,7 @@ export default function About() {
           <p className="lead">
             The Georgia Red Snapper Project is a new initiative from the Georgia
             DNR Coastal Resources Division that gives recreational anglers a
-            62-day red snapper season in federal waters, the longest in over 15
+            13-day red snapper season in federal waters, the longest in over 15
             years.
           </p>
 
@@ -39,7 +39,7 @@ export default function About() {
                 </a>{" "}
                 (Exempted Fishing Permit) from the U.S. Secretary of Commerce in
                 November 2025. The permit allows Georgia to operate a two-month
-                season (July 1 - August 31, 2026) with mandatory electronic
+                season (October 9 - October 22, 2026) with mandatory electronic
                 reporting for anglers. If the state demonstrates it can collect
                 high-quality data, the{" "}
                 <a

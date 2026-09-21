@@ -24,7 +24,7 @@ export default function Hero() {
             animationDelay: "0.1s",
           }}
         >
-          July 1 - August 31, 2026
+          October 9 - October 22, 2026
         </span>
         <h1
           className="hero-title hero-fade-in"

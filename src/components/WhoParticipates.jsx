@@ -183,7 +183,7 @@ export default function WhoParticipates() {
                 waters during the season
               </li>
               <li>
-                Any angler retaining red snapper between July 1 and August 31,
+                Any angler retaining red snapper between October 9 and October 22,
                 2026
               </li>
             </ul>

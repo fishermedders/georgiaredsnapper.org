@@ -4,7 +4,7 @@ import "./styles/SeasonInfo.css";
 
 export default function SeasonInfo() {
   const rules = [
-    "Season: July 1 - August 31, 2026 (62 days)",
+    "Season: October 9 - October 22, 2026 (13 days)",
     "Waters: Federal waters (3-200 miles) off the Georgia coast",
     "Bag limit: 1 red snapper per person per day",
     "Size limit: No minimum size",
@@ -21,7 +21,7 @@ export default function SeasonInfo() {
           <h2>2026 Season Information</h2>
 
           <p className="lead">
-            Georgia's 62-day red snapper season runs July 1 through August 31,
+            Georgia's 13-day red snapper season runs October 9 through October 22,
             2026 in federal waters. Here's everything you need to know before
             you fish.
           </p>

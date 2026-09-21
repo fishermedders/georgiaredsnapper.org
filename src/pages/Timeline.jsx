@@ -38,7 +38,7 @@ export default function Timeline() {
                   stopped the implementation of the South Atlantic states
                   Exempted Fishing Permits. At this time, it is not known if
                   NOAA Fisheries will file an appeal. Because Georgia's
-                  requested start date of July 1st is weeks away, Coastal
+                  requested start date of October 9th is weeks away, Coastal
                   Resources Division will continue to work on ensuring the
                   agency is prepared should the injunction be lifted. Updates
                   will be posted as more information is made available.

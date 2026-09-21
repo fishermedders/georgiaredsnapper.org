@@ -26,8 +26,8 @@ export default function HowItWorksPage() {
       body: "Before heading out, register your trip in VESL. You can do this up to 5 days in advance. Enter basic trip details like the date, and departure location.",
     },
     {
-      title: "Go Fishing: July 1 Through August 31",
-      body: "The 2026 season runs from July 1 through August 31 in federal waters off Georgia. You may keep 1 red snapper per person per day with no minimum size limit.",
+      title: "Go Fishing: October 9 Through October 22",
+      body: "The 2026 season runs from October 9 through October 22 in federal waters off Georgia. You may keep 1 red snapper per person per day with no minimum size limit.",
     },
     {
       title: "Report Your Catch Within 24 Hours",
@@ -120,7 +120,7 @@ export default function HowItWorksPage() {
             <div className="card">
               <h3 className="card__title">Know the Rules</h3>
               <p className="card__body">
-                1 fish per person per day, no minimum size, July 1 - Aug 31
+                1 fish per person per day, no minimum size, October 9 - Aug 31
                 only. See <Link to="/season-info">Season Information</Link> for
                 full details.
               </p>
