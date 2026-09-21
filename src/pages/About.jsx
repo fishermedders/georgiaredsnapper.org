@@ -10,7 +10,7 @@ export default function About() {
           <p className="lead">
             The Georgia Red Snapper Project is a new initiative from the Georgia
             DNR Coastal Resources Division that gives recreational anglers a
-            13-day red snapper season in federal waters, the longest in over 15
+            14-day red snapper season in federal waters, the longest in over 15
             years.
           </p>
 

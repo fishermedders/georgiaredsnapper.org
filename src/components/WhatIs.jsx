@@ -12,7 +12,7 @@ export default function WhatIs() {
 
         <p className="lead">
           The Georgia Red Snapper Project is a new initiative from the Georgia
-          DNR Coastal Resources Division that opens a 13-day recreational red
+          DNR Coastal Resources Division that opens a 14-day recreational red
           snapper season, October 9 through October 22, 2026, in federal waters
           (3-200 miles) off the Georgia coast.
         </p>
@@ -20,7 +20,7 @@ export default function WhatIs() {
         <div className="what-is-cards">
           <div className="what-is-card">
             <div className="what-is-card__icon">📅</div>
-            <h3>13-day Season</h3>
+            <h3>14-day Season</h3>
             <p>
               October 9 - October 22, 2026. After 15 years of one- and two-day
               federal seasons, Georgia anglers now have two full months on the
