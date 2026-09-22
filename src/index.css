@@ -339,6 +339,11 @@ a:hover {
 .btn--accent:hover {
     background: #cf7432;
 }
+.btn--inactive {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
 
 /* --- Store buttons --- */
 .store-btn {

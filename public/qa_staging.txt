@@ -32,7 +32,7 @@ A: 1 red snapper per person per day. There is no minimum size limit.
 Q: What is VESL and do I have to use it?
 F: vesl-app
 T: App, Reporting
-A: VESL is a free reporting platform available on iPhone, Android, and through the VESL website. You will use VESL to register your trips and report your catch. Yes, using it is mandatory for everyone fishing for red snapper under the <a href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf" target="_blank">EFP</a>.
+A: VESL is a free reporting platform available on iPhone, Android, and through the VESL website. You will use VESL to register your trips and report your catch. Yes, using it is mandatory for everyone fishing for red snapper under the <a href="https://www.fisheries.noaa.gov/s3/2026-08/gadnr_rs-efp-application_07102026.pdf" target="_blank">EFP</a>.
 
 Q: When do I register my trip?
 F: trip-registration
@@ -52,7 +52,7 @@ A: Register your trip before you leave (while you have service). VESL supports o
 Q: What happens if I don't report?
 F: non-reporting
 T: Reporting
-A: Noncompliance can result in being denied future participation in the <a href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf" target="_blank">EFP</a> program. Reporting is how we prove this model works. If the data are good, the <a href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf" target="_blank">EFP</a> could be extended through 2027 and 2028.
+A: Noncompliance can result in being denied future participation in the <a href="https://www.fisheries.noaa.gov/s3/2026-08/gadnr_rs-efp-application_07102026.pdf" target="_blank">EFP</a> program. Reporting is how we prove this model works. If the data are good, the <a href="https://www.fisheries.noaa.gov/s3/2026-08/gadnr_rs-efp-application_07102026.pdf" target="_blank">EFP</a> could be extended through 2027 and 2028.
 
 Q: Why has the season been so short in the past?
 F: short-seasons
@@ -62,12 +62,12 @@ A: Federal red snapper seasons in the South Atlantic have been limited to 1-2 da
 Q: Is this just Georgia?
 F: other-states
 T: Season
-A: Georgia is one of four South Atlantic states participating. South Carolina, North Carolina, and Florida each submitted their own EFP applications. The states are collaborating to test better data-collection approaches.
+A: Georgia is one of three South Atlantic states participating. South Carolina and Florida each submitted their own EFP applications. The states are collaborating to test better data-collection approaches.
 
 Q: Is this risky for the red snapper population?
 F: stock-risk
 T: Science
-A: The 2024 SEDAR 73 stock assessment update shows South Atlantic red snapper are not overfished and the stock is rebuilding ahead of schedule. Because the fish retained under the <a href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf" target="_blank">EFP</a> would otherwise be discarded, the program presents low risk when paired with mandatory reporting and monitoring.
+A: The 2024 SEDAR 73 stock assessment update shows South Atlantic red snapper are not overfished and the stock is rebuilding ahead of schedule. Because the fish retained under the <a href="https://www.fisheries.noaa.gov/s3/2026-08/gadnr_rs-efp-application_07102026.pdf" target="_blank">EFP</a> would otherwise be discarded, the program presents low risk when paired with mandatory reporting and monitoring.
 
 Q: Where do I get help with VESL?
 F: get-help

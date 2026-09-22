@@ -46,7 +46,7 @@ export default function Partners() {
               supported by a grant from <strong>Yamaha Rightwaters</strong>.
             </p>
             <p className="footer-tagline">
-              South Carolina, North Carolina, and Florida are collaborating
+              South Carolina, and Florida are collaborating
               through their own EFP applications.
             </p>
           </div>

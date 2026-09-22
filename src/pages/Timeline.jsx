@@ -1,7 +1,7 @@
 import "./styles/Timeline.css";
 
 const EFP_PDF_URL =
-  "https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf";
+  "https://www.fisheries.noaa.gov/s3/2026-08/gadnr_rs-efp-application_07102026.pdf";
 const PR_REQUEST_URL = "https://coastalgadnr.org/News/EFP251113";
 const PR_APPROVAL_URL = "https://coastalgadnr.org/News/260501RedSnapper";
 const PR_INJUNCTION_URL =
@@ -88,8 +88,8 @@ export default function Timeline() {
                     EFP could be extended for two additional years (2027–2028).
                   </li>
                   <li>
-                    Three other Southeast states — North Carolina, South
-                    Carolina, and Florida — submitted their own EFP applications
+                    Two other Southeast states — South
+                    Carolina and Florida — submitted their own EFP applications
                     in a regional collaboration to improve real-time
                     recreational fishing data.
                   </li>

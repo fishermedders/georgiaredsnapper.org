@@ -19,8 +19,8 @@ export default function DownloadQuickStart() {
               below to get started.
             </p>
             <p>
-              You can then access VESL anytime through their mobile app (iPhone
-              or Android) or directly through their website, whichever is most
+              You can then access VESL anytime through the mobile app (iPhone
+              or Android) or directly through the website, whichever is most
               convenient for you.
             </p>
             <div className="download-buttons">

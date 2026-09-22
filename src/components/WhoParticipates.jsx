@@ -165,7 +165,7 @@ export default function WhoParticipates() {
           Reporting through VESL is mandatory, not optional. Every angler
           fishing for red snapper under the{" "}
           <a
-            href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf"
+            href="https://www.fisheries.noaa.gov/s3/2026-08/gadnr_rs-efp-application_07102026.pdf"
             target="_blank"
           >
             EFP
@@ -195,7 +195,7 @@ export default function WhoParticipates() {
               <li>
                 Anglers not fishing for red snapper during the{" "}
                 <a
-                  href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf"
+                  href="https://www.fisheries.noaa.gov/s3/2026-08/gadnr_rs-efp-application_07102026.pdf"
                   target="_blank"
                 >
                   EFP
@@ -206,7 +206,7 @@ export default function WhoParticipates() {
               <li>
                 Commercial fishers not participating under the recreational{" "}
                 <a
-                  href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf"
+                  href="https://www.fisheries.noaa.gov/s3/2026-08/gadnr_rs-efp-application_07102026.pdf"
                   target="_blank"
                 >
                   EFP

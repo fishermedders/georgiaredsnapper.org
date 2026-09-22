@@ -32,7 +32,7 @@ export default function About() {
               <p className="card__body">
                 Georgia requested the{" "}
                 <a
-                  href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf"
+                  href="https://www.fisheries.noaa.gov/s3/2026-08/gadnr_rs-efp-application_07102026.pdf"
                   target="_blank"
                 >
                   EFP
@@ -43,7 +43,7 @@ export default function About() {
                 reporting for anglers. If the state demonstrates it can collect
                 high-quality data, the{" "}
                 <a
-                  href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf"
+                  href="https://www.fisheries.noaa.gov/s3/2026-08/gadnr_rs-efp-application_07102026.pdf"
                   target="_blank"
                 >
                   EFP
@@ -60,8 +60,8 @@ export default function About() {
           <h2>A Regional Effort</h2>
 
           <p className="lead">
-            Georgia isn't alone. South Carolina, North Carolina, and Florida
-            each submitted their own EFP applications. Together, the four states
+            Georgia isn't alone. South Carolina and Florida
+            each submitted their own EFP applications. Together, the three states
             are collaborating to test new approaches for collecting more
             accurate, real-time recreational fishing data on red snapper.
           </p>

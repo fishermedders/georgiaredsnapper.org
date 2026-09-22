@@ -8,7 +8,7 @@ export default function SeasonInfo() {
     "Waters: Federal waters (3-200 miles) off the Georgia coast",
     "Bag limit: 1 red snapper per person per day",
     "Size limit: No minimum size",
-    "Trip registration: Required before departure via the VESL app (can be done up to 5 days in advance)",
+    "Trip registration: Required before departure via VESL (can be done up to 5 days in advance)",
     "Catch reporting: Required within 24 hours of trip departure time via VESL",
     "Must report: Both harvested and released red snapper",
     "Applies to: Private recreational anglers",
@@ -58,8 +58,8 @@ export default function SeasonInfo() {
                 <Link to="/how-it-works" className="btn">
                   Step-by-Step Instructions
                 </Link>
-                <a href="#" className="btn btn--secondary">
-                  View an Instructional Video
+                <a className="btn btn--inactive">
+                  Instructional video coming soon
                 </a>
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function SeasonInfo() {
                 If Georgia demonstrates it can collect high-quality data through
                 VESL, the{" "}
                 <a
-                  href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf"
+                  href="https://www.fisheries.noaa.gov/s3/2026-08/gadnr_rs-efp-application_07102026.pdf"
                   target="_blank"
                 >
                   EFP
@@ -134,7 +134,7 @@ export default function SeasonInfo() {
             red snapper are not overfished and the stock is rebuilding ahead of
             schedule. Because fish retained under the{" "}
             <a
-              href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf"
+              href="https://www.fisheries.noaa.gov/s3/2026-08/gadnr_rs-efp-application_07102026.pdf"
               target="_blank"
             >
               EFP

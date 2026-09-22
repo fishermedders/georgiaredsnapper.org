@@ -11,12 +11,10 @@ import SeasonInfo from "./pages/SeasonInfo.jsx";
 import Contact from "./pages/Contact.jsx";
 import Timeline from "./pages/Timeline.jsx";
 import Partners from "./components/Partners.jsx";
-import AnnouncementModal from "./components/AnnouncementModal.jsx";
 
 function App() {
   return (
     <>
-      <AnnouncementModal />
       <Navbar />
       <ScrollToTop />
       <PageTitle />

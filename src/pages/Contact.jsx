@@ -76,6 +76,7 @@ export default function Contact() {
               <p className="card__body">
                 Technical support for VESL and reporting help.
               </p>
+              {{ /*TODO: CHANGE TECHNICAL SUPPORT TO VESL INFORMATION WITH CRD AS BACKUP*/ }}
             </div>
 
             <div className="card">

@@ -7,9 +7,9 @@ export default function HowItWorksPage() {
       title: "Onboard with VESL",
       body: (
         <>
-          VESL is the free reporting app that Georgia DNR uses to collect data
+          VESL is the free reporting platform that Georgia DNR uses to collect data
           on the season. It is accessible through apps on iPhone and Android, as
-          well as through their website. Register by{" "}
+          well as through the website. Register by{" "}
           <a
             href="https://bfdl.ink/to/red-snapper?and=Georgia"
             target="_blank"
@@ -27,7 +27,7 @@ export default function HowItWorksPage() {
     },
     {
       title: "Go Fishing: October 9 Through October 22",
-      body: "The 2026 season runs from October 9 through October 22 in federal waters off Georgia. You may keep 1 red snapper per person per day with no minimum size limit.",
+      body: "The 2026 season runs from October 9 through October 22 in federal waters off Georgia. You may keep one red snapper per person per day with no minimum size limit.",
     },
     {
       title: "Report Your Catch Within 24 Hours",
@@ -44,7 +44,7 @@ export default function HowItWorksPage() {
             Reporting through VESL is mandatory for anglers fishing for red
             snapper under the{" "}
             <a
-              href="https://coastalgadnr.org/sites/default/files/crd/PressRelease/PDF/GA_EFP_Lutnick_111025.pdf"
+              href="https://www.fisheries.noaa.gov/s3/2026-08/gadnr_rs-efp-application_07102026.pdf"
               target="_blank"
             >
               EFP
@@ -120,7 +120,7 @@ export default function HowItWorksPage() {
             <div className="card">
               <h3 className="card__title">Know the Rules</h3>
               <p className="card__body">
-                1 fish per person per day, no minimum size, October 9 - Aug 31
+                1 fish per person per day, no minimum size, October 9 - October 22
                 only. See <Link to="/season-info">Season Information</Link> for
                 full details.
               </p>
